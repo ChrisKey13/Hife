@@ -1,0 +1,14 @@
+<div class="col-6">
+  <div class="container">
+    <h1>Name your meeting</h1>
+    <%= simple_form_for @meeting do |f| %>
+      <%= f.input :name, label: "Meeting name" %>
+      <%= f.button :submit, "Next", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<div class="col-6">
+
+</div>
+
+
