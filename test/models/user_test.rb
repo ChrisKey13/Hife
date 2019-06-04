@@ -13,7 +13,6 @@
 #  first_name             :string
 #  last_name              :string
 #  company_id             :bigint
-#  team_id                :bigint
 #  photo                  :string
 #
 

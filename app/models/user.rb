@@ -13,7 +13,6 @@
 #  first_name             :string
 #  last_name              :string
 #  company_id             :bigint
-#  team_id                :bigint
 #  photo                  :string
 #
 
@@ -24,6 +23,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :feedbacks
   has_many :agendas
+  has_many :managed_teams, foreign_key: "manager_id", class_name: 'Team'
+  has_many :user_teams
+  has_many :ratings, through: :feedbacks
+  has_many :teams, through: :user_teams
   belongs_to :company
-  belongs_to :team
 end

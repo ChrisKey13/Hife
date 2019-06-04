@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_103043) do
+ActiveRecord::Schema.define(version: 2019_06_04_124714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,15 @@ ActiveRecord::Schema.define(version: 2019_06_04_103043) do
     t.index ["manager_id"], name: "index_teams_on_manager_id"
   end
 
+  create_table "user_teams", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_user_teams_on_team_id"
+    t.index ["user_id"], name: "index_user_teams_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -101,12 +110,10 @@ ActiveRecord::Schema.define(version: 2019_06_04_103043) do
     t.string "first_name"
     t.string "last_name"
     t.bigint "company_id"
-    t.bigint "team_id"
     t.string "photo"
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["team_id"], name: "index_users_on_team_id"
   end
 
   add_foreign_key "agendas", "meetings"
@@ -118,6 +125,7 @@ ActiveRecord::Schema.define(version: 2019_06_04_103043) do
   add_foreign_key "ratings", "meetings"
   add_foreign_key "ratings", "users", column: "manager_id"
   add_foreign_key "teams", "users", column: "manager_id"
+  add_foreign_key "user_teams", "teams"
+  add_foreign_key "user_teams", "users"
   add_foreign_key "users", "companies"
-  add_foreign_key "users", "teams"
 end
