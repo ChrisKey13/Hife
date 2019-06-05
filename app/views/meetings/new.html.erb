@@ -1,9 +1,18 @@
 <div class="col-6">
   <div class="container">
     <h1>Name your meeting</h1>
-    <%= simple_form_for @meeting do |f| %>
+    <%= simple_form_for :meeting, url: meetings_path, method: "post" do |f| %>
       <%= f.input :name, label: "Meeting name" %>
-      <%= f.button :submit, "Next", class: "btn btn-primary" %>
+      <%= f.input :date, label: "When?" %>
+      <%= f.input :available_duration, label: "Duration" %>
+      <%= f.input :meeting_description, label: "Short description" %>
+      <%= f.input :team, collection: @teams, label: "Which team should attend?" %>
+      <%= f.input :item_title, label: "Item title" %>
+      <%= f.input :item_description, label: "Item description" %>
+      <%= f.input :item_duration, label: "Duration" %>
+      <%= f.input :item_owner, collection: @users, label_method: :his_name, label: "Collaborator in charge" %>
+      <%= f.input :activity, collection: @activities, label: "Pick an activity" %>
+      <%= f.submit "Create a meeting", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
