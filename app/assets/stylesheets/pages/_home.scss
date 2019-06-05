@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+#banner-typed-text{
+  color: #E9664B;
+}
+.banner {
+  background-image: url(../../assets/landing.png);
+  background-size: cover;
+  background-position: right;
+  padding: 200px 0;
+}
+.landingpaddingcontent {
+  margin-top: 32px;
+  margin-bottom: 45px;
+}
