@@ -28,4 +28,10 @@ class User < ApplicationRecord
   has_many :ratings, through: :feedbacks
   has_many :teams, through: :user_teams
   belongs_to :company, optional: true
+
+  private
+
+  def his_name
+    return "#{first_name.capitalize} #{last_name.capitalize}"
+  end
 end
