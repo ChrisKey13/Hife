@@ -27,5 +27,5 @@ class User < ApplicationRecord
   has_many :user_teams
   has_many :ratings, through: :feedbacks
   has_many :teams, through: :user_teams
-  belongs_to :company
+  belongs_to :company, optional: true
 end
