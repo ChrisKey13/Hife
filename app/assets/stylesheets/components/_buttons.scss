@@ -12,3 +12,98 @@
   color: white;
   font-size: 16px;
 }
+.bouton-red {
+    display: inline-block;
+    width: 240px;
+    padding: 8px 44px;
+    background-color: #f4364c;
+    border-radius: 100px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box !important;
+    &:hover {
+      background-color: #DA3F4C;
+      text-decoration: none !important;
+      color: white;
+    }
+}
+.bouton-red-nav {
+  margin-left: 47px;
+  width: 130px;
+  height: 40px;
+  padding: 10px 32px;
+  margin-top: 0;
+  font-size: 13px;
+  background: #f4364c;
+  text-align: center;
+  text-transform: none;
+  text-shadow: none;
+  color: white;
+  border-radius: 80px;
+  &:hover {
+    background-color: #DA3F4C;
+    text-decoration: none;
+    color: white;
+  }
+}
+.bouton-white-nav {
+  margin-left: 16px;
+  margin-right: 24px;
+  width: 130px;
+  height: 40px;
+  padding: 10px 32px;
+  margin-top: 0;
+  font-size: 13px;
+  border: 1px solid #999;
+  border-radius: 80px;
+  border-color: #b3b3b3;
+  color: #666;
+  text-align: center;
+  text-transform: none;
+  text-shadow: none;
+  &:hover {
+    border-color: #666666;
+    text-decoration: none;
+    color: #666;
+  }
+}
+.bouton-text-nav {
+  color: #454A51;
+  font-size: 14px;
+  height: auto;
+  position: relative;
+  font-weight: 600;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-left: 40px;
+  &:hover {
+    text-decoration: none;
+    color: #454A51;
+  }
+  &:hover:after {
+      content: '';
+      width: calc(100% + 20px);
+      height: 2px;
+      background-color: #f4364c;
+      position: absolute;
+      right: -10px;
+      bottom: -30px;
+  }
+}
+.bouton-login {
+    background: #0089ff;
+    color: #fff;
+    font-weight: 600;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    font-size: 14px;
+    height: 48px;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(36,129,215,0.05), 0 2px 3px rgba(36,129,215,0.04);
+    display: block;
+    width: 100%
+}

@@ -12,7 +12,7 @@
 
 class Rating < ApplicationRecord
   belongs_to :meeting
-  has_many :feedbacks
+  has_many :feedbacks, dependent: :destroy
   has_many :users, through: :feedbacks
   belongs_to :manager, class_name: "User", foreign_key: "manager_id"
 end
