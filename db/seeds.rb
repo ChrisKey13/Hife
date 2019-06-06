@@ -128,10 +128,8 @@ users_parameters = [
   }
 ]
 
-array_users = []
-users_parameters.each do |user|
-  u = User.create!(user)
-  array_users << u
+array_users = users_parameters.map do |user|
+  User.create!(user)
 end
 
 puts "Users created"
@@ -278,11 +276,9 @@ activities_parameters = [
   photo: "http://s1.lprs1.fr/images/2017/09/13/7257846_b12ef4b6-97df-11e7-98ab-14eea8c7b1d9-1_1000x625.jpg"
   }
 ]
-array_activities =[]
-activities_parameters.each do |activity|
-  ac = Activity.create!(activity)
-  array_activities << ac
-  end
+array_activities = activities_parameters.map do |activity|
+  Activity.create!(activity)
+end
 puts "Activities created"
 
 
@@ -337,17 +333,15 @@ meetings_parameters = [
   }
 ]
 
-array_meetings = []
-meetings_parameters.each do |meeting|
-  m = Meeting.create!(meeting)
-  array_meetings << m
-  end
+array_meetings = meetings_parameters.map do |meeting|
+  Meeting.create!(meeting)
+end
 puts "Meeting created"
 
 
 agenda_parameters = [
   {
-  meeting: array_meetings [0],
+  meeting: array_meetings[0],
   duration: 20,
   title: "1- 2018 Marketing Strategy",
   description: "PFME & Media Plan",
@@ -446,11 +440,9 @@ agenda_parameters = [
   }
 ]
 
-array_agendas = []
-agenda_parameters.each do |agenda|
-  a = Agenda.create!(agenda)
-  array_agendas << a
-  end
+array_agendas = agenda_parameters.map do |agenda|
+  Agenda.create!(agenda)
+end
 puts "Agendas created"
 
 rating_parameters = [
@@ -515,10 +507,8 @@ rating_parameters = [
   manager: array_users[0]
   }
 ]
-array_ratings = []
-rating_parameters.each do |rating|
-  r = Rating.create!(rating)
-  array_ratings << r
+array_ratings = rating_parameters.map do |rating|
+  Rating.create!(rating)
 end
 
 p array_users
@@ -527,676 +517,678 @@ puts "Rating created"
 
 feedback_parameters = [
   {
-  user: array_users[0],
-  rating: array_ratings[0],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[0],
+    answer: 5
   },
   {
-  user: array_users[0],
-  rating: array_ratings[1],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[1],
+    answer: 5
   },
   {
-  user: array_users[0],
-  rating: array_ratings[2],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[2],
+    answer: 5
   },
   {
-  user: array_users[0],
-  rating: array_ratings[3],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[3],
+    answer: 5
   },
   {
-  user: array_users[0],
-  rating: array_ratings[4],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[4],
+    answer: 5
   },
   {
-  user: array_users[0],
-  rating: array_ratings[5],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[5],
+    answer: 5
   },
   {
-  user: array_users[0],
-  rating: array_ratings[6],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[6],
+    answer: 5
   },
   {
-  user: array_users[0],
-  rating: array_ratings[7],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[7],
+    answer: 5
   },
   {
-  user: array_users[0],
-  rating: array_ratings[8],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[8],
+    answer: 5
   },
   {
-  user: array_users[0],
-  rating: array_ratings[9],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[9],
+    answer: 5
   },
   {
-  user: array_users[0],
-  rating: array_ratings[10],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[10],
+    answer: 5
   },
   {
-  user: array_users[0],
-  rating: array_ratings[11],
-  answer: 5
+    user: array_users[0],
+    rating: array_ratings[11],
+    answer: 5
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[0],
+    answer: 3
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[1],
+    answer: 5
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[2],
+    answer: 5
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[3],
+    answer: 3
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[4],
+    answer: 5
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[5],
+    answer: 3
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[6],
+    answer: 3
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[7],
+    answer: 5
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[8],
+    answer: 3
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[9],
+    answer: 5
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[10],
+    answer: 3
+  },
+  {
+    user: array_users[1],
+    rating: array_ratings[11],
+    answer: 5
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[0],
+    answer: 5
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[1],
+    answer: 3
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[2],
+    answer: 3
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[3],
+    answer: 5
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[4],
+    answer: 5
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[5],
+    answer: 3
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[6],
+    answer: 5
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[7],
+    answer: 3
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[8],
+    answer: 5
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[9],
+    answer: 5
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[10],
+    answer: 3
+  },
+  {
+    user: array_users[2],
+    rating: array_ratings[11],
+    answer: 5
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[0],
+    answer: 3
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[1],
+    answer: 5
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[2],
+    answer: 3
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[3],
+    answer: 5
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[4],
+    answer: 5
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[5],
+    answer: 3
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[6],
+    answer: 3
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[7],
+    answer: 5
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[8],
+    answer: 5
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[9],
+    answer: 5
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[10],
+    answer: 3
+  },
+  {
+    user: array_users[3],
+    rating: array_ratings[11],
+    answer: 3
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[0],
+    answer: 5
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[1],
+    answer: 3
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[2],
+    answer: 5
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[3],
+    answer: 2
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[4],
+    answer: 2
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[5],
+    answer: 2
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[6],
+    answer: 5
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[7],
+    answer: 5
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[8],
+    answer: 5
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[9],
+    answer: 2
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[10],
+    answer: 5
+  },
+  {
+    user: array_users[4],
+    rating: array_ratings[11],
+    answer: 2
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[0],
+    answer: 5
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[1],
+    answer: 5
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[2],
+    answer: 4
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[3],
+    answer: 5
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[4],
+    answer: 4
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[5],
+    answer: 4
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[6],
+    answer: 5
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[7],
+    answer: 5
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[8],
+    answer: 5
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[9],
+    answer: 5
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[10],
+    answer: 5
+  },
+  {
+    user: array_users[5],
+    rating: array_ratings[11],
+    answer: 4
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[0],
+    answer: 5
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[1],
+    answer: 5
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[2],
+    answer: 3
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[3],
+    answer: 5
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[4],
+    answer: 5
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[5],
+    answer: 3
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[6],
+    answer: 5
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[7],
+    answer: 5
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[8],
+    answer: 3
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[9],
+    answer: 5
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[10],
+    answer: 5
+  },
+  {
+    user: array_users[6],
+    rating: array_ratings[11],
+    answer: 5
+  },
+  {
+     user: array_users[7],
+    rating: array_ratings[0],
+    answer: 4
+  },
+  {
+    user: array_users[7],
+    rating: array_ratings[1],
+    answer: 5
+  },
+  {
+    user: array_users[7],
+    rating: array_ratings[2],
+    answer: 4
+  },
+  {
+    user: array_users[7],
+    rating: array_ratings[3],
+    answer: 4
+  },
+  {
+    user: array_users[7],
+    rating: array_ratings[4],
+    answer: 5
+  },
+  {
+    user: array_users[7],
+    rating: array_ratings[5],
+    answer: 5
+  },
+  {
+    user: array_users[7],
+    rating: array_ratings[6],
+    answer: 5
+  },
+  {
+    user: array_users[7],
+    rating: array_ratings[7],
+    answer: 4
+  },
+  {
+    user: array_users[7],
+    rating: array_ratings[8],
+    answer: 5
+  },
+  {
+    user: array_users[7],
+    rating: array_ratings[9],
+    answer: 5
+  },
+  {
+    user: array_users[7],
+    rating: array_ratings[10],
+    answer: 5
+  },
+  {
+    user: array_users[7],
+    rating: array_ratings[11],
+    answer: 5
+  },
+  {
+    user: array_users[8],
+    rating: array_ratings[0],
+    answer: 4
+  },
+  {
+    user: array_users[8],
+    rating: array_ratings[1],
+    answer: 5
+  },
+  {
+    user: array_users[8],
+    rating: array_ratings[2],
+    answer: 4
+  },
+  {
+    user: array_users[8],
+    rating: array_ratings[3],
+    answer: 4
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[4],
+    answer: 5
+  },
+  {
+    user: array_users[8],
+    rating: array_ratings[5],
+    answer: 5
+  },
+  {
+    user: array_users[8],
+    rating: array_ratings[6],
+    answer: 4
+  },
+  {
+    user: array_users[8],
+    rating: array_ratings[7],
+    answer: 5
+  },
+  {
+    user: array_users[8],
+    rating: array_ratings[8],
+    answer: 5
+  },
+  {
+    user: array_users[8],
+    rating: array_ratings[9],
+    answer: 4
+  },
+  {
+    user: array_users[8],
+    rating: array_ratings[10],
+    answer: 4
+  },
+  {
+    user: array_users[8],
+    rating: array_ratings[11],
+    answer: 5
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[0],
+    answer: 4
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[1],
+    answer: 5
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[2],
+    answer: 5
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[3],
+    answer: 3
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[4],
+    answer: 4
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[5],
+    answer: 5
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[6],
+    answer: 3
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[7],
+    answer: 5
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[8],
+    answer: 4
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[9],
+    answer: 5
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[10],
+    answer: 4
+  },
+  {
+    user: array_users[9],
+    rating: array_ratings[11],
+    answer: 5
+  },
+  {
+     user: array_users[10],
+    rating: array_ratings[0],
+    answer: 5
+  },
+  {
+    user: array_users[10],
+    rating: array_ratings[1],
+    answer: 3
+  },
+  {
+    user: array_users[10],
+    rating: array_ratings[2],
+    answer: 5
+  },
+  {
+    user: array_users[10],
+    rating: array_ratings[3],
+    answer: 3
+  },
+  {
+    user: array_users[10],
+    rating: array_ratings[4],
+    answer: 5
+  },
+  {
+    user: array_users[10],
+    rating: array_ratings[5],
+    answer: 5
+  },
+  {
+    user: array_users[10],
+    rating: array_ratings[6],
+    answer: 2
+  },
+  {
+    user: array_users[10],
+    rating: array_ratings[7],
+    answer: 4
+  },
+  {
+    user: array_users[10],
+    rating: array_ratings[8],
+    answer: 3
+  },
+  {
+    user: array_users[10],
+    rating: array_ratings[9],
+    answer: 4
+  },
+  {
+    user: array_users[10],
+    rating: array_ratings[10],
+    answer: 3
+  },
+  {
+    user: array_users[10],
+    rating: array_ratings[11],
+    answer: 5
   }
-=begin
-,
-  {
-  user: array_users[1],
-  rating: array_ratings[0],
-  answer: 3
-  },
-  {
-  user: array_users[1],
-  rating: array_ratings[1],
-  answer: 5
-  },
-  {
-  user: array_users[1],
-  rating: array_ratings[2],
-  answer: 5
-  },
-  {
-  user: array_users[1],
-  rating: array_ratings[3],
-  answer: 3
-  },
-  {
-  user: array_users[1],
-  rating: array_ratings[4],
-  answer: 5
-  },
-  {
-  user: array_users[1],
-  rating: array_ratings[5],
-  answer: 3
-  },
-  {
-  user: array_users[1],
-  rating: array_ratings[6],
-  answer: 3
-  },
-  {
-  user: array_users[1],
-  rating: array_ratings[7],
-  answer: 5
-  },
-  {
-  user: array_users[1],
-  rating: array_ratings[8],
-  answer: 3
-  },
-  {
-  user: array_users[1],
-  rating: array_ratings[9],
-  answer: 5
-  },
-  {
-  user: array_users[1],
-  rating: array_ratings[10],
-  answer: 3
-  },
-  {
-  user: array_users[1],
-  rating: array_ratings[11],
-  answer: 5
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[0],
-  answer: 5
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[1],
-  answer: 3
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[2],
-  answer: 3
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[3],
-  answer: 5
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[4],
-  answer: 5
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[5],
-  answer: 3
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[6],
-  answer: 5
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[7],
-  answer: 3
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[8],
-  answer: 5
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[9],
-  answer: 5
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[10],
-  answer: 3
-  },
-  {
-  user: array_users[2],
-  rating: array_ratings[11],
-  answer: 5
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[0],
-  answer: 3
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[1],
-  answer: 5
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[2],
-  answer: 3
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[3],
-  answer: 5
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[4],
-  answer: 5
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[5],
-  answer: 3
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[6],
-  answer: 3
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[7],
-  answer: 5
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[8],
-  answer: 5
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[9],
-  answer: 5
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[10],
-  answer: 3
-  },
-  {
-  user: array_users[3],
-  rating: array_ratings[11],
-  answer: 3
-  },
-  user: array_users[4],
-  rating: array_ratings[0],
-  answer: 5
-  },
-  {
-  user: array_users[4],
-  rating: array_ratings[1],
-  answer: 3
-  },
-  {
-  user: array_users[4],
-  rating: array_ratings[2],
-  answer: 5
-  },
-  {
-  user: array_users[4],
-  rating: array_ratings[3],
-  answer: 2
-  },
-  {
-  user: array_users[4],
-  rating: array_ratings[4],
-  answer: 2
-  },
-  {
-  user: array_users[4],
-  rating: array_ratings[5],
-  answer: 2
-  },
-  {
-  user: array_users[4],
-  rating: array_ratings[6],
-  answer: 5
-  },
-  {
-  user: array_users[4],
-  rating: array_ratings[7],
-  answer: 5
-  },
-  {
-  user: array_users[4],
-  rating: array_ratings[8],
-  answer: 5
-  },
-  {
-  user: array_users[4],
-  rating: array_ratings[9],
-  answer: 2
-  },
-  {
-  user: array_users[4],
-  rating: array_ratings[10],
-  answer: 5
-  },
-  {
-  user: array_users[4],
-  rating: array_ratings[11],
-  answer: 2
-  },
-  user: array_users[5],
-  rating: array_ratings[0],
-  answer: 5
-  },
-  {
-  user: array_users[5],
-  rating: array_ratings[1],
-  answer: 5
-  },
-  {
-  user: array_users[5],
-  rating: array_ratings[2],
-  answer: 4
-  },
-  {
-  user: array_users[5],
-  rating: array_ratings[3],
-  answer: 5
-  },
-  {
-  user: array_users[5],
-  rating: array_ratings[4],
-  answer: 4
-  },
-  {
-  user: array_users[5],
-  rating: array_ratings[5],
-  answer: 4
-  },
-  {
-  user: array_users[5],
-  rating: array_ratings[6],
-  answer: 5
-  },
-  {
-  user: array_users[5],
-  rating: array_ratings[7],
-  answer: 5
-  },
-  {
-  user: array_users[5],
-  rating: array_ratings[8],
-  answer: 5
-  },
-  {
-  user: array_users[5],
-  rating: array_ratings[9],
-  answer: 5
-  },
-  {
-  user: array_users[5],
-  rating: array_ratings[10],
-  answer: 5
-  },
-  {
-  user: array_users[5],
-  rating: array_ratings[11],
-  answer: 4
-  },
-   user: array_users[6],
-  rating: array_ratings[0],
-  answer: 5
-  },
-  {
-  user: array_users[6],
-  rating: array_ratings[1],
-  answer: 5
-  },
-  {
-  user: array_users[6],
-  rating: array_ratings[2],
-  answer: 3
-  },
-  {
-  user: array_users[6],
-  rating: array_ratings[3],
-  answer: 5
-  },
-  {
-  user: array_users[6],
-  rating: array_ratings[4],
-  answer: 5
-  },
-  {
-  user: array_users[6],
-  rating: array_ratings[5],
-  answer: 3
-  },
-  {
-  user: array_users[6],
-  rating: array_ratings[6],
-  answer: 5
-  },
-  {
-  user: array_users[6],
-  rating: array_ratings[7],
-  answer: 5
-  },
-  {
-  user: array_users[6],
-  rating: array_ratings[8],
-  answer: 3
-  },
-  {
-  user: array_users[6],
-  rating: array_ratings[9],
-  answer: 5
-  },
-  {
-  user: array_users[6],
-  rating: array_ratings[10],
-  answer: 5
-  },
-  {
-  user: array_users[6],
-  rating: array_ratings[11],
-  answer: 5
-  },
-   user: array_users[7],
-  rating: array_ratings[0],
-  answer: 4
-  },
-  {
-  user: array_users[7],
-  rating: array_ratings[1],
-  answer: 5
-  },
-  {
-  user: array_users[7],
-  rating: array_ratings[2],
-  answer: 4
-  },
-  {
-  user: array_users[7],
-  rating: array_ratings[3],
-  answer: 4
-  },
-  {
-  user: array_users[7],
-  rating: array_ratings[4],
-  answer: 5
-  },
-  {
-  user: array_users[7],
-  rating: array_ratings[5],
-  answer: 5
-  },
-  {
-  user: array_users[7],
-  rating: array_ratings[6],
-  answer: 5
-  },
-  {
-  user: array_users[7],
-  rating: array_ratings[7],
-  answer: 4
-  },
-  {
-  user: array_users[7],
-  rating: array_ratings[8],
-  answer: 5
-  },
-  {
-  user: array_users[7],
-  rating: array_ratings[9],
-  answer: 5
-  },
-  {
-  user: array_users[7],
-  rating: array_ratings[10],
-  answer: 5
-  },
-  {
-  user: array_users[7],
-  rating: array_ratings[11],
-  answer: 5
-  },
-   user: array_users[9],
-  rating: array_ratings[0],
-  answer: 4
-  },
-  {
-  user: array_users[9],
-  rating: array_ratings[1],
-  answer: 5
-  },
-  {
-  user: array_users[9],
-  rating: array_ratings[2],
-  answer: 4
-  },
-  {
-  user: array_users[9],
-  rating: array_ratings[3],
-  answer: 4
-  },
-  {
-  user: array_users[9],
-  rating: array_ratings[4],
-  answer: 5
-  },
-  {
-  user: array_users[9],
-  rating: array_ratings[5],
-  answer: 5
-  },
-  {
-  user: array_users[9],
-  rating: array_ratings[6],
-  answer: 4
-  },
-  {
-  user: array_users[9],
-  rating: array_ratings[7],
-  answer: 5
-  },
-  {
-  user: array_users[9],
-  rating: array_ratings[8],
-  answer: 5
-  },
-  {
-  user: array_users[9],
-  rating: array_ratings[9],
-  answer: 4
-  },
-  {
-  user: array_users[9],
-  rating: array_ratings[10],
-  answer: 4
-  },
-  {
-  user: array_users[9],
-  rating: array_ratings[11],
-  answer: 5
-  },
-   user: array_users[10],
-  rating: array_ratings[0],
-  answer: 4
-  },
-  {
-  user: array_users[10],
-  rating: array_ratings[1],
-  answer: 5
-  },
-  {
-  user: array_users[10],
-  rating: array_ratings[2],
-  answer: 5
-  },
-  {
-  user: array_users[10],
-  rating: array_ratings[3],
-  answer: 3
-  },
-  {
-  user: array_users[10],
-  rating: array_ratings[4],
-  answer: 4
-  },
-  {
-  user: array_users[10],
-  rating: array_ratings[5],
-  answer: 5
-  },
-  {
-  user: array_users[10],
-  rating: array_ratings[6],
-  answer: 3
-  },
-  {
-  user: array_users[10],
-  rating: array_ratings[7],
-  answer: 5
-  },
-  {
-  user: array_users[10],
-  rating: array_ratings[8],
-  answer: 4
-  },
-  {
-  user: array_users[10],
-  rating: array_ratings[9],
-  answer: 5
-  },
-  {
-  user: array_users[10],
-  rating: array_ratings[10],
-  answer: 4
-  },
-  {
-  user: array_users[10],
-  rating: array_ratings[11],
-  answer: 5
-  },
-   user: array_users[11],
-  rating: array_ratings[0],
-  answer: 5
-  },
-  {
-  user: array_users[11],
-  rating: array_ratings[1],
-  answer: 3
-  },
-  {
-  user: array_users[11],
-  rating: array_ratings[2],
-  answer: 5
-  },
-  {
-  user: array_users[11],
-  rating: array_ratings[3],
-  answer: 3
-  },
-  {
-  user: array_users[11],
-  rating: array_ratings[4],
-  answer: 5
-  },
-  {
-  user: array_users[11],
-  rating: array_ratings[5],
-  answer: 5
-  },
-  {
-  user: array_users[11],
-  rating: array_ratings[6],
-  answer: 2
-  },
-  {
-  user: array_users[11],
-  rating: array_ratings[7],
-  answer: 4
-  },
-  {
-  user: array_users[11],
-  rating: array_ratings[8],
-  answer: 3
-  },
-  {
-  user: array_users[11],
-  rating: array_ratings[9],
-  answer: 4
-  },
-  {
-  user: array_users[11],
-  rating: array_ratings[10],
-  answer: 3
-  },
-  {
-  user: array_users[11],
-  rating: array_ratings[11],
-  answer: 5
-  }
-=end
 ]
 
-array_feedbacks = []
-feedback_parameters.each do |feedback|
-  f = Feedback.create!(feedback)
-  array_feedbacks << f
-  end
+array_feedbacks = feedback_parameters.map do |feedback|
+  Feedback.create!(feedback)
+end
 puts "Feedback created"
 
-#sum = 0
-#array_feedbacks.each do |f|
-# i = f[:answer]
+# sum = 0
+# array_feedbacks.map do |f|
+# i = f.rating[:answer]
 # sum += i
-#end
-#average = sum / array_feedbacks.length.to_i
+# average = sum / array_feedbacks.length.to_i
+# end
 
-#puts average
+# puts average
 
