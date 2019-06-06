@@ -16,7 +16,9 @@
 }
 .display-dash {
   font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
   font-size: 50px;
+  margin-left: 40px;
 }
 .display-funnel {
   font-family: 'Merriweather', sans-serif;
@@ -53,6 +55,8 @@ font-weight: 300;
   font-size: 16px;
   letter-spacing: 8px;
   padding: 8px;
+  color: white;
+  text-decoration: none;
 }
 .awesome {
   font-weight: 700;
@@ -84,4 +88,11 @@ font-weight: 300;
 .container-sign-in {
   width: 350px;
   margin: 0px auto;
+}
+.icon-dash {
+  width: 20px;
+  height: 20px;
+}
+.menu-dash {
+  padding: 30px;
 }

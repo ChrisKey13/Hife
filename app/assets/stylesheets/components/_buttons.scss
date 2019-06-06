@@ -107,3 +107,47 @@
     display: block;
     width: 100%
 }
+.feedback {
+  background-color: $orange1;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+}
+.bouton-text-dash {
+  color: white;
+  font-size: 14px;
+  height: auto;
+  position: relative;
+  font-weight: 600;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-left: 40px;
+  &:hover {
+    text-decoration: none;
+    color: #454A51;
+  }
+}
+.dash-btn-1 {
+  background-color: $orange1;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 2px;
+  display: block;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.dash-text-1 {
+  color: white;
+  font-size: 16px;
+  height: auto;
+  position: relative;
+  font-weight: 600;
+  text-decoration: none;
+  vertical-align: middle;
+  letter-spacing: 4px;
+}
