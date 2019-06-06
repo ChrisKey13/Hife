@@ -16,6 +16,6 @@
 class Meeting < ApplicationRecord
   belongs_to :activity
   belongs_to :team
-  has_many :ratings
-  has_many :agendas
+  has_many :ratings, dependent: :destroy
+  has_many :agendas, dependent: :destroy
 end
