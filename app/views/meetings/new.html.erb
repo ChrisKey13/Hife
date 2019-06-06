@@ -31,7 +31,23 @@
           </div>
         </div>
         <div class="slider hidden-slide">
-          <%= f.input :activity, collection: @activities, label: "Pick an activity" %>
+          <%#= f.input  :activity, collection: @activities, label: "Pick an activity", class: "card-activity"%>
+
+          <div class="Card-activity">
+            <% @activities.each do |activity| %>
+            <div class="card-activity-description">
+                <img src=<%= activity.photo %> >
+              <div class="inactive-card-title">
+                <h2><%= activity.name %></h2>
+                <p> <%= activity.description%></p>
+              </div>
+            <% end %>
+            </div>
+            <div class="map">
+          </div>
+
+
+          </div>
           <div class="slider-change">
             <div class="slider-btn previous-btn">Previous</div>
             <%= f.submit "Create a meeting", class: "btn btn-primary" %>
