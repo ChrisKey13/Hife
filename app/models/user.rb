@@ -35,5 +35,4 @@ class User < ApplicationRecord
   def his_name
     return "#{first_name.capitalize} #{last_name.capitalize}"
   end
->>>>>>> master
 end
