@@ -1,5 +1,10 @@
-<h2>Sign up</h2>
+<div class="d-flex flex-column justify-content-center align-items-center mt-5">
+  <h1>Start Your Free Trial</h1>
+  <p class="display-dash">Fill Out The Form Below To Start Using Hife</p>
+  <p>No credit card required - simply fill out the form and enjoy your 14-free day trial</p>
+</div>
 
+<div class="container">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -21,5 +26,7 @@
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
+</div>
+
 
 <%= render "devise/shared/links" %>
