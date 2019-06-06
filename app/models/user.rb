@@ -21,12 +21,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :feedbacks
-  has_many :agendas
-  has_many :managed_teams, foreign_key: "manager_id", class_name: 'Team'
-  has_many :user_teams
+  has_many :feedbacks, dependent: :nullify
+  has_many :agendas, dependent: :nullify
+  has_many :managed_teams, foreign_key: "manager_id", class_name: 'Team', dependent: :destroy
+  has_many :user_teams, dependent: :destroy
   has_many :ratings, through: :feedbacks
   has_many :teams, through: :user_teams
+
   belongs_to :company, optional: true
 
   private

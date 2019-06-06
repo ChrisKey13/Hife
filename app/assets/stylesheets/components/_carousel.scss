@@ -1,0 +1,76 @@
+.slider {
+  display: flex;
+}
+
+
+.slider-form {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.meeting-creation-carousel img {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+
+.hidden-slide {
+  display: none;
+}
+
+
+.slider-btn {
+  width: 150px;
+  text-align: center;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.slider-btn.next-btn {
+  background-color: $orange1;
+  color: $white;
+  &:hover {
+    background-color: $orange2;
+    color: $gray;
+  }
+}
+
+.slider-btn.previous-btn {
+  background-color: $dark-gray;
+  color: $white;
+  &:hover {
+    background-color: $gray;
+    color: $black;
+  }
+
+}
+
+.slider-change {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-indicators-container {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.slider-indicators {
+  background-color: $orange2;
+  height: 2px;
+  width: 5%;
+  margin: 0 4px;
+}
+
+.slider-indicators.active {
+    background-color: $orange;
+  }
+
+
