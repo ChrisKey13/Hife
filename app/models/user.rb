@@ -27,6 +27,13 @@ class User < ApplicationRecord
   has_many :user_teams, dependent: :destroy
   has_many :ratings, through: :feedbacks
   has_many :teams, through: :user_teams
-  belongs_to :company
-  #mount_uploader :photo, PhotoUploader
+
+  belongs_to :company, optional: true
+
+  private
+
+  def his_name
+    return "#{first_name.capitalize} #{last_name.capitalize}"
+  end
+>>>>>>> master
 end
