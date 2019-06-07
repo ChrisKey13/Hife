@@ -1,4 +1,9 @@
-.meeting-creation-carousel {
+.slider {
+  display: flex;
+}
+
+
+.slider-form {
   height: 60vh;
   display: flex;
   flex-direction: column;
@@ -6,6 +11,13 @@
   width: 80%;
   margin: 0 auto;
 }
+
+.meeting-creation-carousel img {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}
+
 
 .hidden-slide {
   display: none;
@@ -60,3 +72,5 @@
 .slider-indicators.active {
     background-color: $orange;
   }
+
+
