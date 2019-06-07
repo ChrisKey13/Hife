@@ -13,3 +13,70 @@
     margin-right: -15px;
     margin-left: -15px;
 }
+.sidebar {
+  border-radius: 5px;
+}
+.nav-link {
+  color: white;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+.bouton-link-dash {
+  display: inline-block;
+  width: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  padding: 0px 8px;
+  background-color: $orange1;
+  border-radius: 3px;
+  font-size: 8px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box !important;
+  width: 100%;
+  &:hover {
+    background-color: $orange2;
+    text-decoration: none !important;
+    color: white !important;
+  }
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #ffffff;
+    background-color: $orange1;
+  &:hover {
+    background-color: $red;
+    text-decoration: none !important;
+    color: white !important;
+  }
+}
+
+.nav-pills .nav-pills .show > .nav-link {
+    color: #ffffff;
+    background-color: $orange1;
+  &:hover {
+    background-color: $red;
+    text-decoration: none !important;
+    color: white !important;
+  }
+}
+.card-users {
+  margin-top: 50px;
+  background-color: $gray;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+}
+.container-graph {
+  background-color: $orange1;
+  height: 300px;
+  border-radius: 1px;
+}
+.nav-pills .nav-link {
+    border-radius: 0px;
+}

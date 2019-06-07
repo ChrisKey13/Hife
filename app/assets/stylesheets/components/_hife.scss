@@ -24,7 +24,7 @@ p {
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
   font-size: 50px;
-  margin-left: 40px;
+  margin-left: 150px;
 }
 .display-funnel {
   font-family: 'Merriweather', sans-serif;
@@ -55,6 +55,12 @@ font-weight: 300;
   font-weight: 700;
   font-size: 30px;
 }
+.text-icon-dash-dash {
+  font-weight: 400;
+  font-size: 16px;
+  color: $dark;
+  text-align: center;
+}
 .button-dash {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -75,14 +81,36 @@ font-weight: 300;
 
 .orange1 {
   background-color: $orange1;
+  &:hover {
+    background-color: $red;
+  }
+}
+.orange1-sidebar {
+  background-color: $orange1;
 }
 .orange2 {
   background-color: $orange2;
+  &:hover {
+    background-color: $red;
+    column-rule: white;
+    text-decoration: none;
+  }
 }
 .orange3 {
   background-color: $orange3;
+  &:hover {
+    background-color: $red;
+    column-rule: white;
+    text-decoration: none;
+  }
 }
 .orange4 {
+  background-color: $orange4;
+  &:hover {
+    background-color: $red;
+  }
+}
+.orange4-sidebar {
   background-color: $orange4;
 }
 .red {
