@@ -10,7 +10,7 @@ class MeetingsController < ApplicationController
     end
     @company = Company.first
     @meeting = params["meeting"]
-    @activities = Activity.where.not(latitude: nil, longitude: nil)
+    # @activities = Activity.where.not(latitude: nil, longitude: nil)
     # Select activities matching intensity
     # @markers = @activities.map do |activity|
 
