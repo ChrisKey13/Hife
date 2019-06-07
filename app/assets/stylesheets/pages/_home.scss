@@ -12,3 +12,108 @@
   margin-top: 32px;
   margin-bottom: 45px;
 }
+.image-feature {
+  width: 600px;
+  height: auto;
+  margin-top: -60px !important;
+}
+.image-feature1 {
+  width: 600px;
+  height: auto;
+  margin-top: -95px !important;
+}
+.image-feature2 {
+  width: 600px;
+  height: auto;
+  margin-top: -95px !important;
+}
+.card-feature {
+  margin-top: 150px;
+}
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+.imageContent li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+.imageContent li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #dd1d65;
+}
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.ourFeatures {
+  margin-top: 150px;
+}
+.iconFeature {
+  width: 64px;
+  height: 64px;
+}
+.bold-MW-body-text {
+  font-family: 'Merriweather', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 35px;
+  text-align: center;
+  color: #3C3C3C;
+}
+.carousel-inner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  margin-top: 50px;
+  background-color: white;
+  text-align: center;
+  padding: 80px 35px;
+  color: white;
+
+}
+.name-testimonial {
+  color: $dark;
+  font-weight: 700;
+  font-size: 16px;
+}
+.case-study {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 20px;
+  background-color: white;
+border-radius: 10px;
+box-shadow: 0px 13px 20px -11px rgba(30,9,54,0.4);
+}
+.cta-image {
+  text-align: center;
+  max-width: 700px;
+  margin: 150px auto 30px;
+}
+.imageCTA {
+  max-width: 100%;
+  text-align: center;
+  margin-top: 60px;
+}
+.footerCTA {
+  text-align: center;
+}
+.bannerCTA {
+  background: linear-gradient(180deg, rgba(234, 95, 75, 0.5) 0%, rgba(254, 214, 92, 0.45) 100%);
+  background-size: cover;
+  background-position: center;
+  padding: 0px 15px;
+
+}

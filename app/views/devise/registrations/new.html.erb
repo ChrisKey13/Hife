@@ -1,32 +1,51 @@
-<div class="d-flex flex-column justify-content-center align-items-center mt-5">
-  <h1>Start Your Free Trial</h1>
-  <p class="display-dash">Fill Out The Form Below To Start Using Hife</p>
-  <p>No credit card required - simply fill out the form and enjoy your 14-free day trial</p>
-</div>
 
-<div class="container">
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<div class="banner3">
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+  <div class="container-sign-in">
+
+    <div class="d-flex flex-column  justify-content-between align-items-left">
+    <%= link_to "#" do %>
+        <%= image_tag "logo.png", class: "navbar-brand" %>
+        <% end %>
+
+    <h2 class="mt-4 title-signup">Start Your Free Trial</h2>
+    <p class="mt-2 desc-signup">No credit card required - simply fill out the form and enjoy your 14-free day trial</p>
+    </div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <div class="text-on-line-col">
+      <p class="text-on-line">or</p>
+    </div>
+    <div class="container">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs sign-up-label">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Submit", class:"bouton-login" %>
+      </div>
+    <% end %>
+    </div>
+
+    <div class="d-flex justify-content-between mb-5">
+      Already have an account ?
+      <%- if controller_name != 'sessions' %>
+        <%= link_to "Log in here", new_session_path(resource_name), class: "body-sign-up" %>
+      <% end %>
+    </div>
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
 </div>
-
-
-<%= render "devise/shared/links" %>

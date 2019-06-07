@@ -13,12 +13,14 @@ const slideToNext = () => {
           let slideActive = slider.classList.contains("active-slide");
           if (slideActive) {
             slider.classList.remove("active-slide");
-            slider.classList.add("hidden-slide");
+            slider.classList.remove("show")
             i = index;
           }
         });
-        sliders[i+1].classList.remove("hidden-slide");
+        sliders[i+1].classList.add("show");
         sliders[i+1].classList.add("active-slide");
+        // sliders[i].classList.add("hidden-slide");
+        // sliders[i+1].classList.remove("hidden-slide");
       });
     })
   }
@@ -37,11 +39,11 @@ const slideToPrevious = () => {
           let slideActive = slider.classList.contains("active-slide");
           if (slideActive) {
             slider.classList.remove("active-slide");
-            slider.classList.add("hidden-slide");
+            slider.classList.remove("show");
             i = index;
           }
         });
-        sliders[i-1].classList.remove("hidden-slide");
+        sliders[i-1].classList.add("show");
         sliders[i-1].classList.add("active-slide");
       });
     })

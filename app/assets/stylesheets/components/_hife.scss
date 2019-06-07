@@ -2,6 +2,11 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 24px;
+  color: $dark;
+}
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 .display {
   font-family: 'Merriweather', sans-serif;
@@ -13,10 +18,13 @@
   font-family: 'Merriweather', sans-serif;
   font-size: 42px;
   font-weight: 700;
+  color: $dark-display;
 }
 .display-dash {
   font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
   font-size: 50px;
+  margin-left: 150px;
 }
 .display-funnel {
   font-family: 'Merriweather', sans-serif;
@@ -47,12 +55,20 @@ font-weight: 300;
   font-weight: 700;
   font-size: 30px;
 }
+.text-icon-dash-dash {
+  font-weight: 400;
+  font-size: 16px;
+  color: $dark;
+  text-align: center;
+}
 .button-dash {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 8px;
   padding: 8px;
+  color: white;
+  text-decoration: none;
 }
 .awesome {
   font-weight: 700;
@@ -64,24 +80,58 @@ font-weight: 300;
 }
 
 .orange1 {
-  background-color: #F59442;
+  background-color: $orange1;
+  &:hover {
+    background-color: $red;
+  }
+}
+.orange1-sidebar {
+  background-color: $orange1;
 }
 .orange2 {
-  background-color: #FAC599;
+  background-color: $orange2;
+  &:hover {
+    background-color: $red;
+    column-rule: white;
+    text-decoration: none;
+  }
 }
 .orange3 {
-  background-color: #FBD3B1;
+  background-color: $orange3;
+  &:hover {
+    background-color: $red;
+    column-rule: white;
+    text-decoration: none;
+  }
 }
 .orange4 {
-  background-color: #0E0E0E;
+  background-color: $orange4;
+  &:hover {
+    background-color: $red;
+  }
+}
+.orange4-sidebar {
+  background-color: $orange4;
 }
 .red {
-  background-color:#DA3F4C;
+  background-color: $red;
 }
 #text-orange {
-  color: #F59442;
+  color: $orange1;
+  text-align: left;
 }
 .container-sign-in {
   width: 350px;
   margin: 0px auto;
+}
+.icon-dash {
+  width: 20px;
+  height: 20px;
+}
+.menu-dash {
+  padding: 30px;
+}
+.background-grey {
+  background-color: $gray;
+  border-radius: 5px;
 }
