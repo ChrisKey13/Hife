@@ -86,35 +86,36 @@
         <!-- <div class="slider-change"> -->
           <%#= f.input  :activity, collection: @activities, label: "Pick an activity", class: "card-activity"%>
           <!-- <div class="all cards"> -->
-        <% @activities.each do |activity| %>
-        <div class="class row pt-3">
-
-          <div class="card-activity">
-            <img src= <%= activity.photo %> >
-            <div class="card-activity-infos">
-              <h2 class="inactive-card-title">
-                <%= activity.name %></h2>
-              <div class="text-details">
-                <i class="fab fa-github"></i><p> 60 min </p>
-                <i class="fab fa-github"></i><p> Paris, 11e </p>
+        <div class="col sd-6" >
+          <% @activities.each do |activity| %>
+          <div class="class row pt-3">
+            <div class="card-activity">
+              <img src= <%= activity.photo %> >
+              <div class="card-activity-infos">
+                <h2 class="inactive-card-title">
+                  <%= activity.name %></h2>
+                <div class="text-details">
+                  <i class="fab fa-github"></i><p> 60 min </p>
+                  <i class="fab fa-github"></i><p> Paris, 11e </p>
+                </div>
               </div>
+            <div class="map"
+              id="map"
+              style="width: 100%;
+              height: 600px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
             </div>
           </div>
-          <!-- <div class="map"
-            id="map"
-            style="width: 100%;
-            height: 600px;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-          ></div> -->
-        <% end %>
-
+          <% end %>
         </div>
-            <!-- <div class="card-all"> -->
+      </div>
+         <!-- <div class="card-all"> -->
 
               <!-- <div class="paragraph">
                 <p> <%#= activity.description%></p>
-              </div> -->
+         -->
           <!-- </div> -->
         <!-- </div> -->
 
