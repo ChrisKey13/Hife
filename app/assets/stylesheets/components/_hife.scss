@@ -12,7 +12,7 @@ p {
   font-family: 'Merriweather', sans-serif;
   font-size: 56px;
   font-weight: 700;
-  margin-top: -40px;
+  margin-top: 40px;
 }
 .display-2 {
   font-family: 'Merriweather', sans-serif;
@@ -34,6 +34,7 @@ p {
 .text-funnel {
   font-weight: 300;
   font-size: 18px;
+  color: $dark;
 }
 .active-card-content {
 font-size: 14px;
@@ -134,4 +135,14 @@ font-weight: 300;
 .background-grey {
   background-color: $gray;
   border-radius: 5px;
+}
+.imageSlider {
+  margin-top: -180px;
+}
+.container-slider {
+  width: 450px;
+  margin: 0px auto;
+}
+.container {
+  max-width: 1300px;
 }
