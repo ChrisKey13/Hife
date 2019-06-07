@@ -2,6 +2,11 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 24px;
+  color: $dark;
+}
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 .display {
   font-family: 'Merriweather', sans-serif;
@@ -13,6 +18,7 @@
   font-family: 'Merriweather', sans-serif;
   font-size: 42px;
   font-weight: 700;
+  color: $dark-display;
 }
 .display-dash {
   font-weight: 700;
@@ -68,22 +74,23 @@ font-weight: 300;
 }
 
 .orange1 {
-  background-color: #F59442;
+  background-color: $orange1;
 }
 .orange2 {
-  background-color: #FAC599;
+  background-color: $orange2;
 }
 .orange3 {
-  background-color: #FBD3B1;
+  background-color: $orange3;
 }
 .orange4 {
-  background-color: #0E0E0E;
+  background-color: $orange4;
 }
 .red {
-  background-color:#DA3F4C;
+  background-color: $red;
 }
 #text-orange {
-  color: #F59442;
+  color: $orange1;
+  text-align: left;
 }
 .container-sign-in {
   width: 350px;
@@ -95,4 +102,8 @@ font-weight: 300;
 }
 .menu-dash {
   padding: 30px;
+}
+.background-grey {
+  background-color: $gray;
+  border-radius: 5px;
 }

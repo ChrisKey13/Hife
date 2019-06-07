@@ -15,10 +15,28 @@
 .bouton-red {
     display: inline-block;
     width: 240px;
-    padding: 8px 44px;
-    background-color: #f4364c;
+    padding: 12px 36px;
+    background-color: $red;
     border-radius: 100px;
     font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box !important;
+    &:hover {
+      background-color: #DA3F4C;
+      text-decoration: none !important;
+      color: white;
+    }
+}
+.bouton-red-smaller {
+    display: inline-block;
+    width: 150px;
+    padding: 12px 12px;
+    background-color: $red;
+    border-radius: 100px;
+    font-size: 16px;
     font-weight: 600;
     color: #fff;
     text-decoration: none;
@@ -128,7 +146,6 @@
   }
 }
 .dash-btn-1 {
-  background-color: $orange1;
   border-radius: 8px;
   color: white;
   text-decoration: none;
@@ -142,6 +159,7 @@
   padding-right: 10px;
 }
 .dash-text-1 {
+  background-color: $orange1;
   color: white;
   font-size: 16px;
   height: auto;
@@ -150,4 +168,12 @@
   text-decoration: none;
   vertical-align: middle;
   letter-spacing: 4px;
+}
+.bouttons {
+  background-color: $orange1;
+  border-radius: 15px;
+}
+.red-cta-dash {
+  background-color: $red;
+  border-radius: 15px;
 }
