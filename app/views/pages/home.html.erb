@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="banner mb-5">
   <div class="container">
 
     <div class="d-flex flex-column justify-content-left align-items-center"></div>
@@ -10,19 +10,127 @@
         <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red' %>
       <% end %>
   </div>
-
-</div>
-
-<div class="footer footer-icons d-flex flex-column align-items-center">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
   </div>
 </div>
+<div class="container">
+  <div class=" d-flex flex-column align-items-center justify-content-center mt-5">
+      <h1 class="display-2">An <mark id="text-orange">Innovative</mark> Tool To Leverage Your Talents</h1>
+      <p class="mt-4">Offer your team regular moments of relaxation and camaraderie, and watch your problems go away.</p>
+      <p class="text-center">Hife is your personal team-building platform - Easily manage your recurring meetings and create<br> sport experiences that deliver results & streamline communication.</p>
+  </div>
+  <div class="d-flex justify-content-around align-items-start card-feature">
+      <div>
+        <%= image_tag "feature1.png", class: "image-feature1"; %>
+      </div>
+      <div class="d-flex flex-column justify-content-left">
+        <h1 class="display-2">
+          Push'em Faster
+        </h1>
+        <div class="d-flex flex-column align-items-left justify-content-end imageContent">
+          <p class="mt-1 ">Manage Your Recurring Meetings in minutes</p>
+          <ul class="mt-2">
+            <li class="mt-2">Define Everyone's Next Steps Before Your Deadline</li>
+            <li class="mt-2">Soon: Drag & Drop Video, Images & text</li>
+            <li class="mt-2">Next Steps are Automatically Prioritised and Assigned</li>
+          </ul>
+          <div>
+          <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red-smaller mt-4 mb-5' %>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="d-flex justify-content-around align-items-start card-feature">
+      <div class="d-flex flex-column justify-content-left">
+        <h1 class="display-2">
+          Create Sport Experiences
+        </h1>
+        <div class="d-flex flex-column align-items-left justify-content-end imageContent">
+          <p class="mt-1">Give The Time Back To Your Team !</p>
+          <ul class="mt-2">
+            <li class="mt-2">Create Your Own Team Sport Experience</li>
+            <li class="mt-2">Easily Gather Physical or Health Requirements</li>
+            <li class="mt-2">Choose From Only The Best Activities In Your Area</li>
+          </ul>
+          <div>
+          <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red-smaller mt-4 mb-5' %>
+          </div>
+        </div>
+      </div>
+      <div>
+        <%= image_tag "feature2.png", class: "image-feature2"; %>
+      </div>
+  </div>
+  <div class="d-flex justify-content-around align-items-start card-feature">
+      <div>
+        <%= image_tag "feature3.png", class: "image-feature"; %>
+      </div>
+      <div class="d-flex flex-column justify-content-left">
+        <h1 class="display-2">
+          Manage
+        </h1>
+        <div class="d-flex flex-column align-items-left justify-content-end imageContent">
+          <p class="mt-1 ">Track & Manage Your Team's Performance Anywhere, Anytime</p>
+          <ul class="mt-2">
+            <li class="mt-2">Gentle Email & SMS notifications</li>
+            <li class="mt-2">Seamless Feedback Loops</li>
+            <li class="mt-2">Track KPI's Progress and Drill Into Sub-Funnels</li>
+          </ul>
+          <div>
+          <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red-smaller mt-4 mb-5' %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <h1 class="display-2 text-center ourFeatures">Our Features</h1>
+  <p class="text-center mt-2">Everything You Need To Sustain A Brilliant Company Culture</p>
+  <div class="d-flex justify-content-around align-items-center mt-5 mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center">
+          <div><%= image_tag "experience.png", class: "iconFeature"; %></div>
+          <p class="bold-MW-body-text">Experience Generator</p>
+
+          <div class="mt-5"><%= image_tag "responsive.png", class: "iconFeature"; %></div>
+          <p class="bold-MW-body-text">Responsive</p>
+    </div>
+    <div class="d-flex flex-column align-items-center justify-content-center">
+          <div><%= image_tag "stars.png", class: "iconFeature"; %></div>
+          <p class="bold-MW-body-text">Best-Ranked</p>
+
+          <div class="mt-5"><%= image_tag "reporting.png", class: "iconFeature"; %></div>
+          <p class="bold-MW-body-text">Live Reporting</p>
+    </div>
+    <div class="d-flex flex-column align-items-center justify-content-center">
+          <div><%= image_tag "geoloc.png", class: "iconFeature"; %></div>
+          <p class="bold-MW-body-text">Geolocation</p>
+
+          <div class="mt-5"><%= image_tag "integrations.png", class: "iconFeature"; %></div>
+          <p class="bold-MW-body-text">Integrations</p>
+    </div>
+    <div class="d-flex flex-column align-items-center justify-content-center">
+          <div><%= image_tag "multimedia.png", class: "iconFeature"; %></div>
+          <p class="bold-MW-body-text">Multimedia</p>
+
+          <div class="mt-5"><%= image_tag "security.png", class: "iconFeature"; %></div>
+          <p class="bold-MW-body-text">Security</p>
+    </div>
+  </div>
+    <div class="text-center">
+    <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red-smaller mt-2 mb-5' %>
+    </div>
+
+  <h1 class="display-2 text-center ourFeatures">Company Like Yours Use Hife</h1>
+    </div>
+  </div>
+
+
+
+  <div class="col-12 bannerCTA">
+    <div class="cta-image d-flex flex-column align-items-center justify-content-center">
+      <div><%= image_tag "startup.png", class: "imageCTA"; %>
+      </div>
+      <h2 class="display-2 text-center mt-5">Get Started With Hife Today</h2>
+      <div><%= link_to "Try it free", new_user_registration_path, class: 'bouton-red mt-4 mb-5 footerCTA' %></div>
+    </div>
+  </div>
 

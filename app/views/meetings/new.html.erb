@@ -1,3 +1,4 @@
+
 <div class="meeting-creation-top"></div>
 <div class="meeting-creation-carousel">
   <%= simple_form_for :meeting, url: meetings_path, method: "post" do |f| %>
@@ -20,6 +21,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-6">
         <%= image_tag("meeting1.png") %>
       </div>
@@ -46,6 +48,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-6">
         <%= image_tag("meeting2.png") %>
       </div>
@@ -72,29 +75,81 @@
           </div>
         </div>
       </div>
+
       <div class="col-6">
         <%= image_tag("meeting4.png") %>
       </div>
     </div>
+
+    <div class="slider hidden-slide">
+      <!-- <div class="slider-form">
+        <h1>Please, pick an activity</h1>
+=======
     <div class="slider fade-in">
       <div class="slider-form">
         <h2>Please, pick an activity</h2>
+>>>>>>> master
         <%= f.input :activity, collection: @activities, label: "Pick an activity" %>
+ -->
+          <!-- <div class="all cards"> -->
+        <!-- <div class="container" > -->
+          <!-- <div class="title">
+            <h2> Choose Your Experience</h2>
+          </div> -->
+
+            <div id=activities data-ids=<%= @activities.map(&:id).to_json %>></div>
+            <% @activities.each do |activity| %>
+            <div class="row-activity p-10">
+              <div class="card-complete">
+                <div class="card-activity">
+                  <img src= <%= activity.photo %> >
+                  <div class="card-activity-infos">
+                    <h2 class="inactive-card-title"><%= activity.name %> <%= activity.intensiveness %>   <i class="fas fa-dumbbell"></i></h2>
+                    <div class="text-details">
+                      <i class="far fa-clock"></i></i><p> 60 min </p>
+                      <i class="fas fa-map-marker-alt"></i><p> Paris, 11e </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="map"
+                  id='<%= "map_#{activity.id}" %>'
+                  style="width: 400px;
+                  height: 240px;"
+                  data-markers='<%= [{'lat': activity.latitude,'lng': activity.longitude}, {'lat': @company.latitude,'lng': @company.longitude}].to_json %>'
+                  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+                ></div>
+                <%#= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@activity.latitude},#{@activity.longitude}&markers=#{@pactivity.latitude},#{@pactivity.longitude}&zoom=7&size=640x400&key=AIzaSyBjGLld6LJOG0nTKogzNMisjNjMAAYg9tc",
+                class: 'img-fluid img-rounded', alt: "#{@pactivity.title} on the map"%>
+              </div>
+            <% end %>
+          </div>
+
+        <!-- </div> -->
+      <!-- </div> -->
+         <!-- <div class="card-all"> -->
+
+              <!-- <div class="paragraph">
+                <p> <%#= activity.description%></p>
+         -->
+          <!-- </div> -->
+        <!-- </div> -->
+
+
         <div class="slider-change">
           <div class="slider-btn previous-btn">Previous</div>
           <%= f.submit "Create a meeting", class: "btn btn-primary" %>
-        </div>
-        <div class="slider-indicators-container">
-          <div class="slider-indicators">
           </div>
-          <div class="slider-indicators">
-          </div>
-          <div class="slider-indicators">
-          </div>
-          <div class="slider-indicators active">
+          <div class="slider-indicators-container">
+            <div class="slider-indicators">
+            </div>
+            <div class="slider-indicators">
+            </div>
+            <div class="slider-indicators">
+            </div>
+            <div class="slider-indicators active">
+            </div>
           </div>
         </div>
       </div>
-    </div>
   <% end %>
 </div>

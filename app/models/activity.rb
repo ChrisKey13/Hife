@@ -14,4 +14,8 @@
 
 class Activity < ApplicationRecord
   has_many :meetings, dependent: :destroy
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
+  # validates :intensiveness, inclusion: {in: %w[low medium high]}
 end
