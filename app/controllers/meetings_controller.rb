@@ -8,7 +8,17 @@ class MeetingsController < ApplicationController
         @users << user
       end
     end
+    @company = Company.first
     @meeting = params["meeting"]
+    @activities = Activity.where.not(latitude: nil, longitude: nil)
+    # Select activities matching intensity
+    # @markers = @activities.map do |activity|
+
+    #   {
+    #     lat: activity.latitude,
+    #     lng: activity.longitude
+    #   }
+    # end
   end
 
   def create

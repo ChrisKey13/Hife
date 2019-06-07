@@ -15,6 +15,9 @@ Meeting.destroy_all
 puts "destroying all activities"
 Activity.destroy_all
 
+puts "destroying all User Team"
+UserTeam.destroy_all
+
 puts "destroying all teams"
 Team.destroy_all
 
@@ -143,6 +146,59 @@ sales = Team.create({
   manager: manager
   });
 puts "Team created"
+
+sales_team_parameters = [
+  {
+    user: array_users[0],
+    team: sales
+  },
+  {
+    user: array_users[1],
+    team: sales
+  },
+  {
+    user: array_users[2],
+    team: sales
+  },
+  {
+    user: array_users[3],
+    team: sales
+  },
+  {
+    user: array_users[4],
+    team: sales
+  },
+  {
+    user: array_users[5],
+    team: sales
+  },
+  {
+    user: array_users[6],
+    team: sales
+  },
+  {
+    user: array_users[7],
+    team: sales
+  },
+  {
+    user: array_users[8],
+    team: sales
+  },
+  {
+    user: array_users[9],
+    team: sales
+  },
+  {
+    user: array_users[10],
+    team: sales
+  },
+  ]
+
+  array_sales_team = sales_team_parameters.map do |sales|
+  UserTeam.create!(sales)
+end
+
+
 
 
 activities_parameters = [
@@ -511,7 +567,6 @@ array_ratings = rating_parameters.map do |rating|
   Rating.create!(rating)
 end
 
-p array_users
 
 puts "Rating created"
 
