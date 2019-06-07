@@ -19,8 +19,6 @@ const slideToNext = () => {
         });
         sliders[i+1].classList.add("show");
         sliders[i+1].classList.add("active-slide");
-        // sliders[i].classList.add("hidden-slide");
-        // sliders[i+1].classList.remove("hidden-slide");
       });
     })
   }
