@@ -10,14 +10,12 @@ class MeetingsController < ApplicationController
     end
     @meeting = params["meeting"]
     @activities = Activity.where.not(latitude: nil, longitude: nil)
-
     @markers = @activities.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude
       }
     end
-
   end
 
   def create
