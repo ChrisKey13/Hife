@@ -12,7 +12,6 @@ import { disableButtonIfAllNotFilled } from '../components/meeting_creation';
 slideToNext();
 slideToPrevious();
 
-loadDynamicBannerText();
 
 if (document.querySelector(".slider")) {
   disableButtonIfAllNotFilled();
