@@ -5,10 +5,11 @@
       <h1 class="display"> For <span id="banner-typed-text"></span>Teams</h1>
       <p class="text-tab-dash landingpaddingcontent">Everything to switch from endless meetings<br>to productive sport sessions</p>
       <% if user_signed_in? %>
-        <%= link_to "Go to dashboard", dashboard_path, class: 'bouton-red' %>
+        <%= link_to "Dashboard", dashboard_path, class: 'bouton-red' %>
       <% else %>
         <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red' %>
       <% end %>
+    </div>
   </div>
   </div>
 </div>
@@ -118,8 +119,6 @@
     <div class="text-center">
     <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red-smaller mt-2 mb-5' %>
     </div>
-
-  <h1 class="display-2 text-center ourFeatures">Company Like Yours Use Hife</h1>
     </div>
   </div>
 
