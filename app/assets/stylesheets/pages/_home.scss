@@ -3,7 +3,7 @@
   color: #E9664B;
 }
 .banner {
-  background-image: url(../../assets/landing.png);
+  background-image: asset-url('landing.png');
   background-size: cover;
   background-position: right;
   padding: 200px 0;

@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="col-6">
-        <img src="../../../../assets/meeting1.png" alt="Meeting image">
+        <%= image_tag("meeting1.png") %>
       </div>
     </div>
     <div class="slider fade-in">
@@ -47,14 +47,13 @@
         </div>
       </div>
       <div class="col-6">
-        <img src="../../../../assets/meeting2.png" alt="Meeting image">
+        <%= image_tag("meeting2.png") %>
       </div>
     </div>
     <div class="slider fade-in">
       <div class="slider-form col-6">
         <h2>Please, detail the agenda</h2>
         <%= f.input :item_title, label: "Item title" %>
-        <div class="form-group string required meeting_item_title"><label class="form-control-label string required" for="meeting_item_title">Item title <abbr title="required">*</abbr></label><input class="form-control string required" type="text" name="meeting[item_title]" id="meeting_item_title"></div>
         <%= f.input :item_description, label: "Item description" %>
         <%= f.input :item_duration, label: "Duration" %>
         <%= f.input :item_owner, collection: @users, label_method: :his_name, label: "Collaborator in charge" %>
@@ -74,7 +73,7 @@
         </div>
       </div>
       <div class="col-6">
-        <img src="../../../../assets/meeting4.png" alt="Meeting image">
+        <%= image_tag("meeting4.png") %>
       </div>
     </div>
     <div class="slider fade-in">
