@@ -28,7 +28,7 @@ class MeetingsController < ApplicationController
       user_id: meeting_params["item_owner"]
     )
     if @meeting.save && @agenda.save
-      redirect_to root_path #to be changed with dashboard_path (dashboard has to be prefixed when the route will be created)
+      redirect_to dashboard_path
     else
       render :new
     end
