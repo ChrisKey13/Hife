@@ -14,7 +14,7 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
-    <% unless params[:controller] =~ /sessions/ || params[:controller] =~ /registrations/ || current_page?(dashboard_url) %>
+    <% unless params[:controller] =~ /sessions/ || params[:controller] =~ /registrations/ || current_page?(dashboard_url) || current_page?(new_meeting_url) %>
       <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>

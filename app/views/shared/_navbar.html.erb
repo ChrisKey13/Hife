@@ -20,10 +20,17 @@
         <%= link_to "Pricing", root_path, class: "bouton-text-nav"%>
       </li>
       <li class="nav-item active">
-        <%= link_to "Try it free", new_user_registration_path, class: "bouton-red-nav"%>
-      </li>
+        <% if user_signed_in? %>
+          <%= link_to "Dashboard", dashboard_path, class: 'bouton-red-nav' %>
+        <% else %>
+          <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red-nav' %>
+        <% end %>      </li>
       <li class="nav-item active all">
-        <%= link_to "Sign in", new_user_session_path, class: "bouton-white-nav"%>
+        <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'bouton-white-nav' %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, class: 'bouton-white-nav' %>
+        <% end %>
       </li>
     </ul>
   </div>
