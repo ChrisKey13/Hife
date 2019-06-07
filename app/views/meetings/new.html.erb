@@ -3,12 +3,12 @@
   <%= simple_form_for :meeting, url: meetings_path, method: "post" do |f| %>
     <div class="slider active-slide fade-in show">
       <div class="slider-form col-6">
-        <h2>Please, name your meeting</h2>
-        <%= f.input :name, label: "Meeting name" %>
+        <div class="container-slider">
+        <h2 class="display-funnel">Please, name your meeting</h2>
+        <p class="text-funnel mt-3 mb-3"><strong>Is it a recurring meeting ?</strong> You might want to specify it in the name.</p>
+        <%= f.input :name, label: "Meeting name", input_html: {class: "sign-up-label"} %>
         <div class="slider-change">
-          <div></div>
           <div class="slider-btn next-btn">Next</div>
-        </div>
         <div class="slider-indicators-container">
           <div class="slider-indicators active">
           </div>
@@ -19,9 +19,11 @@
           <div class="slider-indicators">
           </div>
         </div>
+        </div>
+        </div>
       </div>
       <div class="col-6">
-        <img src="../../../../assets/meeting1.png" alt="Meeting image">
+        <img src="../../../../assets/meeting1.png" alt="Meeting image" class="imageSlider">
       </div>
     </div>
     <div class="slider fade-in">
@@ -47,7 +49,7 @@
         </div>
       </div>
       <div class="col-6">
-        <img src="../../../../assets/meeting2.png" alt="Meeting image">
+        <img src="../../../../assets/meeting2.png" alt="Meeting image" class="imageSlider">
       </div>
     </div>
     <div class="slider fade-in">
@@ -74,7 +76,7 @@
         </div>
       </div>
       <div class="col-6">
-        <img src="../../../../assets/meeting4.png" alt="Meeting image">
+        <img src="../../../../assets/meeting4.png" alt="Meeting image" class="imageSlider">
       </div>
     </div>
     <div class="slider fade-in">

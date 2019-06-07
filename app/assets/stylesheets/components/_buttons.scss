@@ -25,7 +25,7 @@
     text-align: center;
     box-sizing: border-box !important;
     &:hover {
-      background-color: #DA3F4C;
+      background-color: $orange1;
       text-decoration: none !important;
       color: white;
     }
@@ -43,7 +43,7 @@
     text-align: center;
     box-sizing: border-box !important;
     &:hover {
-      background-color: #DA3F4C;
+      background-color: $orange1;
       text-decoration: none !important;
       color: white;
     }
@@ -63,7 +63,7 @@
     text-align: center;
     box-sizing: border-box !important;
     &:hover {
-      background-color: #DA3F4C;
+      background-color: $orange1;
       text-decoration: none !important;
       color: white;
     }
@@ -85,7 +85,7 @@
     box-sizing: border-box !important;
     width: 100%;
     &:hover {
-      background-color: #DA3F4C;
+      background-color: $orange1;
       text-decoration: none !important;
       color: white;
     }
@@ -104,7 +104,7 @@
   color: white;
   border-radius: 80px;
   &:hover {
-    background-color: #DA3F4C;
+    background-color: $orange1;
     text-decoration: none;
     color: white;
   }
