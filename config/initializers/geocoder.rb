@@ -21,4 +21,6 @@ Geocoder.configure(
   # distances: :linear          # :spherical or :linear
 
   units: :km,
+  api_key: "AIzaSyBjGLld6LJOG0nTKogzNMisjNjMAAYg9tc"
 )
+

@@ -1,3 +1,4 @@
+
 <div class="meeting-creation-carousel">
   <%= simple_form_for :meeting, url: meetings_path, method: "post" do |f| %>
     <div class="slider active-slide">
@@ -85,30 +86,37 @@
  -->
           <!-- <div class="all cards"> -->
         <!-- <div class="container" > -->
-          <% @activities.each do |activity| %>
-          <div class="class row">
-            <div class="card-complete">
-              <div class="card-activity">
-                <img src= <%= activity.photo %> >
-                <div class="card-activity-infos">
-                  <h2 class="inactive-card-title">
-                    <%= activity.name %></h2>
-                  <div class="text-details">
-                    <i class="fab fa-github"></i><p> 60 min </p>
-                    <i class="fab fa-github"></i><p> Paris, 11e </p>
+          <!-- <div class="title">
+            <h2> Choose Your Experience</h2>
+          </div> -->
+
+            <div id=activities data-ids=<%= @activities.map(&:id).to_json %>></div>
+            <% @activities.each do |activity| %>
+            <div class="row-activity p-10">
+              <div class="card-complete">
+                <div class="card-activity">
+                  <img src= <%= activity.photo %> >
+                  <div class="card-activity-infos">
+                    <h2 class="inactive-card-title"><%= activity.name %> <%= activity.intensiveness %>   <i class="fas fa-dumbbell"></i></h2>
+                    <div class="text-details">
+                      <i class="far fa-clock"></i></i><p> 60 min </p>
+                      <i class="fas fa-map-marker-alt"></i><p> Paris, 11e </p>
+                    </div>
                   </div>
                 </div>
+                <div class="map"
+                  id='<%= "map_#{activity.id}" %>'
+                  style="width: 400px;
+                  height: 240px;"
+                  data-markers='<%= [{'lat': activity.latitude,'lng': activity.longitude}, {'lat': @company.latitude,'lng': @company.longitude}].to_json %>'
+                  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+                ></div>
+                <%#= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@activity.latitude},#{@activity.longitude}&markers=#{@pactivity.latitude},#{@pactivity.longitude}&zoom=7&size=640x400&key=AIzaSyBjGLld6LJOG0nTKogzNMisjNjMAAYg9tc",
+                class: 'img-fluid img-rounded', alt: "#{@pactivity.title} on the map"%>
               </div>
-              <div class="map"
-                id="map"
-                style="width: 300px;
-                height: 240px;"
-                data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-              ></div>
-            </div>
-          <% end %>
+            <% end %>
           </div>
+
         <!-- </div> -->
       <!-- </div> -->
          <!-- <div class="card-all"> -->

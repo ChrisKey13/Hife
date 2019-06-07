@@ -1,14 +1,18 @@
 .card-activity {
   overflow: hidden;
   height: 60px;
-  width: 300px;
+  width: 400px;
   background: $orange;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  color: white
+  color: white;
 }
-
+.cards{
+   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
 .card-activity img {
   height: 100%;
   width: 120px;
@@ -18,7 +22,14 @@
 .card-activity h2 {
   //font-size: 16px;
   //font-weight: bold;
-  margin: 0;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-activity .inactive-card-title i {
+  padding-left: 50px;
 }
 
 .card-activity p {
@@ -39,4 +50,12 @@
 .text-details{
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  i {
+    padding-right: 10px;
+  }
+}
+.row-activity {
+  padding-left: 15px;
+  margin-top: 20px;
 }

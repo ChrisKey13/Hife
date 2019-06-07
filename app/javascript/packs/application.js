@@ -9,6 +9,10 @@ import { initMapbox } from '../plugins/init_mapbox';
 slideToNext();
 slideToPrevious();
 
-loadDynamicBannerText();
+const banner = document.getElementById('banner-typed-text');
+if (banner) {
+  loadDynamicBannerText();
+}
+
 
 initMapbox();
