@@ -9,7 +9,7 @@
            <h1 class="display-dash">YOUR DASHBOARD</h1>
         </div>
         <div class="d-flex justify-content-between align-items-center">
-          <p class="text-funnel mt-3">clement</p>
+          <p class="text-funnel mt-3"><%=User.first.first_name%></p>
           <ul>
             <li class="nav-item dropdown">
               <img class="avatar dropdown-toggle tof" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/qm8h3f1lbaotwfxxsmwh.jpg" />
@@ -78,8 +78,10 @@
           </div>
           <div class="d-flex align-items-center justify-content-around card-users bg-white">
             <div class="d-flex flex-column align-items-center icon-name-dash">
-                <div><%= image_tag "logo.png", class: 'avatar'%></div>
-                <p class="avatar-name">Machine</p>
+                <div>
+                <img src="<%= User.second.photo %> " alt="" class="avatar">
+                <p> <%= User.second.first_name%></p>
+                  <%#= image_tag "logo.png", class: 'avatar'%></div>
             </div>
             <div class="d-flex flex-column align-items-center icon-name-dash">
                 <div><%= image_tag "logo.png", class: 'avatar'%></div>
