@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :meetings, only: [:new, :create] do
     resources :agendas, only: [:new, :create]
   end
-  get "pages/dashboard", to: "pages#dashboard", as: "dashboard"
+  get "dashboard/home", to: "dashboard#home", as: "dashboard"
+  get "dashboard/analytics", to: "dashboard#analytics"
 
 end
