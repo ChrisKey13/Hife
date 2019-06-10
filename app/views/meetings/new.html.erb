@@ -2,7 +2,7 @@
 <div class="meeting-creation-top"></div>
 <div class="meeting-creation-carousel">
   <%= simple_form_for :meeting, url: meetings_path, method: "post" do |f| %>
-    <div class="slider active-slide fade-in show">
+    <div class="slider-meeting active-slide fade-in show">
       <div class="slider-form col-6">
         <div class="container-slider">
         <h2 class="display-funnel">Please, name your meeting</h2>
@@ -28,7 +28,7 @@
         <%= image_tag('meeting1.png') %>
       </div>
     </div>
-    <div class="slider fade-in">
+    <div class="slider-meeting fade-in">
       <div class="slider-form col-6">
         <h2>Please, give us team details</h2>
         <%= f.input :date, label: "When?", as: :string, required: false, input_html: {class: "datepicker"} %>
@@ -55,13 +55,22 @@
         <%= image_tag('meeting2.png') %>
       </div>
     </div>
-    <div class="slider fade-in">
+    <div class="slider-meeting fade-in">
       <div class="slider-form col-6">
         <h2>Please, detail the agenda</h2>
-        <%= f.input :item_title, label: "Item title" %>
-        <%= f.input :item_description, label: "Item description" %>
-        <%= f.input :item_duration, label: "Duration" %>
-        <%= f.input :item_owner, collection: @users, label_method: :his_name, label: "Collaborator in charge" %>
+        <div class="agenda-bullets">
+          <%= f.simple_fields_for @agenda do |a| %>
+            <%= a.input :title, label: "Item title 1" %>
+            <div class="agenda-bullet-section i-0 show">
+              <%= a.input :description, label: "Item description" %>
+              <%= a.input :duration, label: "Duration", as: :range, input_html: { step: 5, value: 15,  min: 5, max: 120, id: "text-input-meeting-slider-0" } %>
+              <output class="agenda-duration" id="agenda-duration id-0"></output>
+              <%= a.input :user, collection: @users, label_method: :his_name, label: "Collaborator in charge" %>
+            </div>
+          <% end %>
+          <div class="unhide-bullet in-0 btn-agenda-unhide"><i class="fas fa-arrow-circle-up"></i></div>
+        </div>
+        <div class="add-agenda btn btn-info"><i class="fas fa-plus"></i> Add a bullet</div>
         <div class="slider-change">
           <div class="slider-btn previous-btn">Previous</div>
           <div class="slider-btn next-btn">Next</div>
@@ -82,43 +91,14 @@
         <%= image_tag('meeting4.png') %>
       </div>
     </div>
-
-    <div class="slider fade-in">
+    <div class="slider-meeting fade-in">
       <div class="slider-form">
         <h2>Please, pick an activity</h2>
-
         <%= f.input :activity, collection: @activities, label: "Pick an activity" %>
-
-        <!-- <div id=activities data-ids=<%= @activities.map(&:id).to_json %>></div>
-        <% @activities.each do |activity| %>
-        <div class="row-activity p-10">
-          <div class="card-complete">
-            <div class="card-activity">
-              <img src= <%= activity.photo %> >
-              <div class="card-activity-infos">
-                <h2 class="inactive-card-title"><%= activity.name %> <%= activity.intensiveness %>   <i class="fas fa-dumbbell"></i></h2>
-                <div class="text-details">
-                  <i class="far fa-clock"></i></i><p> 60 min </p>
-                  <i class="fas fa-map-marker-alt"></i><p> Paris, 11e </p>
-                </div>
-              </div>
-            </div>
-            <div class="map"
-              id='<%= "map_#{activity.id}" %>'
-              style="width: 400px;
-              height: 240px;"
-              data-markers='<%= [{'lat': activity.latitude,'lng': activity.longitude}, {'lat': @company.latitude,'lng': @company.longitude}].to_json %>'
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-            ></div> -->
-            <%#= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@activity.latitude},#{@activity.longitude}&markers=#{@pactivity.latitude},#{@pactivity.longitude}&zoom=7&size=640x400&key=AIzaSyBjGLld6LJOG0nTKogzNMisjNjMAAYg9tc",
-            class: 'img-fluid img-rounded', alt: "#{@pactivity.title} on the map"%>
-          </div>
-        <% end %>
-      </div>
-    </div>
-
-
-
+        <div class="slider-change">
+          <div class="slider-btn previous-btn">Previous</div>
+          <%= f.submit "Create a meeting", class: "btn btn-primary" %>
+        </div>
         <div class="slider-indicators-container">
           <div class="slider-indicators">
           </div>
@@ -133,3 +113,45 @@
     </div>
   <% end %>
 </div>
+
+
+
+
+
+
+
+        <!-- <div class="agenda-bullets">
+          <div class="form-group string optional meeting_agenda${agendaBulletsCount}_title">
+            <label class="form-control-label string optional" for="meeting_agenda${agendaBulletsCount}_title">Item title</label>
+            <input class="form-control string optional" type="text" name="meeting[agenda${agendaBulletsCount}][title]" id="meeting_agenda${agendaBulletsCount}_title">
+          </div>
+          <div class="form-group text optional meeting_agenda${agendaBulletsCount}_description">
+            <label class="form-control-label text optional" for="meeting_agenda${agendaBulletsCount}_description">Item description</label>
+            <textarea class="form-control text optional" name="meeting[agenda${agendaBulletsCount}][description]" id="meeting_agenda${agendaBulletsCount}_description">
+            </textarea>
+          </div>
+          <div class="form-group range optional meeting_agenda${agendaBulletsCount}_duration">
+            <label class="range optional" for="text-input-meeting-slider">Duration</label>
+            <input class="form-control-range numeric range optional" step="5" value="15" min="5" max="120" id="text-input-meeting-slider" type="range" name="meeting[agenda${agendaBulletsCount}][duration]">
+          </div>
+          <output id="agenda${agendaBulletsCount}-duration">15 min</output>
+          <div class="form-group select required meeting_agenda${agendaBulletsCount}_user">
+            <label class="form-control-label select required" for="meeting_agenda${agendaBulletsCount}_user">Collaborator in charge <abbr title="required">*</abbr>
+            </label>
+            <select class="form-control select required" name="meeting[agenda${agendaBulletsCount}][user]" id="meeting_agenda${agendaBulletsCount}_user">
+              <option value="14">Vincent Despatin</option>
+              <option value="15">Mikael Garriguet</option>
+              <option value="16">Clément Pecastaings</option>
+              <option value="17">Louise Salle</option>
+              <option value="18">Magdalena Niemec</option>
+              <option value="19">Laurent Toave</option>
+              <option value="20">Nicolas Martin</option>
+              <option value="21">Christophe Boucquet</option>
+              <option value="22">Servane Level</option>
+              <option value="23">Raphaelle Grec</option>
+              <option value="24">Diane Johnston roussillon</option>
+            </select>
+          </div>
+          <div class="unhide-bullet btn btn-success">Unhide</div>
+        </div> -->
+

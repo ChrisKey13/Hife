@@ -7,7 +7,7 @@ const slideToNext = () => {
       btn.addEventListener('click', (event) => {
 
         event.preventDefault();
-        const sliders = document.querySelectorAll(".slider");
+        const sliders = document.querySelectorAll(".slider-meeting");
         let i
         sliders.forEach( (slider, index) => {
           let slideActive = slider.classList.contains("active-slide");
@@ -31,7 +31,7 @@ const slideToPrevious = () => {
       btn.addEventListener('click', (event) => {
 
         event.preventDefault();
-        const sliders = document.querySelectorAll(".slider");
+        const sliders = document.querySelectorAll(".slider-meeting");
         let i
         sliders.forEach( (slider, index) => {
           let slideActive = slider.classList.contains("active-slide");

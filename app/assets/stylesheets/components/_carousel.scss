@@ -1,12 +1,12 @@
-.slider {
+.slider-meeting {
   display: flex;
 }
 
 .slider-form {
-  height: 60vh;
+  // height: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 80%;
   margin: 0 auto;
 }
@@ -30,7 +30,7 @@
 
 .fade-in.show {
   position: absolute;
-  top: 200px;
+  top: 64px;
   opacity: 1;
   height: 100%;
   width: 100%;
