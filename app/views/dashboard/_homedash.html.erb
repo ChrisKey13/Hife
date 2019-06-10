@@ -1,29 +1,28 @@
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 ">
+          <div class="image-create-meeting">
+          <%= image_tag "celebration.png", class: "image-celebration"; %>
+          <div><%= link_to "Create your next meeting", new_meeting_path, class: 'bouton-CTA'%></div>
+          </div>
           <div class="container-graph">
 
-            <div class="title-company">
-             <img src="<%= Company.first.photo  %>" alt="" class="title-company-img">
-           </div>
-
+            <div class="container-new-meeting">
+              <p class= ""> Next meetings</p>
+            </div>
+            <!-- <div class="container-past-meeting"></div> -->
             <div class="card-history">
-              <p class= "past"> Next meetings</p>
               <p class= "past"> Past meetings</p>
               <% @all_meetings = Meeting.all %>
                 <% @all_users = User.all %>
-                <p> @format= DateFormat.change_to(@all_meetings[0].start_time, "LONG_DATE")</p>
-                <p><%= @format  %></p>
               <div class="card-meeting">
-
-                  <img src="<%= @all_meetings[0].activity.photo %>" class="past-photos">
-                  <div class="card-meeting-infos">
-                    <div>
-                        <h2><%= @all_meetings[0].name %></h2>
-                        <p> Physical Activity duration:  <strong> <%=@all_meetings[0].activity.duration%> min</strong></p>
-                    </div>
-                        <h2 class="card-meeting-pricing"> <%=@all_meetings[0].available_duration %> min </h2>                  <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-use avatar"/> -->
-                    <!-- <img src='<%=@all_users[2].photo%>' class="card-meeting-user avatar"/> -->
+                <img src="<%= @all_meetings[0].activity.photo %>" class="past-photos">
+                <div class="card-meeting-infos">
+                  <div>
+                      <h2><%= @all_meetings[0].name %></h2>
+                      <p> Physical Activity duration:  <strong> <%=@all_meetings[0].activity.duration%> min</strong></p>
                   </div>
-
+                    <h2 class="card-meeting-pricing"> <%=@all_meetings[0].available_duration %> min </h3>                  <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-use avatar"/> -->
+                  <!-- <img src='<%=@all_users[2].photo%>' class="card-meeting-user avatar"/> -->
+                </div>
               </div>
 
               <div class="card-meeting">
@@ -90,9 +89,9 @@
                   <!-- <img src='<%=@all_users[2].photo%>' class="card-trip-meeting avatar"/> -->
                 </div>
               </div>
+            </div>
           </div>
 
-          </div>
           <div class="container-avatarlist">
             <div class="d-flex align-items-center justify-content-around card-users bg-white">
               <div class="d-flex flex-column align-items-center icon-name-dash">
