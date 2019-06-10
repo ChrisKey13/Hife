@@ -1,4 +1,5 @@
 import "bootstrap";
+import "bootstrap-slider";
 import "../plugins/flatpickr";
 import { slideToNext, slideToPrevious } from "../components/carousel_slider";
 import { loadDynamicBannerText } from '../components/banner';
@@ -12,13 +13,34 @@ import { disableButtonIfAllNotFilled } from '../components/meeting_creation';
 slideToNext();
 slideToPrevious();
 
-if (document.querySelector(".slider")) {
+if (document.querySelector(".slider-meeting")) {
   disableButtonIfAllNotFilled();
 }
 
 const banner = document.getElementById('banner-typed-text');
 if (banner) {
   loadDynamicBannerText();
+}
+
+
+import { addOutputToSlider } from '../components/meeting_slider';
+
+const agendaSliders = document.querySelectorAll(".form-group.range");
+if (agendaSliders) {
+  addOutputToSlider(0);
+}
+
+
+import { clickToAddAgendaBullet, toggleToUnhide } from '../components/agenda';
+
+const addAgenda = document.querySelector(".add-agenda");
+if (addAgenda) {
+  clickToAddAgendaBullet();
+}
+
+const agendaBullets = document.querySelectorAll(".agenda-bullets");
+if (agendaBullets) {
+  toggleToUnhide(0);
 }
 
 // initMapbox();
