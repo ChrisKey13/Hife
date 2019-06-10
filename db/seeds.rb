@@ -388,7 +388,7 @@ meetings_parameters = [
     team: sales
   },
   {
-    name: "PRV Presenation - February",
+    name: "PRV Presentation",
     description: "presentation Plan de Remunération Variable",
     start_time: DateTime.new(2019,2,4,9,0,0),
     available_duration: 60,
@@ -396,7 +396,7 @@ meetings_parameters = [
     team: sales
   },
   {
-    name: "D-10 final sprint",
+    name: "D-10 T1 final sprint",
     description: "Efficacity - Energy - postivism",
     start_time: DateTime.new(2019,3,15,9,0,0),
     available_duration: 60,
@@ -412,7 +412,7 @@ meetings_parameters = [
     team: sales
   },
   {
-    name: "Monthly meeting - May",
+    name: "Monthly meeting",
     description: "Important information + focus client",
     start_time: DateTime.new(2019,5,6,9,0,0),
     available_duration: 60,
@@ -420,7 +420,7 @@ meetings_parameters = [
     team: sales
   },
   {
-    name: "Final Sprint - June",
+    name: "Final Sprint T3",
     description: "Efficacity - Energy - postivism",
     start_time: DateTime.new(2019,6,3,8,30,0),
     available_duration: 60,

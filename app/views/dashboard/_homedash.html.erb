@@ -19,17 +19,24 @@
 
       <div class="container-new-meeting">
         <p class= ""> Next meetings</p>
+        <% if @future_meetings.nil? %>
          <div class="card-meeting-future">
           <img src="<%= @future_meetings[0].activity.photo %>" class="future-photos">
           <div class="card-meeting-infos-future">
             <div>
                 <h2 class = " "><%= @future_meetings[0].name %></h2>
-                <p> Physical Activity duration:  <strong> <%=@future_meetings[0].activity.duration%> min</strong></p>
+                <p> <strong> <%=@future_meetings[0].activity.name%></strong></p>
             </div>
-              <h2 class="card-meeting-pricing-future"> <%=@future_meetings[0].available_duration %> min </h3>                  <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-use avatar"/> -->
-            <!-- <img src='<%=@all_users[2].photo%>' class="card-meeting-user avatar"/> -->
+            <div class="right">
+              <h3 class="date-meeting" > <% @date_meeting = @future_meetings[0].start_time %>
+                <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
+              </h3>
+              <p class="card-meeting-pricing-future"> <strong><%=@future_meetings[0].activity.duration %> min  saved</strong>
+              </p>
+            </div>
           </div>
         </div>
+        <% end %>
       </div>
       <!-- <div class="container-past-meeting"></div> -->
       <div class="card-history">
@@ -39,76 +46,101 @@
           <img src="<%= @past_meetings[0].activity.photo %>" class="past-photos">
           <div class="card-meeting-infos">
             <div>
-                <h2><%= @past_meetings[0].name %></h2>
-                <p> Physical Activity duration:  <strong> <%=@past_meetings[0].activity.duration%> min</strong></p>
+              <h2><%= @past_meetings[0].name %></h2>
+              <p> <strong> <%=@past_meetings[0].activity.name%></strong></p>
             </div>
-              <h2 class="card-meeting-pricing"> <%=@past_meetings[0].available_duration %> min </h3>                  <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-use avatar"/> -->
-            <!-- <img src='<%=@all_users[2].photo%>' class="card-meeting-user avatar"/> -->
+            <div class="right">
+              <h3 class="date-meeting-past" > <% @date_meeting = @past_meetings[0].start_time %>
+                <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
+              </h3>
+              <p class="card-meeting-pricing"> <strong><%=@past_meetings[0].activity.duration %> min  saved</strong>
+              </p>
+            </div>
           </div>
         </div>
 
         <div class="card-meeting">
-          <img src="<%= @past_meetings[1].activity.photo %>">
+          <img src="<%= @past_meetings[1].activity.photo %>" class="past-photos">
           <div class="card-meeting-infos">
             <div>
               <h2><%= @past_meetings[1].name %></h2>
-              <p> Physical Activity duration:   <strong> <%=@past_meetings[1].activity.duration%> min</strong></p>
+              <p> <strong> <%=@past_meetings[1].activity.name%></strong></p>
             </div>
-            <h2 class="card-meeting-pricing"><%=@past_meetings[1].available_duration %> min </h2>
-            <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-user avatar"/> -->
-            <!-- <img src='<%=@all_users[2].photo%>' class="card-meeting-user avatar"/> -->
+            <div class="right">
+              <h3 class="date-meeting-past" > <% @date_meeting = @past_meetings[1].start_time %>
+                <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
+              </h3>
+              <p class="card-meeting-pricing"> <strong><%=@past_meetings[1].activity.duration %> min  saved</strong>
+              </p>
+            </div>
           </div>
         </div>
 
         <div class="card-meeting">
-          <img src="<%= @past_meetings[2].activity.photo %>">
+          <img src="<%= @past_meetings[2].activity.photo %>" class="past-photos">
           <div class="card-meeting-infos">
             <div>
               <h2><%= @past_meetings[2].name %></h2>
-              <p> Physical Activity duration:  <strong> <%=@past_meetings[2].activity.duration%> min</strong></p>
+              <p> <strong> <%=@past_meetings[2].activity.name%></strong></p>
             </div>
-            <h2 class="card-meeting-pricing"><%=@past_meetings[2].available_duration %> min </h2>
-            <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-user avatar"/> -->
-            <!-- <img src='<%=@all_users[2].photo%>' class="card-meeting-user avatar"/> -->
+            <div class="right">
+              <h3 class="date-meeting-past" > <% @date_meeting = @past_meetings[2].start_time %>
+                <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
+              </h3>
+              <p class="card-meeting-pricing"> <strong><%=@past_meetings[2].activity.duration %> min  saved</strong>
+              </p>
+            </div>
           </div>
         </div>
 
         <div class="card-meeting">
-          <img src="<%= @past_meetings[3].activity.photo %>">
+          <img src="<%= @past_meetings[3].activity.photo %>" class="past-photos">
           <div class="card-meeting-infos">
             <div>
               <h2><%= @past_meetings[3].name %></h2>
-              <p>Physical Activity duration:  <strong> <%=@past_meetings[3].activity.duration%> min</strong></p>
+              <p> <strong> <%=@past_meetings[3].activity.name%></strong></p>
             </div>
-            <h2 class="card-meeting-pricing"><%=@past_meetings[3].available_duration %> min </h2>
-            <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-user avatar"/> -->
-            <!-- <img src='<%=@all_users[2].photo%>' class="card-meeting-user avatar"/> -->
+            <div class="right">
+              <h3 class="date-meeting-past" > <% @date_meeting = @past_meetings[3].start_time %>
+                <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
+              </h3>
+              <p class="card-meeting-pricing"> <strong><%=@past_meetings[3].activity.duration %> min  saved</strong>
+              </p>
+            </div>
           </div>
         </div>
 
         <div class="card-meeting">
-          <img src="<%= @past_meetings[4].activity.photo %>">
+          <img src="<%= @past_meetings[4].activity.photo %>" class="past-photos">
           <div class="card-meeting-infos">
             <div>
               <h2><%= @past_meetings[4].name %></h2>
-              <p> Physical Activity duration:   <strong> <%=@past_meetings[4].activity.duration%> min</strong></p>
+              <p> <strong> <%=@past_meetings[4].activity.name%></strong></p>
             </div>
-            <h2 class="card-trip-pricing"><%=@past_meetings[4].available_duration %> min </h2>
-            <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-user avatar"/> -->
-            <!-- <img src='<%=@all_users[2].photo%>' class="card-trip-meeting avatar"/> -->
+            <div class="right">
+              <h3 class="date-meeting-past" > <% @date_meeting = @past_meetings[4].start_time %>
+                <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
+              </h3>
+              <p class="card-meeting-pricing"> <strong><%=@past_meetings[4].activity.duration %> min  saved</strong>
+              </p>
+            </div>
           </div>
         </div>
 
         <div class="card-meeting">
-          <img src="<%= @past_meetings[5].activity.photo %>">
+          <img src="<%= @past_meetings[5].activity.photo %>" class="past-photos">
           <div class="card-meeting-infos">
             <div>
               <h2><%= @past_meetings[5].name %></h2>
-              <p> Physical Activity duration:   <strong> <%=@past_meetings[5].activity.duration%> min</strong></p>
+              <p> <strong> <%=@past_meetings[5].activity.name%></strong></p>
             </div>
-            <h2 class="card-trip-pricing"><%=@past_meetings[5].available_duration %> min </h2>
-            <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-user avatar"/> -->
-            <!-- <img src='<%=@all_users[2].photo%>' class="card-trip-meeting avatar"/> -->
+            <div class="right">
+              <h3 class="date-meeting-past" > <% @date_meeting = @past_meetings[5].start_time %>
+                <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
+              </h3>
+              <p class="card-meeting-pricing"> <strong><%=@past_meetings[5].activity.duration %> min  saved</strong>
+              </p>
+            </div>
           </div>
         </div>
       </div>
