@@ -91,14 +91,10 @@
         <%= image_tag('meeting4.png') %>
       </div>
     </div>
-
-
     <div class="slider-meeting fade-in">
-
       <div class="slider-form">
         <h2>Please, pick an activity</h2>
         <%= f.input :activity, collection: @activities, label: "Pick an activity" %>
-
         <div class="slider-change">
           <div class="slider-btn previous-btn">Previous</div>
           <%= f.submit "Create a meeting", class: "btn btn-primary" %>

@@ -1,5 +1,4 @@
 import "bootstrap";
-import "bootstrap-slider";
 import "../plugins/flatpickr";
 import { slideToNext, slideToPrevious } from "../components/carousel_slider";
 import { loadDynamicBannerText } from '../components/banner';
