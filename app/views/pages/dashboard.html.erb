@@ -68,12 +68,99 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <nav class="nav nav-pills nav-justified">
-            <a class="flex-sm-fill text-sm-center nav-link active text-tab-dash orange1" href="#">Average Mood</a>
+            <a class="flex-sm-fill text-sm-center nav-link active text-tab-dash orange1" href="#">Past Meetings</a>
             <a class="flex-sm-fill text-sm-center nav-link text-tab-dash orange2" href="#">Overall Satisfaction</a>
             <a class="flex-sm-fill text-sm-center nav-link text-tab-dash orange3" href="#">Daily Steps</a>
             <a class="flex-sm-fill text-sm-center nav-link text-tab-dash orange4" href="#" tabindex="-1" aria-disabled="true">Energy burned</a>
           </nav>
+
           <div class="container-graph">
+
+            <div class="title-company"></div>
+
+            <div class="card-history">
+              <% @all_meetings = Meeting.all %>
+                <% @all_users = User.all %>
+              <div class="card-meeting">
+                <img src="<%= @all_meetings[0].activity.photo %>">
+                <div class="card-meeting-infos">
+                  <div>
+                    <ul><h2><%= @all_meetings[0].name %></h2>
+                     <p> Physical Activity duration:  <strong> <%=@all_meetings[0].activity.duration%> min</strong></p>
+
+                  <h2 class="card-meeting-pricing"><%=@all_meetings[0].available_duration %> min </h2>
+                  <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-use avatar"/> -->
+                  <!-- <img src='<%=@all_users[2].photo%>' class="card-meeting-user avatar"/> -->
+                    </ul>
+                  </div>
+              </div>
+              </div>
+
+              <div class="card-meeting">
+                <img src="<%= @all_meetings[1].activity.photo %>">
+                <div class="card-meeting-infos">
+                  <div>
+                    <h2><%= @all_meetings[1].name %></h2>
+                    <p> Physical Activity duration:   <strong> <%=@all_meetings[0].activity.duration%> min</strong></p>
+                  </div>
+                  <h2 class="card-meeting-pricing"><%=@all_meetings[1].available_duration %> min </h2>
+                  <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-user avatar"/> -->
+                  <!-- <img src='<%=@all_users[2].photo%>' class="card-meeting-user avatar"/> -->
+                </div>
+              </div>
+
+              <div class="card-meeting">
+                <img src="<%= @all_meetings[2].activity.photo %>">
+                <div class="card-meeting-infos">
+                  <div>
+                    <h2><%= @all_meetings[2].name %></h2>
+                    <p> Physical Activity duration:  <strong> <%=@all_meetings[0].activity.duration%> min</strong></p>
+                  </div>
+                  <h2 class="card-meeting-pricing">£99.99</h2>
+                  <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-user avatar"/> -->
+                  <!-- <img src='<%=@all_users[2].photo%>' class="card-meeting-user avatar"/> -->
+                </div>
+              </div>
+
+              <div class="card-meeting">
+                <img src="<%= @all_meetings[3].activity.photo %>">
+                <div class="card-meeting-infos">
+                  <div>
+                    <h2><%= @all_meetings[3].name %></h2>
+                    <p>Physical Activity duration:  <strong> <%=@all_meetings[0].activity.duration%> min</strong></p>
+                  </div>
+                  <h2 class="card-meeting-pricing">£99.99</h2>
+                  <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-user avatar"/> -->
+                  <!-- <img src='<%=@all_users[2].photo%>' class="card-meeting-user avatar"/> -->
+                </div>
+              </div>
+
+              <div class="card-meeting">
+                <img src="<%= @all_meetings[4].activity.photo %>">
+                <div class="card-meeting-infos">
+                  <div>
+                    <h2><%= @all_meetings[4].name %></h2>
+                    <p> Physical Activity duration:   <strong> <%=@all_meetings[0].activity.duration%> min</strong></p>
+                  </div>
+                  <h2 class="card-trip-pricing">£99.99</h2>
+                  <!-- <img src='<%=@all_users[1].photo%>' class="card-meeting-user avatar"/> -->
+                  <!-- <img src='<%=@all_users[2].photo%>' class="card-trip-meeting avatar"/> -->
+                </div>
+              </div>
+
+              <div class="card-meeting">
+                <img src="<%= @all_meetings[5].activity.photo %>">
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= @all_meetings[5].name %></h2>
+                    <p> Physical Activity duration:  <strong> <%=@all_meetings[0].activity.duration%> min</strong></p>
+                  </div>
+                  <h2 class="card-trip-pricing">£99.99</h2>
+                  <!-- <img src='<%=@all_users[1].photo%>' class="card-trip-meeting avatar"/>
+                  <img src='<%=@all_users[2].photo%>' class="card-trip-meeting avatar"/>
+                </div>
+              </div>
+          </div>
 
           </div>
           <div class="d-flex align-items-center justify-content-around card-users bg-white">
