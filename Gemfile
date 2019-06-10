@@ -18,6 +18,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
 
+
 # gem for seeds photos
 gem "carrierwave"
 gem "rabl"
