@@ -5,7 +5,7 @@
           <%= link_to "root_path", class: 'navbar-brand' do %>
             <%= image_tag "logo.png", class: 'navbar-brand'%>
             <% end %>
-           <h1 class="display-dash">YOUR DASHBOARD</h1>
+           <!-- <h1 class="display-dash">YOUR DASHBOARD</h1> -->
         </div>
         <div class="d-flex justify-content-between align-items-center">
         <img src="<%= Company.first.photo  %>" alt="" class="title-company-img">
@@ -28,11 +28,10 @@
         </div>
       </div>
       <div class="row">
-        <nav class="col-md-2 d-flex flex-column align-items-center justify-content-center orange4-sidebar sidebar">
+        <nav class="col-md-2 d-flex flex-column align-items-center orange4-sidebar sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column align-items-left">
               <div>
-
               <li class="nav-item bouton-link-dash">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                   <a><%= link_to "Home", dashboard_path, class: "nav-link active" %>
@@ -59,7 +58,7 @@
                   Reports
                 </a>
               </li>
-              <li><%= link_to "Add a Meeting", new_meeting_path, class: 'bouton-red-smaller-dash2'%></li>
+              <li><%= link_to "Update your Team", new_meeting_path, class: 'bouton-red-smaller-dash2'%></li>
             </ul>
           </div>
         </nav>
@@ -68,5 +67,4 @@
           <% else %>
           <%= render 'analytics' %>
         <% end %>
-
       </div>
