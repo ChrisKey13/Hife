@@ -253,17 +253,19 @@ background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
 }
 
 .card-meeting-future h2 {
+
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  padding-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 .card-meeting-future p {
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 15px;
+
+  //margin-bottom: 15px;
   color: white;
   //margin-top: 8px;
 }
@@ -283,12 +285,12 @@ background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
   align-items: center;
 }
 
-.card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 20px;
-}
+//.card-trip-user {
+  //position: absolute;
+  //right: 16px;
+  //top: -20px;
+  //width: 20px;
+//}
 
 .card-meeting-pricing {
   padding: 0px;
@@ -297,10 +299,19 @@ background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
 .card-meeting-pricing-future {
   padding: 0px;
   color: white;
+  margin: 10px;
 }
 
+.card-meeting-pricing-future h2 {
+  //font-size: 8px;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 10px;
+}
+
+
 .card-meeting-pricing h3 {
-  font-size: 16px;
+  font-size: 10px;
   font-weight: bold;
   opacity: 0.4;
   }
@@ -309,4 +320,17 @@ main {
   background-color: #f4F4F4;
   padding-bottom: 80px;
   width: 100%;
+  }
+
+  .date-meeting {
+  color: $red;
+  font-size: 10px;
+  margin-top: 10px;
+  }
+
+  .date-meeting-past {
+    color: $red;
+  font-size: 10px;
+  margin-top: 10px;
+  opacity: 0.7;
   }
