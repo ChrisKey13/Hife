@@ -73,7 +73,7 @@
   border-radius: 5px;
 }
 .container-graph {
-  background-color: $orange1;
+  background-color: white;
   //height: 300px;
   border-radius: 1px;
 }
@@ -93,17 +93,36 @@
   //grid-template-rows: 90px 90px;
   //grid-gap: 28px;
   padding: 25px;
+}
+
+.past {
+  border: 0px;
+  color: $orange1;
+  margin-bottom: 15px;
 
 }
 
+.title-company{
+  height: 50px;
+  padding-top: -20px;
+
+}
+
+.title-company-img {
+  height: 100px;
+  width: 200px;
+}
+
 .card-meeting {
+
   overflow: hidden;
   height: 50px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 30px;
+  width: 600px;
 
 }
 
@@ -111,24 +130,43 @@
   height: 100%;
   width: 120px;
   object-fit: cover;
+  opacity: 0.6;
+}
+
+.past-photos {
+background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
 }
 
 .card-meeting h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  padding-top: 15px;
+  opacity: 0.3;
 }
 
 .card-meeting p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  margin-bottom: 15px;
+  opacity: 0.3;
+  //margin-top: 8px;
 }
 
-.card-meeting .card-meeting-infos {
-  padding: 16px;
+.card-meeting-infos {
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $orange4;
+}
+
+.card-meeting .card-meeting-infos ul {
+  //display: inline;
+  display: flex;
+  align-items: center;
 }
 
 .card-trip-user {

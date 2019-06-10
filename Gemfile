@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
+gem 'date_format'
 
 
 # gem for seeds photos
