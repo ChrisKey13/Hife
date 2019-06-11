@@ -13,9 +13,14 @@ import { disableButtonIfAllNotFilled } from '../components/meeting_creation';
 
 slideToNext();
 slideToPrevious();
-slideToRight();
-slideToLeft();
-selectCardActivity();
+
+const activities = document.querySelectorAll(".activity-choice");
+if (activities) {
+  selectCardActivity();
+  slideToRight();
+  slideToLeft();
+}
+
 
 if (document.querySelector(".slider-meeting")) {
   disableButtonIfAllNotFilled();
@@ -30,7 +35,7 @@ if (banner) {
 import { addOutputToSlider } from '../components/meeting_slider';
 
 const agendaSliders = document.querySelectorAll(".form-group.range");
-if (agendaSliders) {
+if (agendaSliders.count > 0) {
   addOutputToSlider(0);
 }
 
@@ -43,7 +48,7 @@ if (addAgenda) {
 }
 
 const agendaBullets = document.querySelectorAll(".agenda-bullets");
-if (agendaBullets) {
+if (agendaBullets.count > 0) {
   toggleToUnhide(0);
 }
 
