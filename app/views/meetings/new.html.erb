@@ -1,11 +1,8 @@
-
-<div class="meeting-creation-top"></div>
 <div class="meeting-creation-carousel">
   <%= simple_form_for :meeting, url: meetings_path, method: "post" do |f| %>
     <div class="slider-meeting active-slide fade-in show">
       <div class="slider-form col-6">
-        <div class="container-slider">
-        <h2 class="display-funnel">Please, name your meeting</h2>
+        <h2>Please, name your meeting</h2>
         <p class="text-funnel mt-3 mb-3"><strong>Is it a recurring meeting ?</strong> You might want to specify it in the name.</p>
         <%= f.input :name, label: "Meeting name", input_html: {class: "sign-up-label"} %>
         <div class="slider-change">
@@ -21,9 +18,7 @@
           </div>
         </div>
         </div>
-        </div>
       </div>
-
       <div class="col-6">
         <%= image_tag('meeting1.png') %>
       </div>
@@ -94,7 +89,52 @@
     <div class="slider-meeting fade-in">
       <div class="slider-form">
         <h2>Please, pick an activity</h2>
-        <%= f.input :activity, collection: @activities, label: "Pick an activity" %>
+        <div class="form-group">
+          <label class="control-label radio_buttons optional">Activities</label>
+          <input type="hidden" name="meeting[activity_ids][]" value="">
+            <% arraySelected = @activities[:low] %>
+            <div id="activities" data-ids=<%= arraySelected.map(&:id).to_json %>>
+            <div class="activity-choices">
+            <% arraySelected.each do |activity| %>
+              <div class="activity-choice">
+
+              <input type="radio" class="hidden" value="<%= activity.id %>" name="meeting[activity_ids][]" id="meeting_activity_ids_<%= activity.id %>">
+              <label for="meeting_activity_ids_<%= activity.id %>">
+                <%= activity.name %>
+                <i class="fa fa-check"></i>
+              </label>
+              <div class="row-activity p-10">
+                <div class="card-complete">
+                  <div class="card-activity">
+                    <%= image_tag(activity.photo) %>
+                    <div class="card-activity-infos">
+                      <h2 class="inactive-card-title">
+                        <%= activity.name %>
+                        <%= activity.intensiveness %>
+                        <i class="fas fa-dumbbell"></i>
+                      </h2>
+                      <div class="text-details">
+                        <i class="far fa-clock"></i></i><p><%= "#{activity.duration} min" %></p>
+                        <i class="fas fa-map-marker-alt"></i><p><%= activity.address %></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="map" id='<%= "map_#{activity.id}" %>'
+                    style="width: 400px; height: 240px;"
+                    data-markers-activity="<%= {lng: activity.longitude, lat: activity.latitude}.to_json %>"
+                    data-markers-company="<%= {lng: @company.longitude, lat: @company.latitude}.to_json %>"
+                    data-mapbox-api-key='<%= ENV["MAPBOX_API_KEY"] %>'>
+                  </div>
+                </div>
+              </div>
+
+
+
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
         <div class="slider-change">
           <div class="slider-btn previous-btn">Previous</div>
           <%= f.submit "Create a meeting", class: "btn btn-primary" %>
@@ -113,45 +153,3 @@
     </div>
   <% end %>
 </div>
-
-
-
-
-
-
-
-        <!-- <div class="agenda-bullets">
-          <div class="form-group string optional meeting_agenda${agendaBulletsCount}_title">
-            <label class="form-control-label string optional" for="meeting_agenda${agendaBulletsCount}_title">Item title</label>
-            <input class="form-control string optional" type="text" name="meeting[agenda${agendaBulletsCount}][title]" id="meeting_agenda${agendaBulletsCount}_title">
-          </div>
-          <div class="form-group text optional meeting_agenda${agendaBulletsCount}_description">
-            <label class="form-control-label text optional" for="meeting_agenda${agendaBulletsCount}_description">Item description</label>
-            <textarea class="form-control text optional" name="meeting[agenda${agendaBulletsCount}][description]" id="meeting_agenda${agendaBulletsCount}_description">
-            </textarea>
-          </div>
-          <div class="form-group range optional meeting_agenda${agendaBulletsCount}_duration">
-            <label class="range optional" for="text-input-meeting-slider">Duration</label>
-            <input class="form-control-range numeric range optional" step="5" value="15" min="5" max="120" id="text-input-meeting-slider" type="range" name="meeting[agenda${agendaBulletsCount}][duration]">
-          </div>
-          <output id="agenda${agendaBulletsCount}-duration">15 min</output>
-          <div class="form-group select required meeting_agenda${agendaBulletsCount}_user">
-            <label class="form-control-label select required" for="meeting_agenda${agendaBulletsCount}_user">Collaborator in charge <abbr title="required">*</abbr>
-            </label>
-            <select class="form-control select required" name="meeting[agenda${agendaBulletsCount}][user]" id="meeting_agenda${agendaBulletsCount}_user">
-              <option value="14">Vincent Despatin</option>
-              <option value="15">Mikael Garriguet</option>
-              <option value="16">Clément Pecastaings</option>
-              <option value="17">Louise Salle</option>
-              <option value="18">Magdalena Niemec</option>
-              <option value="19">Laurent Toave</option>
-              <option value="20">Nicolas Martin</option>
-              <option value="21">Christophe Boucquet</option>
-              <option value="22">Servane Level</option>
-              <option value="23">Raphaelle Grec</option>
-              <option value="24">Diane Johnston roussillon</option>
-            </select>
-          </div>
-          <div class="unhide-bullet btn btn-success">Unhide</div>
-        </div> -->
-
