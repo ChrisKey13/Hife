@@ -212,15 +212,15 @@ activities_parameters = [
     duration: 60,
     pas: 5000
   },
-  {
-    name: 'Meeting Cycling',
-    description: "Fed up with tradtional meetings? Try this new sport challenge way to work. One stop cycling means end of meeting.",
-    address: "15 Avenue de la République, 75011 Paris",
-    intensiveness: "low",
-    photo: "https://media.licdn.com/dms/image/C4E22AQEHYZbC84OmrQ/feedshare-shrink_8192/0?e=1562803200&v=beta&t=ScTQtib5KLWHDHj4U3Vhy2iTsBLizAi27Y2DfjLp98M",
-    duration: 60,
-    pas: 7000
-  },
+  #{
+  #   name: 'Meeting Cycling',
+  #   description: "Fed up with tradtional meetings? Try this new sport challenge way to work. One stop cycling means end of meeting.",
+  #   address: "15 Avenue de la République, 75011 Paris",
+  #   intensiveness: "low",
+  #   photo: "https://media.licdn.com/dms/image/C4E22AQEHYZbC84OmrQ/feedshare-shrink_8192/0?e=1562803200&v=beta&t=ScTQtib5KLWHDHj4U3Vhy2iTsBLizAi27Y2DfjLp98M",
+  #   duration: 60,
+  #   pas: 7000
+  # },
   #{
     #name: "Nordic walking",
     #description: "Mickael and Kate come to you, provide you walking stick and let's go for a 1-hour speed walking in Paris in a 'taylor-made' circuit.",
@@ -263,9 +263,8 @@ activities_parameters = [
   #},
   {
     name: "Ping-Pong",
-    description: "Table Tennis is quite a gentle on your body, almost injury-free and does not require any special skills at least until the beginner level. And the best part is, it's relatively easier to learn and a great way to de-stress yourself.
-    People of all age groups can play and enjoy this sport. On average you burn 500 calories per hour while playing table tennis.
-    Table tennis is a great game to gel up with friends, family and colleagues. Simple rules, along with the ease of playing makes it a perfect recreational sport. Moreover, the game is not very demanding physically but at the same time is very engaging.",
+    description: "Table Tennis is quite a gentle on your body, almost injury-free and a great way to de-stress yourself.
+    People of all age groups can play and enjoy this sport. On average you burn 500 calories per hour while playing table tennis.",
     address: "9 rue alphonse Baudin 75011 Paris",
     intensiveness: "Medium",
     photo: "https://images.unsplash.com/photo-1519162952575-c6c7199502a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -277,8 +276,8 @@ activities_parameters = [
   },
   {
     name: "Badminton",
-    description: "A one-hour session of badminton burns upto 450 calories per hour. Between the running, diving, lunging, and hitting, this sport helps gives a great cardio workout and serves as a path to weight-loss and building endurance.
-    The fast-paced nature of the game significantly improves your reflexes and speed. Badminton reduces anxiety and stress
+    description: "A one-hour session of badminton burns upto 450 calories per hour. Between the running, diving and hitting, this sport helps gives a great cardio workout and serves as a path to weight-loss and building endurance.
+    Badminton reduces anxiety and stress.
     A 2v2 match provide ample opportunities for one to socialise to meet new people whilst also giving one the experience of an intense double match!",
     address: "9 rue alphonse Baudin 75011 Paris",
     intensiveness: "Medium",
@@ -297,25 +296,18 @@ activities_parameters = [
   #},
   {
     name: "Circus",
-    description: "Circus helps people learn life skills, such as independence,
-    self-confidence, success and social skills 'The team spirit, with ages and backgrounds losing
-    their importance, has been tremendous. We’ve
-    achieved this simply by doing things together, us
-    instructors included. At times, this has meant that
-    we have played around with pictures and shared
-    laughs. At other times we’ve had quite long chats
-    in between exercises. We’ve discarded practically
-    all rules and improvise all situations pretty freely.'",
+    description: "Circus helps people learn life skills, such as independence,self-confidence, success and social skills. By doing things together, you will achieve tricks you never imagined.
+    If you love laughing, playing and learning with collegues, this circus experiences is made for you",
     address: "110 Rue Amelot, 75011 Paris",
     intensiveness: "Medium",
-    photo: "https://images.unsplash.com/photo-1551422788-18e2a1f5bb88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    #"https://images.unsplash.com/photo-1544289444-7992bb5e7e28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    photo: "https://images.unsplash.com/photo-1544289444-7992bb5e7e28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    #"https://images.unsplash.com/photo-1551422788-18e2a1f5bb88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     duration: 70,
     pas: 7000
   },
   {
     name: "Volleyball",
-    description: "",
+    description: "Whether you play indoors, on the grass, or on a beach, volleyball can be a great way to stay healthy and fit. It’s also a great way to stay involved in social activities, as it can be played with a single partner or with and entire team",
     address: "9 rue alphonse Baudin 75011 Paris",
     intensiveness: "Medium",
     photo: "https://images.unsplash.com/photo-1510006851064-e6056cd0e3a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -366,7 +358,7 @@ activities_parameters = [
 
   },
   {
-    name: "Atheltism - 3 tasks of Hercules",
+    name: "Athletism - 3 tasks of Hercules",
     description: "How far can you throw a javellin? How fast can you run on a 100 meters race? How far can you jump?
     Challenge your collegues in individual or team competition on a 3 sessions.",
     address: "23 Rue des Balkans, 75020 Paris",
@@ -411,7 +403,7 @@ meetings_parameters = [
   {
     name: "Kick Off T2",
     description: "All we need to perform",
-    start_time: DateTime.new(2019,3,1,9,30,0),
+    start_time: DateTime.new(2019,4,1,9,30,0),
     available_duration: 90,
     activity: array_activities[9],
     team: sales
@@ -437,7 +429,7 @@ meetings_parameters = [
     description: "Vision - Energy - postivism",
     start_time: DateTime.new(2019,12,16,9,30,0),
     available_duration: 600,
-    activity: array_activities[12],
+    activity: array_activities[10],
     team: sales
   }
 ]

@@ -1,6 +1,6 @@
 import "bootstrap";
 import "../plugins/flatpickr";
-import { slideToNext, slideToPrevious } from "../components/carousel_slider";
+import { slideToNext, slideToPrevious, slideToRight, slideToLeft, selectCardActivity } from "../components/carousel_slider";
 import { loadDynamicBannerText } from '../components/banner';
 import "../components/slick";
 
@@ -10,9 +10,18 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
 import { disableButtonIfAllNotFilled } from '../components/meeting_creation';
+//import { displayCards }
 
 slideToNext();
 slideToPrevious();
+
+const activities = document.querySelectorAll(".activity-choice");
+if (activities) {
+  selectCardActivity();
+  slideToRight();
+  slideToLeft();
+}
+
 
 if (document.querySelector(".slider-meeting")) {
   disableButtonIfAllNotFilled();
@@ -27,7 +36,7 @@ if (banner) {
 import { addOutputToSlider } from '../components/meeting_slider';
 
 const agendaSliders = document.querySelectorAll(".form-group.range");
-if (agendaSliders) {
+if (agendaSliders.count > 0) {
   addOutputToSlider(0);
 }
 
@@ -40,7 +49,7 @@ if (addAgenda) {
 }
 
 const agendaBullets = document.querySelectorAll(".agenda-bullets");
-if (agendaBullets) {
+if (agendaBullets.count > 0) {
   toggleToUnhide(0);
 }
 

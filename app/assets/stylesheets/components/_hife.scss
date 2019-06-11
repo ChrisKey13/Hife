@@ -26,6 +26,13 @@ p {
   font-size: 50px;
   margin-left: 150px;
 }
+.display-dash-cd {
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  margin-top: 16px;
+  margin-left: 60px;
+}
 .display-funnel {
   font-family: 'Merriweather', sans-serif;
   font-weight: 300;
@@ -121,6 +128,14 @@ font-weight: 300;
   color: $orange1;
   text-align: left;
 }
+#text-orange1 {
+  color: $orange1;
+  text-align: left;
+  font-size: 16px;
+  margin-top: -60px;
+  letter-spacing: 3px;
+  font-family: "Open Sans", sans-serif;
+}
 .container-sign-in {
   width: 350px;
   margin: 0px auto;
@@ -150,4 +165,21 @@ font-weight: 300;
   width: 750px;
   margin: 0px auto;
   margin-bottom: -200px;
+}
+#icon-hearbeat {
+    -webkit-animation-name: heartbeat2;
+    animation-name: heartbeat2;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+}
+.container-dash-card {
+  width: 700px;
+  margin: 0px auto;
+  margin-bottom: 0px;
 }
