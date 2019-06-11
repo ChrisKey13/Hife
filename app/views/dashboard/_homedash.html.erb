@@ -1,9 +1,9 @@
   <main role="main" class="col-md-9 ml-sm-auto col-lg-10 ">
-    <div class="image-create-meeting">
-      <%= image_tag "celebration.png", class: "image-celebration"; %>
-      <div><%= link_to "Create your next meeting", new_meeting_path, class: 'bouton-CTA'%>
-      </div>
-    </div>
+    <!-- <div class="image-create-meeting"> -->
+      <%#= image_tag "celebration.png", class: "image-celebration" %>
+      <!-- <div><%= link_to "Create your next meeting", new_meeting_path, class: 'bouton-CTA'%>
+      </div> -->
+    <!-- </div> -->
     <div class="container-graph">
       <% @all_meetings = Meeting.all %>
       <% @all_users = User.all %>
@@ -19,14 +19,20 @@
 
       <div class="container-new-meeting">
         <p class= ""> Next meetings</p>
-        <% if @future_meetings.nil? %>
+        <% if @future_meetings != nil %>
          <div class="card-meeting-future">
           <img src="<%= @future_meetings[0].activity.photo %>" class="future-photos">
           <div class="card-meeting-infos-future">
-            <div>
-                <h2 class = " "><%= @future_meetings[0].name %></h2>
-                <p> <strong> <%=@future_meetings[0].activity.name%></strong></p>
+            <div class="title">
+                <h2><%= @future_meetings[0].name %></h2>
             </div>
+            <div class="activity">
+              <p> <strong> <%=@future_meetings[0].activity.name%></strong></p>
+            </div>
+            <div class="paragraph">
+              <p><%=@future_meetings[0].activity.description%></p>
+            </div>
+          </div>
             <div class="right">
               <h3 class="date-meeting" > <% @date_meeting = @future_meetings[0].start_time %>
                 <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
@@ -145,40 +151,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="container-avatarlist">
-      <div class="d-flex align-items-center justify-content-around card-users bg-white">
-        <div class="d-flex flex-column align-items-center icon-name-dash">
-            <div>
-            <img src="<%= User.second.photo %> " alt="" class="avatar">
-            <p class="avatar-name"><%= User.second.first_name%></p>
-            </div>
-        </div>
-        <div class="d-flex flex-column align-items-center icon-name-dash">
-          <div>
-          <img src="<%= User.third.photo %> " alt="" class="avatar">
-          <p class="avatar-name"><%= User.third.first_name%></p>
-          </div>
-        </div>
-        <div class="d-flex flex-column align-items-center icon-name-dash">
-          <div>
-          <img src="<%= User.fourth.photo %> " alt="" class="avatar">
-          <p class="avatar-name"><%= User.fourth.first_name%></p>
-          </div>
-        </div>
-        <div class="d-flex flex-column align-items-center icon-name-dash">
-          <div>
-          <img src="<%= User.first.photo %> " alt="" class="avatar">
-          <p class="avatar-name"><%= User.first.first_name%></p>
-          </div>
-        </div>
-        <div class="d-flex flex-column align-items-center icon-name-dash">
-          <div class="d-flex flex-column align-items-center icon-name-dash">
-            <img src="<%= User.first.photo %> " alt="" class="avatar">
-            <p class="avatar-name"><%= User.first.first_name%></p>
-          </div>
-        </div>
-    </div> -->
 
 
     </div>
