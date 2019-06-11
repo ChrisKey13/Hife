@@ -1,8 +1,5 @@
 import mapboxgl from 'mapbox-gl';
 
-// const mapElement = document.getElementById('map');
-
-
 const buildMap = (id) => {
   const mapElement = document.querySelector(`#map_${id}`);
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -12,12 +9,12 @@ const buildMap = (id) => {
   });
 };
 
-const addMarkersToMap = (map, markers) => {
-  markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
-  });
+const addMarkersToMap = (map, marker) => {
+  // const markerL = new mapboxgl.LngLat([parseFloat(marker.lng), parseFloat(marker.lat)]);
+  // const markerL = new mapboxgl.LngLat([marker.lng, marker.lat]);
+  new mapboxgl.Marker()
+    .setLngLat(marker)
+    .addTo(map);
 };
 
 const fitMapToMarkers = (map, markers) => {
@@ -29,11 +26,17 @@ const fitMapToMarkers = (map, markers) => {
 const initMapbox = () => {
   if (document.querySelector('#activities')) {
     const ids = JSON.parse(document.querySelector('#activities').dataset.ids)
+    // const mapAll = document.querySelectorAll(".map");
     ids.forEach((id) => {
       const map = buildMap(id);
       const mapElement = document.querySelector(`#map_${id}`);
-      const markers = JSON.parse(mapElement.dataset.markers);
-      addMarkersToMap(map, markers);
+      const markersActivity = JSON.parse(mapElement.dataset.markersActivity);
+      // const markersActivity = mapElement.dataset.markersActivity;
+      const markersCompany = JSON.parse(mapElement.dataset.markersCompany);
+      // const markersCompany = mapElement.dataset.markersCompany;
+      const markers = [markersCompany, markersActivity];
+      addMarkersToMap(map, markersCompany);
+      addMarkersToMap(map, markersActivity);
       fitMapToMarkers(map, markers);
     })
   }

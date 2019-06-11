@@ -1,7 +1,6 @@
 class MeetingsController < ApplicationController
   def new
     @teams = Team.where(manager: current_user)
-    @activities = Activity.all
     @users = []
     @teams.each do |team|
       team.users.each do |user|
@@ -13,10 +12,10 @@ class MeetingsController < ApplicationController
 
     @meeting = params["meeting"]
 
-    # @activities = Activity.where.not(latitude: nil, longitude: nil)
+    # @activities = Activity.all
+    @activities = Activity.activities_seeded
     # Select activities matching intensity
     # @markers = @activities.map do |activity|
-
     #   {
     #     lat: activity.latitude,
     #     lng: activity.longitude

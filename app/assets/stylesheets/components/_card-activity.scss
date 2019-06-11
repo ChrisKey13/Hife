@@ -59,3 +59,15 @@
   padding-left: 15px;
   margin-top: 20px;
 }
+
+.activity-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.activity-choice {
+  display: inline-grid;
+}
+
+
