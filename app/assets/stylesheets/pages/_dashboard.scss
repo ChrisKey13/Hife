@@ -1,7 +1,7 @@
 .container-fluid {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 0px;
+    padding-left: 0px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -13,6 +13,29 @@
     margin-right: -15px;
     margin-left: -15px;
 }
+
+.bouton-CTA {
+    //display: inline-block;
+    width: 300px;
+    margin-left: 350px;
+    margin-right: 10px;
+    padding: 4px 20px;
+    background-color: $red;
+    border-radius: 3px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box !important;
+    &:hover {
+      background-color: $orange1;
+      text-decoration: none !important;
+      color: white;
+    }
+  }
+
+
 .sidebar {
   border-radius: 5px;
 }
@@ -65,6 +88,21 @@
     color: white !important;
   }
 }
+
+.image-create-meeting {
+background-color: white;
+margin-left: -15px;
+height: 500px;
+}
+
+.image-celebration {
+  align-items: center;
+  height: 450px;
+  padding-left: 250px;
+}
+
+
+
 .card-users {
   margin-top: 50px;
   background-color: $gray;
@@ -73,9 +111,13 @@
   border-radius: 5px;
 }
 .container-graph {
-  background-color: white;
+  background-color: &gray;
   //height: 300px;
   border-radius: 1px;
+  text-align: center;
+  align-center: center;
+  padding-left: 150px;
+
 }
 .nav-pills .nav-link {
     border-radius: 0px;
@@ -93,12 +135,18 @@
   //grid-template-rows: 90px 90px;
   //grid-gap: 28px;
   padding: 25px;
+  background-color: white;
+  width: 700px;
+  margin: 20px;
+  padding-left: 40px;
 }
 
 .past {
   border: 0px;
   color: $orange1;
   margin-bottom: 15px;
+  opacity: 0.4;
+  font-weight: bold;
 
 }
 
@@ -111,6 +159,21 @@
 .title-company-img {
   height: 100px;
   width: 200px;
+  padding-right: 15px;
+}
+
+.container-new-meeting{
+
+  color: $orange1;
+  margin: 20px;
+  padding: 25px;
+  background-color: white;
+  width: 700px;
+  font-weight: bold;
+}
+
+.container-past-meeting{
+  background-color: white;
 }
 
 .card-meeting {
@@ -132,6 +195,9 @@
   object-fit: cover;
   opacity: 0.6;
 }
+
+
+
 
 .past-photos {
 background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
@@ -169,17 +235,93 @@ background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
   align-items: center;
 }
 
-.card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 20px;
+.card-meeting-future {
+  overflow: hidden;
+  height: 50px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  width: 600px;
 }
+
+.card-meeting-future img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-meeting-future h2 {
+
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.card-meeting-future p {
+  font-size: 12px;
+  line-height: 1.4;
+
+  //margin-bottom: 15px;
+  color: white;
+  //margin-top: 8px;
+}
+
+.card-meeting-infos-future {
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $orange2;
+}
+
+.card-meeting-future .card-meeting-infos ul {
+  //display: inline;
+  display: flex;
+  align-items: center;
+}
+
+//.card-trip-user {
+  //position: absolute;
+  //right: 16px;
+  //top: -20px;
+  //width: 20px;
+//}
+
+.card-meeting-pricing {
+  padding: 0px;
+}
+
+.card-meeting-pricing-future {
+  padding: 0px;
+  color: white;
+  margin: 10px;
+}
+
+.card-meeting-pricing-future h2 {
+  //font-size: 8px;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 10px;
+}
+
+
+.card-meeting-pricing h3 {
+  font-size: 10px;
+  font-weight: bold;
+  opacity: 0.4;
+  }
+
 main {
   background-color: #f4F4F4;
   padding-bottom: 80px;
   width: 100%;
   }
+<<<<<<< HEAD
 .fonticon {
   font-size: 40px;
   color: $orange1;
@@ -270,3 +412,15 @@ main {
 .rightdivdash {
   flex: 0 0 200px;
 }
+  .date-meeting {
+  color: $red;
+  font-size: 10px;
+  margin-top: 10px;
+  }
+
+  .date-meeting-past {
+    color: $red;
+  font-size: 10px;
+  margin-top: 10px;
+  opacity: 0.7;
+  }

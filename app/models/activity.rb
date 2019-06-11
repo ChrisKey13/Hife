@@ -17,5 +17,18 @@ class Activity < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  # validates :intensiveness, inclusion: {in: %w[low medium high]}
+  validates :intensiveness, inclusion: { in: %w[low medium high] }
+
+  def self.activities_seeded
+    activities = Activity.where.not(latitude: nil, longitude: nil)
+    activities_hash = {
+      low: [],
+      medium: [],
+      high: []
+    }
+    activities.each do |activity|
+      activities_hash[activity.intensiveness.downcase.to_sym] << activity
+    end
+    return activities_hash
+  end
 end
