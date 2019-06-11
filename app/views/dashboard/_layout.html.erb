@@ -2,13 +2,22 @@
       <div class="d-flex justify-content-between align-items-center bg-white" style="height:15vh;">
         <div class="d-flex justify-content-between align-items-center">
 
-          <%= link_to "root_path", class: 'navbar-brand' do %>
-            <%= image_tag "logo.png", class: 'navbar-brand'%>
+          <%= link_to "#", class: 'navbar-brand2' do %>
+            <%= image_tag "logo.png", class: 'navbar-brand2'%>
             <% end %>
+<<<<<<< HEAD
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <div><%= link_to "Add A Meeting", new_meeting_path, class: 'bouton-red-smaller-dash'%></div>
+
+        </div>
+      </div>
+=======
            <!-- <h1 class="display-dash">YOUR DASHBOARD</h1> -->
         </div>
         <div class="d-flex justify-content-between align-items-center">
         <img src="<%= Company.first.photo  %>" alt="" class="title-company-img">
+>>>>>>> master
           <p class="text-funnel mt-3"><%=User.first.first_name%></p>
           <ul>
             <li class="nav-item dropdown">
@@ -23,6 +32,8 @@
               </div>
             </li>
           </ul>
+<<<<<<< HEAD
+=======
           <div><%= link_to "+", new_meeting_path, class: 'bouton-red-smaller-dash'%></div>
 
         </div>
@@ -62,6 +73,7 @@
             </ul>
           </div>
         </nav>
+>>>>>>> master
         <% unless current_page?('/dashboard/analytics') %>
           <%= render 'homedash' %>
           <% else %>

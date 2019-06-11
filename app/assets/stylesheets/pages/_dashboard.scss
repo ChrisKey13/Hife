@@ -321,7 +321,97 @@ main {
   padding-bottom: 80px;
   width: 100%;
   }
-
+<<<<<<< HEAD
+.fonticon {
+  font-size: 40px;
+  color: $orange1;
+  margin-bottom: 16px;
+}
+.icontext {
+  font-size: 12px;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+}
+.card-kpi {
+  background-color: $orange4;
+  padding: 40px;
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+  // border: 0.5px solid $red;
+  box-shadow: 8px 4px 4px $red;
+}
+.username {
+  margin-left: -160px;
+  font-family: "Open Sans", sans-serif;
+}
+.dashboard-content {
+  margin-top: -500px;
+}
+.global-analytics-title {
+  margin-top: 0px;
+  background-color: $gray;
+  height: 15vh;
+  margin-left: 32px;
+}
+.global-analytics-data {
+  margin-top: 0px;
+  background-color: $dark;
+  height: 50vh;
+  width: auto;
+  margin-left: 32px;
+  margin-top: 0vh;
+  padding-left: 100px;
+}
+.team-analytics-title {
+  margin-top: 0px;
+  background-color: $orange1;
+  height: 15vh;
+  margin-left: 24px;
+}
+.team-analytics-data {
+  margin-top: 0px;
+  background-color: $orange3;
+  height: 50vh;
+  margin-left: 24px;
+}
+.name-dropdown {
+  background-color: $orange1;
+  padding-top: 4px;
+  text-align: left;
+  margin-top: -8px;
+}
+.text-funnel-dash {
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+.link-dash  {
+  background-color: $gray;
+}
+.first-link-dash {
+  margin-top: -16px;
+}
+.second-link-dash {
+  margin-bottom: -8px;
+}
+.dashboardbody {
+  background-color: $gray;
+}
+.tabs-dash {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+.leftdivdash  {
+  flex: 0 0 200px;
+}
+.rightdivdash {
+  flex: 0 0 200px;
+}
   .date-meeting {
   color: $red;
   font-size: 10px;
