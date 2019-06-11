@@ -94,9 +94,10 @@
           <input type="hidden" name="meeting[activity_ids][]" value="">
             <% arraySelected = @activities[:low] %>
             <div id="activities" data-ids=<%= arraySelected.map(&:id).to_json %>>
+            <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
             <div class="activity-choices">
             <% arraySelected.each do |activity| %>
-              <div class="activity-choice">
+              <div class="activity-choice fade-in hidden-slide">
 
               <input type="radio" class="hidden" value="<%= activity.id %>" name="meeting[activity_ids][]" id="meeting_activity_ids_<%= activity.id %>">
               <label for="meeting_activity_ids_<%= activity.id %>">
@@ -127,12 +128,10 @@
                   </div>
                 </div>
               </div>
-
-
-
               </div>
             <% end %>
           </div>
+          <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
         </div>
       </div>
         <div class="slider-change">
