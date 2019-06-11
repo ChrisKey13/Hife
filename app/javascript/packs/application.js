@@ -1,6 +1,6 @@
 import "bootstrap";
 import "../plugins/flatpickr";
-import { slideToNext, slideToPrevious } from "../components/carousel_slider";
+import { slideToNext, slideToPrevious, slideToRight, slideToLeft, selectCardActivity } from "../components/carousel_slider";
 import { loadDynamicBannerText } from '../components/banner';
 import "../components/slick";
 
@@ -13,6 +13,9 @@ import { disableButtonIfAllNotFilled } from '../components/meeting_creation';
 
 slideToNext();
 slideToPrevious();
+slideToRight();
+slideToLeft();
+selectCardActivity();
 
 if (document.querySelector(".slider-meeting")) {
   disableButtonIfAllNotFilled();
