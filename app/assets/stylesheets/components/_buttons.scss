@@ -30,6 +30,21 @@
       color: white;
     }
 }
+.bouton-text {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: $dark;
+    background-color: transparent;
+    border-radius: 0px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    &:hover {
+      text-decoration: none !important;
+      color: $orange1;
+    }
+}
 .bouton-red-smaller {
     display: inline-block;
     width: 150px;
