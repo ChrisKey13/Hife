@@ -1,7 +1,6 @@
 const slideToRight = (intensiveness) => {
   const activityIntensiveness = document.querySelector(`.activity-${intensiveness}`);
   const rightBtn = activityIntensiveness.querySelector(`.btn-arrow-right`);
-  console.log(rightBtn);
   if (rightBtn) {
     rightBtn.addEventListener('click', (event) => {
         event.preventDefault();
@@ -30,7 +29,6 @@ const slideToRight = (intensiveness) => {
 const slideToLeft = (intensiveness) => {
   const activityIntensiveness = document.querySelector(`.activity-${intensiveness}`);
   const leftBtn = activityIntensiveness.querySelector(`.btn-arrow-left`);
-  console.log(leftBtn);
   if (leftBtn) {
     leftBtn.addEventListener('click', (event) => {
         event.preventDefault();

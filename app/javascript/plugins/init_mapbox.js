@@ -5,16 +5,26 @@ const buildMap = (id) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: `map_${id}`,
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/mapbox/streets-v10?'
   });
 };
 
-const addMarkersToMap = (map, marker) => {
+const addMarkersToMap = (map, marker, url) => {
   // const markerL = new mapboxgl.LngLat([parseFloat(marker.lng), parseFloat(marker.lat)]);
   // const markerL = new mapboxgl.LngLat([marker.lng, marker.lat]);
-  new mapboxgl.Marker()
-    .setLngLat(marker)
-    .addTo(map);
+  if (false) {
+    // const el = document.createElement('div');
+    // el.className = 'marker-logo-company';
+    // new mapboxgl.Marker(el)
+    //   .setLngLat(marker)
+    //   .addTo(map);
+
+  } else {
+    new mapboxgl.Marker()
+      .setLngLat(marker)
+      .addTo(map);
+  }
+
 };
 
 const fitMapToMarkers = (map, markers) => {
@@ -23,9 +33,11 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 29 });
 };
 
-const initMapbox = () => {
-  if (document.querySelector('#activities')) {
-    const ids = JSON.parse(document.querySelector('#activities').dataset.ids)
+const initMapbox = (intensiveness) => {
+  const activityIntensiveness = document.querySelector(`.activity-${intensiveness}`);
+  const activitiesIds = activityIntensiveness.querySelector('#activities');
+  if (activitiesIds) {
+    const ids = JSON.parse(activitiesIds.dataset.ids)
     // const mapAll = document.querySelectorAll(".map");
     ids.forEach((id) => {
       const map = buildMap(id);
@@ -34,6 +46,7 @@ const initMapbox = () => {
       // const markersActivity = mapElement.dataset.markersActivity;
       const markersCompany = JSON.parse(mapElement.dataset.markersCompany);
       // const markersCompany = mapElement.dataset.markersCompany;
+      // const urlLogo = mapElement.dataset.markersLogoCompany;
       const markers = [markersCompany, markersActivity];
       addMarkersToMap(map, markersCompany);
       addMarkersToMap(map, markersActivity);
