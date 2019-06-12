@@ -12,15 +12,7 @@ class MeetingsController < ApplicationController
 
     @meeting = params["meeting"]
 
-    # @activities = Activity.all
     @activities = Activity.activities_seeded
-    # Select activities matching intensity
-    # @markers = @activities.map do |activity|
-    #   {
-    #     lat: activity.latitude,
-    #     lng: activity.longitude
-    #   }
-    # end
   end
 
   def create

@@ -1,13 +1,10 @@
-const slideToRight = () => {
+const slideToRight = (intensiveness) => {
   const rightBtn = document.querySelector(".btn-arrow-right");
   if (rightBtn) {
-    const sliderInit = document.querySelector(".activity-choice");
-    sliderInit.classList.add("active-slide");
-    sliderInit.classList.remove("hidden-slide");
-    sliderInit.classList.add("show");
     rightBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        const sliders = document.querySelectorAll(".activity-choice");
+        const activeSliders = document.querySelector(`.activity-${intensiveness}`);
+        const sliders = activeSliders.querySelectorAll(".activity-choice");
         let checkLast = sliders[sliders.length - 1 ].classList.contains("active-slide");
         if (!checkLast) {
         let i

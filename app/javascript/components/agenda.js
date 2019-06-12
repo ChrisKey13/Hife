@@ -1,6 +1,6 @@
 
 
-import { addOutputToSlider } from './meeting_slider';
+import { addOutputToSliderBullet } from './meeting_slider';
 
 
 const addAgenda = document.querySelector(".add-agenda");
@@ -25,8 +25,8 @@ const clickToAddAgendaBullet = () => {
               </textarea>
             </div>
             <div class="form-group range optional meeting_agenda${number}_duration">
-              <label class="range optional" for="text-input-meeting-slider-${number}">Duration</label>
-              <input class="form-control-range numeric range optional" step="5" value="15" min="5" max="120" id="text-input-meeting-slider-${number}" type="range" name="meeting[agenda${number}][duration]">
+              <label class="range optional" for="text-input-agenda-slider-${number}">Duration</label>
+              <input class="form-control-range numeric range optional" step="5" value="15" min="5" max="120" id="text-input-agenda-slider-${number}" type="range" name="meeting[agenda${number}][duration]">
             </div>
             <output class="agenda-duration" id="agenda-duration id-${number}">15 min</output>
             <div class="form-group select required meeting_agenda${number}_user">
@@ -56,7 +56,7 @@ const clickToAddAgendaBullet = () => {
     setTimeout(function() {previousBullet.classList.add('hide')}, 600);
     agendaBullets[number - 1].querySelector(`.unhide-bullet.in-${number - 1}`).innerHTML = `<i class="fas fa-arrow-circle-down"></i>`;
     toggleToUnhide(number);
-    addOutputToSlider(number);
+    addOutputToSliderBullet(number);
   });
 
 };
