@@ -1,73 +1,56 @@
+
+.card-activity-wrapper {
+  display: flex;
+  height: 70vh;
+  width: 70vw;
+}
+
 .card-activity {
-  overflow: hidden;
-  height: 60px;
-  width: 400px;
-  background: $orange;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
-  color: white;
-}
-.cards{
-   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-.card-activity img {
   height: 100%;
-  width: 120px;
+  margin: 0 auto;
+}
+
+.card-activity-photo img {
   object-fit: cover;
+  width: 350px;
+  height: 480px;
 }
 
-.card-activity h2 {
-  //font-size: 16px;
-  //font-weight: bold;
-  margin-top: 0;
+.card-activity-right {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card-activity .inactive-card-title i {
-  padding-left: 50px;
-}
-
-.card-activity p {
-  font-size: 8px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-activity .card-activity-infos {
-  padding: 16px;
-}
-.card-activity .card-activity-infos ul{
-    list-style: none;
-    display: inline;
-  }
-.text-details{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  i {
-    padding-right: 10px;
-  }
-}
-.row-activity {
-  padding-left: 15px;
-  margin-top: 20px;
-}
-
-.activity-choices {
+.card-activity-infos {
   display: flex;
   flex-grow: 1;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $white;
+  padding: 8px;
+  .card-activity-title {
+    color: $orange;
+    display: flex;
+    font-size: 32px;
+  }
+  .card-activity-title-details {
+    color: $orange;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+  .card-activity-description {
+    color: $black;
+    font-size: 12px;
+    vertical-align: middle;
+  }
 }
 
 .activity-choice {
   opacity: .4;
+  width: 900px;
   &:hover {
     opacity: 1;
     cursor: pointer;
@@ -78,9 +61,8 @@
     }
 }
 
-
-#activities {
-  display: flex;
+.hide-activity {
+  display: none;
 }
 
 .btn-arrow-left {
@@ -94,4 +76,12 @@
   background-color: $gray;
   text-align: center;
 
+}
+
+.activity-intensiveness-picker {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
 }

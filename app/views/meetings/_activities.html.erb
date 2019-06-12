@@ -1,0 +1,48 @@
+<div class="activity-choices">
+  <div id="activities" data-ids=<%= activities.map(&:id).to_json %>>
+  <% activities.each do |activity| %>
+    <div class="activity-choice fade-in hidden-slide">
+
+      <input type="radio" class="hidden hidden-slide" value="<%= activity.id %>" name="meeting[activity_ids][]" id="meeting_activity_ids_<%= activity.id %>">
+      <label for="meeting_activity_ids_<%= activity.id %>" class="hidden-slide">
+        <%= activity.name %>
+      </label>
+      <div class="card-activity">
+
+        <div class="card-activity-photo">
+          <%= image_tag(activity.photo) %>
+        </div>
+
+        <div class="card-activity-right">
+          <div class="card-activity-infos">
+            <div class="card-activity-title">
+                <%= activity.name %>
+                <%= activity.intensiveness.capitalize %>
+            </div>
+            <div class="card-activity-title-details">
+              <div>
+                <i class="far fa-clock pr-2"></i></i><%= "#{activity.duration} min" %>
+              </div>
+              <div>
+                <i class="fas fa-map-marker-alt pr-2"></i><%= activity.address %>
+              </div>
+            </div>
+            <div class="card-activity-description">
+              <%= activity.description %>
+            </div>
+          </div>
+          <div class="card-activity-map">
+            <!-- <div class="map" id='<%#= "map_#{activity.id}" %>'
+              style="width: 630px; height: 230px;"
+              data-markers-activity="<%#= {lng: activity.longitude, lat: activity.latitude}.to_json %>"
+              data-markers-company="<%#= {lng: @company.longitude, lat: @company.latitude}.to_json %>"
+              data-mapbox-api-key='<%#= ENV["MAPBOX_API_KEY"] %>'>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+  </div>
+</div>
