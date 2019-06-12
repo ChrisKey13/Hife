@@ -10,6 +10,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
 import { disableButtonIfAllNotFilled } from '../components/meeting_creation';
+//import { displayCards }
 
 slideToNext();
 slideToPrevious();
