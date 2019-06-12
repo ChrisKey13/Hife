@@ -3,12 +3,17 @@
   color: #E9664B;
 }
 .banner {
-  background-image: asset-url('landing.png');
-  background-size: cover;
-  background-position: center;
+  background-image: asset-url('banner.svg');
+  background-size: 82%;
+  background-repeat: no-repeat;
+  background-position: right;
+  position: relative;
   padding: 200px 0;
-  margin-top: -50px;
   margin-left: 20px;
+  margin-top: -50px;
+}
+.banner-scroll {
+  margin-top: 50px;
 }
 .landingpaddingcontent {
   margin-top: 32px;
