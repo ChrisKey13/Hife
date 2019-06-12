@@ -56,16 +56,16 @@ if (agendaBullets.length > 0) {
 }
 
 
-import { drawBackgroundColor, drawStacked } from '../plugins/googlecharts';
+import { drawBackgroundColor, drawStacked, drawLineChart, drawLineChart2 } from '../plugins/googlecharts';
 
-const lineChart = document.querySelector(".svg-container1");
-if (lineChart) {
+
+if (document.getElementById('chart_div') || document.getElementById('chart2_div') || document.getElementById('chart3_div') || document.getElementById('chart4_div'))  {
   drawBackgroundColor();
-}
-const stackchart = document.querySelector(".svg-container2");
-if (stackchart) {
   drawStacked();
-}
+  drawLineChart();
+  drawLineChart2();
+};
+
 
 // map to unhide once working
 
