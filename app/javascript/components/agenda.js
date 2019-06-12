@@ -13,26 +13,25 @@ const clickToAddAgendaBullet = () => {
     agendaBullets = document.querySelectorAll(".agenda-bullets");
     number = agendaBullets.length;
     const htmlBullet = `
-        <div class="agenda-bullets">
-          <div class="form-group string optional meeting_agenda${number}_title">
-            <label class="form-control-label string optional" for="meeting_agenda${number}_title">Item title ${number + 1}</label>
-            <input class="form-control string optional" type="text" name="meeting[agenda${number}][title]" id="meeting_agenda${number}_title">
+        <div class="agenda-bullets"> \
+          <div class="form-group string optional meeting_agenda${number}_title"> \
+            <label class="form-control-label string optional" for="meeting_agenda${number}_title">Item title ${number + 1}</label> \
+            <input class="form-control string optional" type="text" name="meeting[agendas][${number}][title]" id="meeting_agenda${number}_title"> \
           </div>
           <div class="agenda-bullet-section i-${number} show">
             <div class="form-group text optional meeting_agenda${number}_description">
               <label class="form-control-label text optional" for="meeting_agenda${number}_description">Item description</label>
-              <textarea class="form-control text optional" name="meeting[agenda${number}][description]" id="meeting_agenda${number}_description">
-              </textarea>
+              <textarea class="form-control text optional" name="meeting[agendas][${number}][description]" id="meeting_agenda${number}_description"></textarea>
             </div>
             <div class="form-group range optional meeting_agenda${number}_duration">
               <label class="range optional" for="text-input-agenda-slider-${number}">Duration</label>
-              <input class="form-control-range numeric range optional" step="5" value="15" min="5" max="120" id="text-input-agenda-slider-${number}" type="range" name="meeting[agenda${number}][duration]">
+              <input class="form-control-range numeric range optional" step="5" value="15" min="5" max="120" id="text-input-agenda-slider-${number}" type="range" name="meeting[agendas][${number}][duration]">
             </div>
             <output class="agenda-duration" id="agenda-duration id-${number}">15 min</output>
             <div class="form-group select required meeting_agenda${number}_user">
               <label class="form-control-label select required" for="meeting_agenda${number}_user">Collaborator in charge <abbr title="required">*</abbr>
               </label>
-              <select class="form-control select required" name="meeting[agenda${number}][user]" id="meeting_agenda${number}_user">
+              <select class="form-control select required" name="meeting[agendas][${number}][user]" id="meeting_agenda${number}_user">
                 <option value="14">Vincent Despatin</option>
                 <option value="15">Mikael Garriguet</option>
                 <option value="16">Clément Pecastaings</option>

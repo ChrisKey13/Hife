@@ -18,20 +18,24 @@ class MeetingsController < ApplicationController
   def create
     @meeting = Meeting.new(
       name: meeting_params["name"],
-      start_time: meeting_params["date"],
-      available_duration: meeting_params["available_duration"],
+      start_time: DateTime.strptime(meeting_params["date"], '%Y-%m-%d %H:%M'),
+      available_duration: meeting_params["duration"],
       description: meeting_params["meeting_description"]
     )
     @meeting.team = Team.find(meeting_params["team"])
-    @meeting.activity = Activity.find(meeting_params["activity"])
-    @agenda = Agenda.new(
-      meeting: @meeting,
-      title: agenda_params["title"],
-      duration: agenda_params["duration"],
-      description: agenda_params["description"],
-      user_id: agenda_params["user"]
-    )
-    if @meeting.save && @agenda.save
+
+    (0..find_number_of_bullet_in_agenda).to_a.each do |number|
+      Agenda.create(
+        meeting: @meeting,
+        title: meeting_params[:agendas][number.to_s][:title],
+        duration: meeting_params[:agendas][number.to_s][:duration],
+        description: meeting_params[:agendas][number.to_s][:description],
+        user_id: meeting_params[:agendas][number.to_s][:user]
+      )
+    end
+    @meeting.activity = Activity.find(meeting_params["activity_ids"][1])
+
+    if @meeting.save
       redirect_to dashboard_path
     else
       render :new
@@ -41,10 +45,12 @@ class MeetingsController < ApplicationController
   private
 
   def meeting_params
-    params.require(:meeting).permit(:name, :date, :available_duration, :meeting_description, :team, :activity)
+    params.require(:meeting).permit(:name, :date, :duration, :meeting_description, :team, activity_ids: [], agendas: {})
   end
 
-  def agenda_params(identification)
-    params.require(":agenda_#{identification}").permit(:title, :description, :duration, :user)
+  def find_number_of_bullet_in_agenda
+    i = 0
+    i += 1 unless params["agenda#{i}"].nil?
+    return i
   end
 end
