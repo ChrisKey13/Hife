@@ -4,8 +4,6 @@ import "../plugins/flatpickr";
 import { loadDynamicBannerText } from '../components/banner';
 import "../components/slick";
 
-import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
-import { initMapbox } from '../plugins/init_mapbox';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
 import { disableButtonIfAllNotFilled } from '../components/meeting_creation';
@@ -59,15 +57,27 @@ if (agendaBullets.length > 0) {
 import { drawBackgroundColor, drawStacked, drawLineChart, drawLineChart2 } from '../plugins/googlecharts';
 
 
-if (document.getElementById('chart_div') || document.getElementById('chart2_div') || document.getElementById('chart3_div') || document.getElementById('chart4_div'))  {
+if (document.getElementById('chart_div')) {
   drawBackgroundColor();
+}
+
+if (document.getElementById('chart2_div')) {
   drawStacked();
+
+}
+
+if (document.getElementById('chart3_div')) {
   drawLineChart();
+
+}
+if (document.getElementById('chart4_div')) {
   drawLineChart2();
-};
+}
 
 
 // map to unhide once working
+import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+import { initMapbox } from '../plugins/init_mapbox';
 
-// initMapbox();
+initMapbox();
 
