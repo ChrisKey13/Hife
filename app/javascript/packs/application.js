@@ -57,12 +57,22 @@ if (agendaBullets.length > 0) {
 import { drawBackgroundColor, drawStacked, drawLineChart, drawLineChart2 } from '../plugins/googlecharts';
 
 
-if (document.getElementById('chart_div') || document.getElementById('chart2_div') || document.getElementById('chart3_div') || document.getElementById('chart4_div'))  {
+if (document.getElementById('chart_div')) {
   drawBackgroundColor();
+}
+
+if (document.getElementById('chart2_div')) {
   drawStacked();
+
+}
+
+if (document.getElementById('chart3_div')) {
   drawLineChart();
+
+}
+if (document.getElementById('chart4_div')) {
   drawLineChart2();
-};
+}
 
 
 // map to unhide once working
