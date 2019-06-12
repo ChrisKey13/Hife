@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="google-signin-client_id" content="client-id.apps.googleusercontent.com">
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script>
+      google.charts.load('current', {packages: ['corechart', 'line']});
+    </script>
+    <title>Hife</title>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <title><%= meta_title %></title>
@@ -25,13 +30,15 @@
     <meta name="twitter:description" content="<%= meta_description %>">
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
-        <%= csrf_meta_tags %>
-        <%= action_cable_meta_tag %>
-        <%= stylesheet_link_tag 'application', media: 'all' %>
-        <%= stylesheet_pack_tag 'application', media: 'all' %>
 
         <!-- check Favicon -->
     <%= favicon_link_tag %>
+
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
+
   </head>
   <body>
     <% unless params[:controller] =~ /sessions/ || params[:controller] =~ /registrations/ || current_page?(dashboard_url) || current_page?(new_meeting_url) || params[:controller] =~ /dashboard/ %>
@@ -47,6 +54,5 @@
     <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
  -->
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </body>
 </html>

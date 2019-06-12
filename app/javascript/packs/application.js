@@ -18,7 +18,7 @@ import { mainActivityMaker } from '../components/activity_master';
 slideToNext();
 slideToPrevious();
 const activities = document.querySelectorAll(".activity-choice");
-if (activities) {
+if (activities.length>0) {
   selectCardActivity();
   mainActivityMaker();
 }
