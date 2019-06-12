@@ -56,12 +56,12 @@
         <h2>Please, detail the agenda</h2>
         <div class="agenda-bullets">
           <%= f.simple_fields_for @agenda do |a| %>
-            <%= a.input :title, label: "Item title 1" %>
+            <%= a.input :title, label: "Item title 1", input_html: { name:"meeting[agendas][0][title]" } %>
             <div class="agenda-bullet-section i-0 show">
-              <%= a.input :description, label: "Item description" %>
-              <%= a.input :duration, label: "Duration", as: :range, input_html: { step: 5, value: 15,  min: 5, max: 120, id: "text-input-agenda-slider-0" } %>
+              <%= a.input :description, label: "Item description", input_html: { name:"meeting[agendas][0][description]" } %>
+              <%= a.input :duration, label: "Duration", as: :range, input_html: { name: "meeting[agendas][0][duration]" , step: 5, value: 15,  min: 5, max: 120, id: "text-input-agenda-slider-0" } %>
               <output class="agenda-duration" id="agenda-duration id-0"></output>
-              <%= a.input :user, collection: @users, label_method: :his_name, label: "Collaborator in charge" %>
+              <%= a.input :user, collection: @users, label_method: :his_name, label: "Collaborator in charge", input_html: { name:"meeting[agendas][0][user]" } %>
             </div>
           <% end %>
           <div class="unhide-bullet in-0 btn-agenda-unhide"><i class="fas fa-arrow-circle-up"></i></div>
