@@ -1,33 +1,50 @@
 .agenda-duration {
-  color: $orange;
+  color: $red;
   text-align: center;
   width: 100%;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
 .add-agenda {
   margin: 16px 0;
+  background-color: white;
+  color: $orange;
+  border-color: $orange;
+  opacity:0.5;
+  &:hover {
+
+    color: $orange;
+    background-color: white;
+    border: 1px solid $orange;
+  }
 }
 
 
 .form-control-range {
   -webkit-appearance: none;
   width: 100%;
-  height: 15px;
+  height: 3px;
   border-radius: 5px;
-  background: #d3d3d3;
+  background: $blue;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
   transition: opacity .2s;
+  margin-top:8px;
+}
+
+.form-control[readonly] {
+background-color: white;
 }
 
 .form-control-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: $orange;
+  background: $red;
   cursor: pointer;
 }
 
@@ -35,7 +52,7 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: $orange;
+  background: $red;
   cursor: pointer;
 }
 
@@ -61,11 +78,11 @@
 }
 
 .btn-agenda-unhide {
-  color: $orange;
+  color: $orange3;
   opacity: 0.5;
   text-align: center;
   background-color: $white;
-  border: 1px solid $orange2;
+  border: 1px solid $orange;
   border-radius: 2px;
   &:hover {
     opacity: 1;
