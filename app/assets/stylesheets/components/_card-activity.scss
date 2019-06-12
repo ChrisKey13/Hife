@@ -11,6 +11,11 @@
   margin: 0 auto;
 }
 
+.activity-intensiveness-card {
+  display: flex;
+  justify-content: space-between;
+}
+
 .card-activity-photo img {
   object-fit: cover;
   width: 350px;

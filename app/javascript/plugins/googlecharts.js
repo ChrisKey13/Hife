@@ -69,7 +69,6 @@ function drawStacked() {
       };
       var chart = new google.visualization.BarChart(document.getElementById('chart2_div'));
       chart.draw(data, options);
-    }
+};
 
-
-export { drawStacked, drawBackgroundColor };
+export { drawBackgroundColor, drawStacked };
