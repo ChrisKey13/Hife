@@ -1,3 +1,10 @@
+require("chartkick");
+require("chart.js");
+
+
+// require(["https://www.gstatic.com/charts/loader.js"])
+
+function functionToExport() {
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawBackgroundColor);
 google.charts.setOnLoadCallback(drawStacked);
@@ -70,7 +77,7 @@ function drawStacked() {
       };
       var chart = new google.visualization.BarChart(document.getElementById('chart2_div'));
       chart.draw(data, options);
-    }
+    };
+};
 
-
-export { drawStacked, drawBackgroundColor };
+export { functionToExport };
