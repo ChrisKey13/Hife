@@ -3,7 +3,7 @@
   background-color: transparent;
   transition: 0.2s background-color ease;
 }
-.navbar-lewagon1 {
+.navbar-lewagon2 {
   justify-content: space-between;
   background-color: transparent;
   transition: 0.2s background-color ease;
@@ -13,11 +13,20 @@
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
+.navbar-lewagon2 .navbar-collapse {
+  flex-grow: 0;
+}
+
 
 .navbar-lewagon .navbar-brand img {
   width: 60px;
   height: 60px;
 }
+.navbar-lewagon2 .navbar-brand img {
+  width: 60px;
+  height: 60px;
+}
+
 .navbar-brand {
   width: 60px;
   height: 60px;

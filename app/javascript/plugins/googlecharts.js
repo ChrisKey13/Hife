@@ -39,8 +39,8 @@ function drawBackgroundColor() {
   }
 };
 
-
 function drawStacked() {
+
   if (document.getElementById('chart2_div')) {
       var data = google.visualization.arrayToDataTable([
         ['Month', 'Mood'],
@@ -49,7 +49,8 @@ function drawStacked() {
         ['April', 4.2],
         ['May', 4.7],
         ['June', 4.8]
-      ]);
+  ]);
+
 
       var options = {
         title: '',
@@ -77,6 +78,7 @@ function drawStacked() {
 
   }
 };
+
 
 
 function drawLineChart() {
