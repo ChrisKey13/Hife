@@ -17,6 +17,7 @@ import { mainActivityMaker } from '../components/activity_master';
 slideToNext();
 slideToPrevious();
 const activities = document.querySelectorAll(".activity-choice");
+
 if (activities.length > 0) {
   selectCardActivity();
   mainActivityMaker();
@@ -55,20 +56,18 @@ if (agendaBullets.length > 0) {
 }
 
 
-// import { functionToExport } from '../plugins/googlecharts';
+import { drawBackgroundColor, drawStacked } from '../plugins/googlecharts';
 
-// const lineChart = document.querySelector(".svg-container1");
-// console.log (lineChart);
-// const stackchart = document.querySelector(".svg-container2");
-// console.log(stackchart);
-// if (lineChart) {
-//   drawBackgroundColor();
-// }
-// if (stackchart) {
-//   drawStacked();
-// }
+const lineChart = document.querySelector(".svg-container1");
+if (lineChart) {
+  drawBackgroundColor();
+}
+const stackchart = document.querySelector(".svg-container2");
+if (stackchart) {
+  drawStacked();
+}
 
-// functionToExport();
+// map to unhide once working
 
 // initMapbox();
 
