@@ -176,15 +176,17 @@
       </div>
       <% end %>
       <p id="list-meetings"> All your coming meetings</p>
+      <% if @future_meetings[0] != @display_last %>
       <div class="next-meeting-parked">
-        <% if @future_meetings[0] != @display_last %>
           <img src=" <%=@future_meetings[0].activity.photo%> " alt="">
           <div class="next-meeting-parked-recap">
             <h2><%= @future_meetings[0].name %></h2>
              <p> <strong> <%=@future_meetings[0].activity.name%></strong></p>
           </div>
-        <% end %>
       </div>
+      <% else %>
+      <% end %>
+
     </div>
     <!-- <div class="container-past-meeting"></div> -->
 
