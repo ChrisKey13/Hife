@@ -32,7 +32,7 @@
         <%= image_tag('meeting1.svg') %>
       </div>
     </div>
-    <div class="slider-meeting fade-in">
+    <div class="slider-meeting fade-in hidden-slide">
       <div class="col-6 container-form2">
         <div class="logo-form">
           <%= image_tag "logo.png" %>
@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <div class="slider-meeting fade-in">
+    <div class="slider-meeting fade-in hidden-slide">
       <div class="col-6 container-form2">
         <div class="logo-form">
           <%= image_tag "logo.png" %>
@@ -85,7 +85,7 @@
                 <%= a.input :user, collection: @users, label_method: :his_name, label: "Collaborator in charge", input_html: { name:"meeting[agendas][0][user]" } %>
               </div>
             <% end %>
-            <div class="unhide-bullet in-0 btn-agenda-unhide"><i class="fas fa-arrow-circle-up"></i></div>
+            <div class="unhide-bullet in-0 btn-agenda-unhide"><i class="fas fa-chevron-up"></i></div>
           </div>
 
           <div class="add-agenda btn btn-info"><i class="fas fa-plus"></i> Add a bullet</div>
@@ -112,7 +112,7 @@
     </div>
 
 
-    <div class="slider-meeting fade-in">
+    <div class="slider-meeting fade-in hidden-slide">
       <div class="slider-activity-picker">
         <h2>Please, pick an activity</h2>
         <div class="card-activity-wrapper">

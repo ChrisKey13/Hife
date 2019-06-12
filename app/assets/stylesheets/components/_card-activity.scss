@@ -3,6 +3,7 @@
   display: flex;
   height: 70vh;
   width: 70vw;
+  margin: 0 auto;
 }
 
 .card-activity {
@@ -48,21 +49,21 @@
   }
   .card-activity-description {
     color: $black;
+    flex-grow: 1;
     font-size: 12px;
-    vertical-align: middle;
+    padding: auto 4px;
   }
 }
 
 .activity-choice {
-  opacity: .4;
-  width: 900px;
+  width: 800px;
+  margin: 0 16px;
+  border-radius: 4px;
   &:hover {
-    opacity: 1;
     cursor: pointer;
   }
   &.checked {
-      opacity: 1;
-      border: 4px solid $green;
+      border: 3px solid $orange;
     }
 }
 
@@ -71,16 +72,46 @@
 }
 
 .btn-arrow-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   width: 42px;
-  background-color: $gray;
+  color: $orange3;
+  opacity: 0.5;
   text-align: center;
+  vertical-align: middle;
+  background-color: $white;
+  border: 1px solid $orange;
+  border-radius: 2px;
+  font-size: 42px;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .btn-arrow-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   width: 42px;
-  background-color: $gray;
+  color: $orange3;
+  opacity: 0.5;
   text-align: center;
+  background-color: $white;
+  border: 1px solid $orange;
+  border-radius: 2px;
+  font-size: 42px;
+  &:hover {
+    opacity: 1;
+  }
+}
 
+#map {
+ width: 100%;
+ height: 230px;
+ position: absolute;
+ margin:0;
+ z-index:1;
 }
 
 .activity-intensiveness-picker {

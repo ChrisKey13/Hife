@@ -46,14 +46,14 @@ const clickToAddAgendaBullet = () => {
               </select>
             </div>
           </div>
-          <div class="unhide-bullet in-${number} btn-agenda-unhide"><i class="fas fa-arrow-circle-up"></i></div>
+          <div class="unhide-bullet in-${number} btn-agenda-unhide"><i class="fas fa-chevron-up"></i></div>
         </div>
         `;
     addAgendaBulletHTML(htmlBullet);
     const previousBullet = agendaBullets[number - 1].querySelector('.agenda-bullet-section');
     previousBullet.classList.remove('show');
     setTimeout(function() {previousBullet.classList.add('hide')}, 600);
-    agendaBullets[number - 1].querySelector(`.unhide-bullet.in-${number - 1}`).innerHTML = `<i class="fas fa-arrow-circle-down"></i>`;
+    agendaBullets[number - 1].querySelector(`.unhide-bullet.in-${number - 1}`).innerHTML = `<i class="fas fa-chevron-down"></i>`;
     toggleToUnhide(number);
     addOutputToSliderBullet(number);
   });
@@ -75,11 +75,11 @@ const toggleToUnhide = (index) => {
     if (agendaBulletSection.classList.contains('show')) {
       agendaBulletSection.classList.toggle("show");
       setTimeout(function() {agendaBulletSection.classList.toggle("hide")}, 600);
-      unhideBullet.innerHTML = `<i class="fas fa-arrow-circle-down"></i>`;
+      unhideBullet.innerHTML = `<i class="fas fa-chevron-down"></i>`;
     } else {
       agendaBulletSection.classList.toggle("hide");
       setTimeout(function() {agendaBulletSection.classList.toggle("show")}, 200)
-      unhideBullet.innerHTML = `<i class="fas fa-arrow-circle-up"></i>`;
+      unhideBullet.innerHTML = `<i class="fas fa-chevron-up"></i>`;
     }
   })
 };
