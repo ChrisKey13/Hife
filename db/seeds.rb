@@ -336,7 +336,8 @@ activities_parameters = [
   },
   {
     name: "Swedish Fit",
-    description: "9 rue alphonse Baudin 75011 Paris",
+    description: "Swedish Fit is a complete sport developed in collaboration with doctors, physiotherapists and osteopaths.
+    Each session is structured in several sequences for an optimal stimulation of the cardiovascular system, muscles and joints preserving the physical integrity of every participant",
     address: "9-11 Rue de Malte, 75011 Paris",
     intensiveness: "High",
     photo: "https://i.f1g.fr/media/figaro/orig/2016/01/20/XVM2476d366-bf7a-11e5-936d-d2bfcae1fcdd.jpg",
