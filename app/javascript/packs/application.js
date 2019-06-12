@@ -1,3 +1,5 @@
+require("chartkick")
+require("chart.js")
 import "bootstrap";
 import "../plugins/flatpickr";
 import { slideToNext, slideToPrevious, slideToRight, slideToLeft, selectCardActivity } from "../components/carousel_slider";
@@ -6,6 +8,7 @@ import "../components/slick";
 
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import { initMapbox } from '../plugins/init_mapbox';
+import { drawBackgroundColor } from '../plugins/googlecharts';
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();

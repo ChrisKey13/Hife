@@ -471,6 +471,26 @@ main {
   font-size: 11px;
   left: 350px;
 }
+  .date-meeting-past {
+    color: $red;
+  font-size: 10px;
+  margin-top: 10px;
+  opacity: 0.7;
+  }
+  .card-dashcard {
+    background-color: white;
+    height: 65vh;
+    border-radius: 5px;
+    margin: 12px;
+  }
+  .orangebg1 {
+    background-color: $orange2;
+    height: 10vh;
+  }
+  .orangebg2 {
+    background-color: $orange4;
+    height: 10vh;
+  }
 
 .date-meeting-past {
   color: $red;
@@ -484,17 +504,46 @@ opacity: 0.7;
   border-radius: 5px;
   margin: 12px;
 }
+
 .svg-container1 {
   position: absolute;
   top: -30px;
   left: -20px;
   width: 100%;
-  height: 100%;
 }
 .svg-container2 {
   position: absolute;
   top: -30px;
   left: 0px;
   width: 100%;
-  height: 100%;
+}
+.icon-analytics {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-top: -12px;
+  margin-right: 16px;
+}
+.overflowavatar {
+  overflow-y: hidden;
+}
+.texttoggle {
+  text-decoration: none;
+}
+.fa-check-circle {
+  color: $green;
+}
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.0425);
+}
+.icon-anal {
+  font-size: 24px;
+  margin-right: 26px;
+  color: $orange1;
+}
+.card-metric {
+background-color: $gray;
+padding-top: 8px;
+padding-right: 8px;
+border-radius: 4px;
 }

@@ -20,6 +20,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
 gem 'date_format'
+gem 'chartkick'
+
 
 
 # gem for seeds photos
