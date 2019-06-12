@@ -2,7 +2,6 @@ require("chartkick")
 require("chart.js")
 import "bootstrap";
 import "../plugins/flatpickr";
-import { slideToNext, slideToPrevious, slideToRight, slideToLeft, selectCardActivity } from "../components/carousel_slider";
 import { loadDynamicBannerText } from '../components/banner';
 import "../components/slick";
 
@@ -13,14 +12,15 @@ initUpdateNavbarOnScroll();
 import { disableButtonIfAllNotFilled } from '../components/meeting_creation';
 //import { displayCards }
 
+
+import { slideToNext, slideToPrevious, selectCardActivity } from "../components/carousel_slider";
+import { mainActivityMaker } from '../components/activity_master';
 slideToNext();
 slideToPrevious();
-
 const activities = document.querySelectorAll(".activity-choice");
 if (activities) {
   selectCardActivity();
-  slideToRight();
-  slideToLeft();
+  mainActivityMaker();
 }
 
 
@@ -34,11 +34,12 @@ if (banner) {
 }
 
 
-import { addOutputToSlider } from '../components/meeting_slider';
+import { addOutputToSliderMeeting, addOutputToSliderBullet } from '../components/meeting_slider';
 
 const agendaSliders = document.querySelectorAll(".form-group.range");
 if (agendaSliders.length > 0) {
-  addOutputToSlider(0);
+  addOutputToSliderBullet(0);
+  addOutputToSliderMeeting();
 }
 
 
@@ -65,5 +66,9 @@ if (stackchart) {
   drawStacked();
 }
 
+// initMapbox();
 
-initMapbox();
+
+import { activitiesToReload } from '../components/activity_picker_slider'
+
+activitiesToReload();

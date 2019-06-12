@@ -19,7 +19,7 @@
         </div>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-6 form-right-img-meeting">
         <%= image_tag('meeting1.png') %>
       </div>
     </div>
@@ -27,7 +27,8 @@
       <div class="slider-form col-6">
         <h2>Please, give us team details</h2>
         <%= f.input :date, label: "When?", as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :available_duration, label: "Duration" %>
+        <%= f.input :duration, label: "Duration", as: :range, input_html: { step: 10, value: 30,  min: 10, max: 240, id: "text-input-meeting-slider" } %>
+        <output class="agenda-duration" id="meeting-duration-slider"></output>
         <%= f.input :meeting_description, label: "Short description" %>
         <%= f.input :team, collection: @teams, label: "Which team should attend?" %>
         <div class="slider-change">
@@ -46,7 +47,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-6 form-right-img-meeting">
         <%= image_tag('meeting2.png') %>
       </div>
     </div>
@@ -58,7 +59,7 @@
             <%= a.input :title, label: "Item title 1" %>
             <div class="agenda-bullet-section i-0 show">
               <%= a.input :description, label: "Item description" %>
-              <%= a.input :duration, label: "Duration", as: :range, input_html: { step: 5, value: 15,  min: 5, max: 120, id: "text-input-meeting-slider-0" } %>
+              <%= a.input :duration, label: "Duration", as: :range, input_html: { step: 5, value: 15,  min: 5, max: 120, id: "text-input-agenda-slider-0" } %>
               <output class="agenda-duration" id="agenda-duration id-0"></output>
               <%= a.input :user, collection: @users, label_method: :his_name, label: "Collaborator in charge" %>
             </div>
@@ -82,58 +83,40 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-6 form-right-img-meeting">
         <%= image_tag('meeting4.png') %>
       </div>
     </div>
-    <div class="slider-meeting fade-in">
-      <div class="slider-form">
-        <h2>Please, pick an activity</h2>
-        <div class="form-group">
-          <label class="control-label radio_buttons optional">Activities</label>
-          <input type="hidden" name="meeting[activity_ids][]" value="">
-            <% arraySelected = @activities[:low] %>
-            <div id="activities" data-ids=<%= arraySelected.map(&:id).to_json %>>
-            <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
-            <div class="activity-choices">
-            <% arraySelected.each do |activity| %>
-              <div class="activity-choice fade-in hidden-slide">
 
-              <input type="radio" class="hidden" value="<%= activity.id %>" name="meeting[activity_ids][]" id="meeting_activity_ids_<%= activity.id %>">
-              <label for="meeting_activity_ids_<%= activity.id %>">
-                <%= activity.name %>
-                <i class="fa fa-check"></i>
-              </label>
-              <div class="row-activity p-10">
-                <div class="card-complete">
-                  <div class="card-activity">
-                    <%= image_tag(activity.photo) %>
-                    <div class="card-activity-infos">
-                      <h2 class="inactive-card-title">
-                        <%= activity.name %>
-                        <%= activity.intensiveness %>
-                        <i class="fas fa-dumbbell"></i>
-                      </h2>
-                      <div class="text-details">
-                        <i class="far fa-clock"></i></i><p><%= "#{activity.duration} min" %></p>
-                        <i class="fas fa-map-marker-alt"></i><p><%= activity.address %></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="map" id='<%= "map_#{activity.id}" %>'
-                    style="width: 400px; height: 240px;"
-                    data-markers-activity="<%= {lng: activity.longitude, lat: activity.latitude}.to_json %>"
-                    data-markers-company="<%= {lng: @company.longitude, lat: @company.latitude}.to_json %>"
-                    data-mapbox-api-key='<%= ENV["MAPBOX_API_KEY"] %>'>
-                  </div>
-                </div>
-              </div>
-              </div>
-            <% end %>
+
+    <div class="slider-meeting fade-in">
+      <div class="slider-activity-picker">
+        <h2>Please, pick an activity</h2>
+        <div class="card-activity-wrapper">
+          <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
+          <label class="control-label radio_buttons optional hidden-slide">Activities</label>
+          <input type="hidden" name="meeting[activity_ids][]" value="">
+          <div id="card-activities-all">
+            <div class="activity-low hide-activity">
+              <%= render 'activities', activities: @activities[:low] %>
+            </div>
+            <div class="activity-medium active-activity">
+              <%= render 'activities', activities: @activities[:medium] %>
+            </div>
+            <div class="activity-high hide-activity">
+              <%= render 'activities', activities: @activities[:high] %>
+            </div>
           </div>
           <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
         </div>
-      </div>
+
+        <div class="activity-intensiveness-picker">
+          <%= f.simple_fields_for(:activities) do |b| %>
+            <%= b.input :intensiveness, label: "Intensiveness", as: :range, input_html: { step: 1, value: 2,  min: 1, max: 3, id: "intensiveness-pick-activity" } %>
+            <output class="intensiveness-picker" id="activity-picker">Medium</output>
+          <% end %>
+        </div>
+
         <div class="slider-change">
           <div class="slider-btn previous-btn">Previous</div>
           <%= f.submit "Create a meeting", class: "btn btn-primary" %>
@@ -148,6 +131,7 @@
           <div class="slider-indicators active">
           </div>
         </div>
+
       </div>
     </div>
   <% end %>
