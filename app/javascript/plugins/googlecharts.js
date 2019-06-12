@@ -37,41 +37,40 @@ function drawBackgroundColor() {
       chart.draw(data, options);
     };
 
-
 function drawStacked() {
-      var data = google.visualization.arrayToDataTable([
+  var data = new google.visualization.arrayToDataTable([
         ['Month', 'Mood'],
         ['February', 3.2],
         ['March', 3.9],
         ['April', 4.2],
         ['May', 4.7],
         ['June', 4.8]
-      ]);
+  ]);
 
-      var options = {
-        title: '',
-        chartArea: {width: '100%'},
-        isStacked: true,
-        hAxis: {
-          title: '',
-          baselineColor: 'none',
-          ticks: [],
-        },
-         curveType: 'function',
-         pointSize: 10,
-         animation:{
-           startup: true,
-           duration: 2000,
-           easing: 'in'
-        },
-        vAxis: {
-          title: ''
-        },
-        backgroundColor: '#ffffff'
-      };
-      var chart = new google.visualization.BarChart(document.getElementById('chart2_div'));
-      chart.draw(data, options);
+  var options = {
+    hAxis: {
+      title: '',
+      baselineColor: 'none',
+      ticks: [],
+    },
+    curveType: 'function',
+    pointSize: 10,
+    animation:{
+       startup: true,
+       duration: 3000,
+       easing: 'in'
+    },
+    vAxis: {
+      title: '',
+    },
+    legend: {position: 'none'},
+    backgroundColor: '#ffffff'
+  };
+
+  var chart = new google.visualization.AreaChart(document.getElementById('chart2_div'));
+  chart.draw(data, options);
 };
+
 
 
 function drawLineChart() {
@@ -94,7 +93,7 @@ function drawLineChart() {
     pointSize: 10,
     animation:{
        startup: true,
-       duration: 3000,
+       duration: 1000,
        easing: 'in'
     },
     vAxis: {

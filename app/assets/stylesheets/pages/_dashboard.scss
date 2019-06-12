@@ -479,7 +479,6 @@ main {
   }
   .card-dashcard {
     background-color: white;
-    height: 65vh;
     border-radius: 5px;
     margin: 12px;
   }
@@ -497,12 +496,6 @@ main {
 font-size: 10px;
 margin-top: 10px;
 opacity: 0.7;
-}
-.card-dashcard {
-  background-color: white;
-  height: 65vh;
-  border-radius: 5px;
-  margin: 12px;
 }
 
 .svg-container1 {
@@ -549,6 +542,8 @@ border-radius: 4px;
 }
 .card-body-member {
   background-color: $orange4;
+  widows: 50%;
+  margin: 0 auto;
   margin-top: 8px;
   margin-bottom: 4px;
   padding: 8px;
@@ -564,4 +559,18 @@ border-radius: 4px;
   width: 60%;
   margin-right: auto;
   margin-left: auto;
+}
+.figure-dash2 {
+  font-weight: 400;
+  font-size: 24px;
+}
+.divinside {
+  background-color: white;
+  padding: 20px;
+}
+.forsvg {
+  position: relative;
+}
+.forsvg2 {
+  position: relative;
 }
