@@ -222,16 +222,16 @@ background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  opacity: 0.3;
+  opacity: 0.5;
   color: $orange1;
 }
 
 .past-card-meeting p {
   font-size: 8px;
   line-height: 1.4;
-  opacity: .7;
+
   margin-bottom: 15px;
-  opacity: 0.3;
+  opacity: 0.5;
   //margin-top: 8px;
 }
 
@@ -290,7 +290,7 @@ background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
   font-size: 16px;
 }
 .card-meeting-infos-future .activity p{
-  color: gray;
+  color: #313030;
   font-size: 12px;
 }
 .card-meeting-infos-future .paragraph p{
@@ -365,6 +365,11 @@ background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
   color: $orange1;
   opacity:0.6;
   font-size: 12px;
+}
+
+.fa-plus-circle {
+  font-size: 50px;
+  color: white;
 }
 
 main {
@@ -467,7 +472,7 @@ main {
   position: absolute;
   /* right: 10px; */
   bottom: 128px;
-  color: #E9664B;
+  //color: $orange;
   font-size: 11px;
   left: 350px;
 }

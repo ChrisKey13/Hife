@@ -1,0 +1,52 @@
+.container-form {
+
+  max-width: 50%;
+  position: relative;
+  /* justify-content: center; */
+  //align-items: center;
+  //justify-content: center;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+#bold-meeting{
+  font-weight: bold;
+}
+
+.logo-form {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+
+}
+
+.logo-form img {
+  width:70px;
+}
+
+#light-recurency{
+  font-weight: 100;
+}
+
+#slider1 {
+    flex-direction: column;
+  /* justify-content: space-around; */
+  width: 60%;
+  border-top: 50px;
+  margin:0 auto;
+  //margin-left: 60px;
+  height: 200ox;
+  padding: 40px;
+  height: 500px;
+  border-radius: 15px;
+  /* padding-left: 100px; */
+}
+
+#change_orange {
+  color: $orange;
+}
+
+#bouton1 {
+  margin-left: 150px;
+  font-weight: bold;
+}

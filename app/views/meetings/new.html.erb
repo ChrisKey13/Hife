@@ -1,22 +1,31 @@
+
+
+
 <div class="meeting-creation-carousel">
   <%= simple_form_for :meeting, url: meetings_path, method: "post" do |f| %>
     <div class="slider-meeting active-slide fade-in show">
-      <div class="slider-form col-6">
-        <h2>Please, name your meeting</h2>
-        <p class="text-funnel mt-3 mb-3"><strong>Is it a recurring meeting ?</strong> You might want to specify it in the name.</p>
-        <%= f.input :name, label: "Meeting name", input_html: {class: "sign-up-label"} %>
-        <div class="slider-change">
-          <div class="slider-btn next-btn">Next</div>
-        <div class="slider-indicators-container">
-          <div class="slider-indicators active">
-          </div>
-          <div class="slider-indicators">
-          </div>
-          <div class="slider-indicators">
-          </div>
-          <div class="slider-indicators">
-          </div>
+      <div class="col-6 container-form">
+        <div class="logo-form">
+          <%= image_tag "logo.png" %>
+          <h4 class="pl-3 pt-2">Hife</h4>
         </div>
+        <div class="slider-form" id="slider1">
+          <h2 class=".display-funnel"> Name your meeting</h2>
+          <p class="text-funnel mt-3 mb-3"><span id="bold-meeting"> Is it a recurring meeting ?</span> <span id="light-recurency"> You might want to specify it in the name.</span></p>
+          <%= f.input :name, label: "Meeting name", input_html: {class: "sign-up-label"} %>
+          <div class="slider-change">
+            <div class="slider-btn next-btn" id="bouton1">Next</div>
+          <div class="slider-indicators-container">
+            <div class="slider-indicators active">
+            </div>
+            <div class="slider-indicators">
+            </div>
+            <div class="slider-indicators">
+            </div>
+            <div class="slider-indicators">
+            </div>
+          </div>
+          </div>
         </div>
       </div>
       <div class="col-6 form-right-img-meeting">
