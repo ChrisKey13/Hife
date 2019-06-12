@@ -9,8 +9,15 @@
 .add-agenda {
   margin: 16px 0;
   background-color: white;
-  color: $orange3;
-  border-color: $orange3;
+  color: $orange;
+  border-color: $orange;
+  opacity:0.5;
+  &:hover {
+
+    color: $orange;
+    background-color: white;
+    border: 1px solid $orange;
+  }
 }
 
 
