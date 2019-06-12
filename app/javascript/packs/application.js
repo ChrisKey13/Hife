@@ -1,5 +1,4 @@
-require("chartkick")
-require("chart.js")
+
 import "bootstrap";
 import "../plugins/flatpickr";
 import { loadDynamicBannerText } from '../components/banner';
@@ -18,7 +17,8 @@ import { mainActivityMaker } from '../components/activity_master';
 slideToNext();
 slideToPrevious();
 const activities = document.querySelectorAll(".activity-choice");
-if (activities.length>0) {
+
+if (activities.length > 0) {
   selectCardActivity();
   mainActivityMaker();
 }
@@ -57,6 +57,7 @@ if (agendaBullets.length > 0) {
 
 
 import { drawBackgroundColor, drawStacked } from '../plugins/googlecharts';
+
 const lineChart = document.querySelector(".svg-container1");
 if (lineChart) {
   drawBackgroundColor();
@@ -66,9 +67,7 @@ if (stackchart) {
   drawStacked();
 }
 
+// map to unhide once working
+
 // initMapbox();
 
-
-import { activitiesToReload } from '../components/activity_picker_slider'
-
-activitiesToReload();

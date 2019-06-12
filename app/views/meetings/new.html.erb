@@ -93,21 +93,25 @@
       <div class="slider-activity-picker">
         <h2>Please, pick an activity</h2>
         <div class="card-activity-wrapper">
-          <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
           <label class="control-label radio_buttons optional hidden-slide">Activities</label>
           <input type="hidden" name="meeting[activity_ids][]" value="">
           <div id="card-activities-all">
-            <div class="activity-low hide-activity">
+            <div class="activity-intensiveness-card activity-low hide-activity">
+              <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
               <%= render 'activities', activities: @activities[:low] %>
+              <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
             </div>
-            <div class="activity-medium active-activity">
+            <div class="activity-intensiveness-card activity-medium active-activity">
+              <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
               <%= render 'activities', activities: @activities[:medium] %>
+              <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
             </div>
-            <div class="activity-high hide-activity">
+            <div class="activity-intensiveness-card activity-high hide-activity">
+              <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
               <%= render 'activities', activities: @activities[:high] %>
+              <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
             </div>
           </div>
-          <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
         </div>
 
         <div class="activity-intensiveness-picker">
