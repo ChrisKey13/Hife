@@ -101,7 +101,13 @@ height: 500px;
   padding-left: 250px;
 }
 
+.container-home-dashboard{
+  margin-left: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  //margin-top: 20px;
 
+}
 
 .card-users {
   margin-top: 50px;
@@ -111,12 +117,13 @@ height: 500px;
   border-radius: 5px;
 }
 .container-graph {
-  background-color: &gray;
-  //height: 300px;
+  //display: grid;
+  background-color: $gray;
+  //grid-template-columns: 1fr 1fr;
   border-radius: 1px;
-  text-align: center;
+  //text-align: center;
   align-center: center;
-  padding-left: 150px;
+  //padding-left: 150px;
 
 }
 .nav-pills .nav-link {
@@ -134,20 +141,26 @@ height: 500px;
   //grid-template-columns: 60px 60px;
   //grid-template-rows: 90px 90px;
   //grid-gap: 28px;
+  overflow: scroll;
   padding: 25px;
   background-color: white;
-  width: 700px;
+  width: 600px;
   margin: 20px;
   padding-left: 40px;
+  margin-left:50px;
+  height: 580px;
 }
 
 .past {
   border: 0px;
-  color: $orange1;
-  margin-bottom: 15px;
+  //color: $orange1;
+  margin-top: 15px;
   opacity: 0.4;
   font-weight: bold;
+}
 
+.past p {
+  margin-bottom: 7px;
 }
 
 .title-company{
@@ -168,51 +181,53 @@ height: 500px;
   margin: 20px;
   padding: 25px;
   background-color: white;
-  width: 700px;
+  width: 580px;
   font-weight: bold;
+}
+
+.container-new-meeting p {
+  color: black;
+  margin-top:10px;
 }
 
 .container-past-meeting{
   background-color: white;
 }
 
-.card-meeting {
-
+.past-card-meeting {
   overflow: hidden;
-  height: 50px;
+  position: relative;
+  height: 200px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  margin-top: 30px;
-  width: 600px;
+  //width: 450px;
+  margin-bottom: 60px;
 
 }
 
-.card-meeting img {
+.past-card-meeting img {
   height: 100%;
-  width: 120px;
+  width: 50%;
   object-fit: cover;
-  opacity: 0.6;
+  //opacity: 0.6;
 }
-
-
-
 
 .past-photos {
 background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
 }
 
-.card-meeting h2 {
+.past-card-meeting h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  padding-top: 15px;
   opacity: 0.3;
+  color: $orange1;
 }
 
-.card-meeting p {
-  font-size: 12px;
+.past-card-meeting p {
+  font-size: 8px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 15px;
@@ -220,40 +235,39 @@ background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
   //margin-top: 8px;
 }
 
-.card-meeting-infos {
+.past-card-meeting-infos {
   padding: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  //display: flex;
+  //align-items: center;
+  //justify-content: space-between;
   width: 100%;
-  background-color: $orange4;
-}
-
-.card-meeting .card-meeting-infos ul {
-  //display: inline;
-  display: flex;
-  align-items: center;
 }
 
 .card-meeting-future {
   overflow: hidden;
-  height: 50px;
+  //height: 50px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
+  //display: flex;
   align-items: center;
-  margin-top: 30px;
-  width: 600px;
+  //margin-top: 30px;
+  //width: 600px;
+}
+
+
+
+#list-meetings {
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .card-meeting-future img {
-  height: 100%;
-  width: 120px;
+  height: 200px;
+  width: 100%;
   object-fit: cover;
 }
 
 .card-meeting-future h2 {
-
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -261,36 +275,63 @@ background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
   padding-bottom: 5px;
 }
 
-.card-meeting-future p {
+.card-meeting-infos-future {
+  padding: 20px;
+  //display: flex;
+  align-: left;
+  //justify-content: space-between;
+  width: 100%;
+  background-color: white;
+  position: relative;
+}
+
+.card-meeting-infos-future .title {
+  color: orange;
+  font-size: 16px;
+}
+.card-meeting-infos-future .activity p{
+  color: gray;
+  font-size: 12px;
+}
+.card-meeting-infos-future .paragraph p{
+  color: gray;
+  font-size: 9px;
+}
+
+.next-meeting-parked {
+  overflow: hidden;
+  height: 80px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  //width: 450px;
+  margin-top: 5px;
+}
+
+.next-meeting-parked img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.next-meeting-parked h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.next-meeting-parked p {
   font-size: 12px;
   line-height: 1.4;
-
-  //margin-bottom: 15px;
-  color: white;
-  //margin-top: 8px;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
 }
 
-.card-meeting-infos-future {
-  padding: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  background-color: $orange2;
+.next-meeting-parked .next-meeting-parked-recap {
+  padding: 16px;
 }
-
-.card-meeting-future .card-meeting-infos ul {
-  //display: inline;
-  display: flex;
-  align-items: center;
-}
-
-//.card-trip-user {
-  //position: absolute;
-  //right: 16px;
-  //top: -20px;
-  //width: 20px;
-//}
 
 .card-meeting-pricing {
   padding: 0px;
@@ -309,12 +350,22 @@ background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
   padding-top: 10px;
 }
 
-
 .card-meeting-pricing h3 {
   font-size: 10px;
   font-weight: bold;
   opacity: 0.4;
   }
+
+.next-meeting-parked {
+  background-color: white;
+}
+
+.past-card-meeting-infos .sticky-date {
+  position: absolute;
+  color: $orange1;
+  opacity:0.6;
+  font-size: 12px;
+}
 
 main {
   background-color: #f4F4F4;
@@ -412,12 +463,14 @@ main {
 .rightdivdash {
   flex: 0 0 200px;
 }
-  .date-meeting {
-  color: $red;
-  font-size: 10px;
-  margin-top: 10px;
-  }
-
+.card-meeting-infos-future .date-meeting {
+  position: absolute;
+  /* right: 10px; */
+  bottom: 128px;
+  color: #E9664B;
+  font-size: 11px;
+  left: 350px;
+}
   .date-meeting-past {
     color: $red;
   font-size: 10px;
@@ -438,6 +491,20 @@ main {
     background-color: $orange4;
     height: 10vh;
   }
+
+.date-meeting-past {
+  color: $red;
+font-size: 10px;
+margin-top: 10px;
+opacity: 0.7;
+}
+.card-dashcard {
+  background-color: white;
+  height: 65vh;
+  border-radius: 5px;
+  margin: 12px;
+}
+
 .svg-container1 {
   position: absolute;
   top: -30px;
