@@ -17,11 +17,10 @@
   justify-content: space-between;
 }
 
-.card-activity-photo img {
-  object-fit: cover;
-  width: 350px;
-  height: 480px;
+.card-activity-photo {
+  background-size: cover;
   border-radius: 4px 0px 0px 4px;
+  width: 300px;
 }
 
 .card-activity-right {
@@ -34,6 +33,7 @@
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+  width: 400px;
   justify-content: space-between;
   background-color: $white;
   padding: 8px;
