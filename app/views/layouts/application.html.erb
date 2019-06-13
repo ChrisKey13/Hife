@@ -41,14 +41,10 @@
 
   </head>
   <body>
-    <% unless devise_controller? || controller_name == 'dashboard' || current_page?(new_meeting_url) %>
+    <% unless devise_controller? || controller_name == 'dashboard' || action_name == 'new' && controller_name == 'meetings' %>
       <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
-    <%= devise_controller? %>
-    <%= controller_name %>
-    <%= controller_name == 'dashboard' %>
-    <%= current_page?(new_meeting_url) %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
