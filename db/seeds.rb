@@ -99,8 +99,8 @@ users_parameters = [
   },
   {
     first_name: "Christophe",
-    last_name: "Boucquet",
-    email: "Christophe.boucquet@kickmaker.com",
+    last_name: "Bouquet",
+    email: "Christophe.bouquet@kickmaker.com",
     password: "123456",
     company: kick_maker,
     photo: "https://uinames.com/api/photos/male/20.jpg"
@@ -267,7 +267,7 @@ activities_parameters = [
     People of all age groups can play and enjoy this sport. On average you burn 500 calories per hour while playing table tennis.",
     address: "9 rue alphonse Baudin 75011 Paris",
     intensiveness: "Medium",
-    photo: "https://images.unsplash.com/photo-1519162952575-c6c7199502a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    photo: "http://www.cttlachauxdefonds.ch/wp-content/uploads/2014/08/imgtable3.jpg",
     #"https://images.unsplash.com/photo-1511067007398-7e4b90cfa4bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
     duration: 60,
     pas: 8000
@@ -281,7 +281,7 @@ activities_parameters = [
     A 2v2 match provide ample opportunities for one to socialise to meet new people whilst also giving one the experience of an intense double match!",
     address: "9 rue alphonse Baudin 75011 Paris",
     intensiveness: "Medium",
-    photo: "https://fiitli.com/wp-content/uploads/2019/01/La-Cantine-VS-Ge%CC%81omensura.jpg",
+    photo: "https://images.unsplash.com/photo-1553258223-6e8add562470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     duration: 45,
     pas: 7000
   },
@@ -319,7 +319,7 @@ activities_parameters = [
     description: "Exercise is the ultimate mood booster. Reduce stress and anxiety with your collegues, stay motivated, promote healthy competition and make your average gym session so much more fun.",
     address: "9 Passage Thiéré, 75011 Paris",
     intensiveness: "High",
-    photo: "https://images.unsplash.com/photo-1519317245869-d6943e4a4f9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    photo: "https://images.pexels.com/photos/28080/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     duration: 35,
     pas: 8000
   },
@@ -329,7 +329,7 @@ activities_parameters = [
     You will challenge yourself, conquer fears, burn calories (820 for 1 hour climbing) and you will combine cardio and strength into a single workout.",
     address: "35 Rue des Grands Champs, 75020 Paris",
     intensiveness: "High",
-    photo: "https://www.arkose.com/wp-content/uploads/2017/01/%C2%A9-Guillaume-Pellion_1_site-1024x576.jpg",
+    photo: "https://images.unsplash.com/photo-1529861820-012514cbd6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     #"https://images.unsplash.com/photo-1543076599-cff029197216?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
     duration: 45,
     pas: 8000
@@ -340,7 +340,7 @@ activities_parameters = [
     Each session is structured in several sequences for an optimal stimulation of the cardiovascular system, muscles and joints preserving the physical integrity of every participant",
     address: "9-11 Rue de Malte, 75011 Paris",
     intensiveness: "High",
-    photo: "https://i.f1g.fr/media/figaro/orig/2016/01/20/XVM2476d366-bf7a-11e5-936d-d2bfcae1fcdd.jpg",
+    photo: "https://images.unsplash.com/photo-1554284126-aa88f22d8b74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1714&q=80",
     duration: 50,
     pas: 7500
   },
