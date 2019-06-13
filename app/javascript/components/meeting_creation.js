@@ -5,7 +5,7 @@ const disableButtonIfAllNotFilled = () => {
     submitInputs.forEach((formInput) => {
       submitArray.push(formInput);
     });
-  const submitButton = submitArray[submitArray.length - 1];
+  const submitButton = document.querySelector('.btn-success');
   let formInputs = form.querySelectorAll('input');
   const agendaBullets = document.querySelectorAll(".agenda-bullets");
   const number = agendaBullets.length - 1;
@@ -32,9 +32,7 @@ const disableButtonIfAllNotFilled = () => {
           able[index] = false;
         }
       });
-      // able.splice(-1,1);
       if (validArray(able)) {
-        console.log('toto');
         submitButton.disabled = false;
       }
       });

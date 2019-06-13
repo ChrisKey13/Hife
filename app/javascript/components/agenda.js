@@ -14,7 +14,6 @@ const clickToAddAgendaBullet = () => {
     number = agendaBullets.length;
 
     const meetingAgendaUser = document.getElementById('meeting_agenda_user');
-    console.log(meetingAgendaUser);
     const optionsFromTeam = meetingAgendaUser.querySelectorAll('option');
     let htmlTeam;
 
