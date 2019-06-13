@@ -44,7 +44,7 @@
           <%= f.input :team, collection: @teams, label: "Which team should attend?" %>
           <div class="slider-change">
             <div class="slider-btn previous-btn slider-btn-previous-small">Previous</div>
-            <div class="slider-btn next-btn slider-btn-next-small">Next</div>
+            <div class="slider-btn next-btn slider-btn-next-small">Next <i class="fas fa-arrow-right"></i></div>
           </div>
         </div>
         <div class="slider-indicators-container">
@@ -74,7 +74,7 @@
           <h2 class="display-funnel"> Detail the agenda</h2>
           <div class="agenda-bullets mt-2">
             <%= f.simple_fields_for @agenda do |a| %>
-              <%= a.input :title, label: "Give it a title", input_html: { name:"meeting[agendas][0][title]" } %>
+              <%= a.input :title, label: "What is the first point ?", input_html: { name:"meeting[agendas][0][title]" } %>
               <div class="agenda-bullet-section i-0 show mt-2">
                 <%= a.input :description, label: "Enter a description", input_html: { name:"meeting[agendas][0][description]" } %>
                 <%= a.input :duration, label: "Select the duration", as: :range, input_html: { name: "meeting[agendas][0][duration]" , step: 5, value: 15,  min: 5, max: 120, id: "text-input-agenda-slider-0", class: "mt-2" } %>
@@ -88,7 +88,7 @@
           <div class="add-agenda btn btn-info"><i class="fas fa-plus"></i> Add a bullet</div>
           <div class="slider-change mt-4">
             <div class="slider-btn previous-btn slider-btn-previous-small">Previous</div>
-            <div class="slider-btn next-btn slider-btn-next-small">Next</div>
+            <div class="slider-btn next-btn slider-btn-next-small">Next <i class="fas fa-arrow-right"></i></div>
           </div>
         </div>
         <div class="slider-indicators-container">
@@ -111,19 +111,18 @@
 
     <div class="slider-meeting fade-in hidden-slide">
       <div class="slider-activity-picker">
-        <div class="slider-activity-sidebar">
-          <h2>Choose an activity</h2>
+        <div class="slider-activity-sidebar d-flex flex-column align-items-center justify-content-evenly">
+          <h2 class ="display-funnel2 text-center display-activity" >Choose <br>Your Activity</h2>
           <div class="activity-intensiveness-picker">
             <%= f.simple_fields_for(:activities) do |b| %>
-              <%= b.input :intensiveness, label: "Intensiveness", as: :range, input_html: { step: 1, value: 2,  min: 1, max: 3, id: "intensiveness-pick-activity" } %>
-              <output class="intensiveness-picker" id="activity-picker">Medium</output>
+              <%= b.input :intensiveness, label: "Select Your Intensiveness ", as: :range, input_html: { step: 1, value: 2,  min: 1, max: 3, id: "intensiveness-pick-activity" } %>
+              <output class="intensiveness-picker mt-2" id="activity-picker">Medium</output>
             <% end %>
           </div>
-
-        <div class="slider-change">
-          <div class="slider-btn previous-btn slider-btn-previous-small">Previous</div>
-          <%= f.submit "Create a meeting", class: "btn btn-success", disabled: true %>
+        <div class="slider-change2 d-flex flex-column align-items-center justify-content-evenly">
         </div>
+          <%= f.submit "Create your meeting", class: " btn btn-success slider-btn-next-small1", disabled: true %>
+
       </div>
         <div class="activity-meeting-container">
 
@@ -160,6 +159,7 @@
           </div>
         </div>
 
+          <div class="slider-btn previous-btn slider-btn-previous-small1 mt-2">Previous</div>
       </div>
     </div>
   <% end %>

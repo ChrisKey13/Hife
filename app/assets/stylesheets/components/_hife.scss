@@ -188,3 +188,25 @@ font-weight: 300;
   margin: 0px auto;
   margin-bottom: 0px;
 }
+.display-funnel2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+}
+ .btn-success:disabled {
+    color: #ffffff;
+    background-color: $red;
+    border-color: $red;
+    &:hover {
+      background-color: $green;
+      border-color: $green;
+    }
+}
+#boutonpreviousactivity {
+  position: absolute;
+  bottom: 100px;
+  right: 48px
+}
