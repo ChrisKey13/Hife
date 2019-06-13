@@ -430,7 +430,7 @@ meetings_parameters = [
     description: "Vision - Energy - postivism",
     start_time: DateTime.new(2019,12,16,9,30,0),
     available_duration: 600,
-    activity: array_activities[10],
+    activity: array_activities[7],
     team: sales
   }
 ]

@@ -183,6 +183,11 @@
             <h2><%= @future_meetings[0].name %></h2>
              <p> <strong> <%=@future_meetings[0].activity.name%></strong></p>
           </div>
+          <div class="right">
+            <h3 class="date-meeting1" > <% @date_meeting = @display_last.start_time %>
+              <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
+            </h3>
+          </div>
       </div>
       <% else %>
       <% end %>
