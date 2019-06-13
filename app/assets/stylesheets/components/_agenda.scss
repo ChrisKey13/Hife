@@ -18,6 +18,7 @@
     color: white;
     background-color: $red;
     border: 1px solid $red;
+    opacity: 1;
   }
 }
 
@@ -79,11 +80,11 @@ background-color: white;
 }
 
 .btn-agenda-unhide {
-  color: $orange1;
+  color: $red;
   opacity: 0.5;
   text-align: center;
   background-color: $white;
-  border: 1px solid $orange1;
+  border: 1px solid $red;
   border-radius: 3px;
   &:hover {
     opacity: 1;
