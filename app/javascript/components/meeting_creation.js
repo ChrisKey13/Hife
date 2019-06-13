@@ -32,9 +32,7 @@ const disableButtonIfAllNotFilled = () => {
           able[index] = false;
         }
       });
-      // able.splice(-1,1);
       if (validArray(able)) {
-        console.log('toto');
         submitButton.disabled = false;
       }
       });

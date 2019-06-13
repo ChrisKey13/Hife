@@ -10,8 +10,6 @@ const buildMap = (id) => {
 };
 
 const addMarkersToMap = (map, marker, logo_boolean) => {
-  // const markerL = new mapboxgl.LngLat([parseFloat(marker.lng), parseFloat(marker.lat)]);
-  // const markerL = new mapboxgl.LngLat([marker.lng, marker.lat]);
   if (logo_boolean) {
     const el = document.createElement('div');
     el.className = 'marker-logo-company';
@@ -43,15 +41,11 @@ const initMapbox = (intensiveness) => {
   const activitiesIds = activityIntensiveness.querySelector('#activities');
   if (activitiesIds) {
     const ids = JSON.parse(activitiesIds.dataset.ids)
-    // const mapAll = document.querySelectorAll(".map");
     ids.forEach((id) => {
       const map = buildMap(id);
       const mapElement = document.querySelector(`#map_${id}`);
       const markersActivity = JSON.parse(mapElement.dataset.markersActivity);
-      // const markersActivity = mapElement.dataset.markersActivity;
       const markersCompany = JSON.parse(mapElement.dataset.markersCompany);
-      // const markersCompany = mapElement.dataset.markersCompany;
-      // const urlLogo = mapElement.dataset.markersLogoCompany;
       const markers = [markersCompany, markersActivity];
       addMarkersToMap(map, markersCompany, true);
       addMarkersToMap(map, markersActivity);
