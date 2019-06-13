@@ -41,42 +41,42 @@
   <div class="container-new-meeting">
     <p class= ""> Next Meeting</p>
     <% display_last = future_meetings.last %>
-    <% if display_last != nil %>
-    <div class="card-meeting-future">
-      <img src="<%= display_last.activity.photo %>" class="future-photos">
-      <div class="card-meeting-infos-future">
-        <div class="title">
-            <h2><%= display_last.name %></h2>
+    <% if display_last %>
+      <div class="card-meeting-future">
+        <img src="<%= display_last.activity.photo %>" class="future-photos">
+        <div class="card-meeting-infos-future">
+          <div class="title">
+              <h2><%= display_last.name %></h2>
+          </div>
+          <div class="activity">
+            <p> <strong> <%=display_last.activity.name%></strong></p>
+          </div>
+          <div class="paragraph">
+            <p><%=display_last.activity.description%></p>
+          </div>
+          <div class="right">
+            <h3 class="date-meeting" > <% date_meeting = display_last.start_time %>
+              <%= DateFormat.change_to(date_meeting, "LONG_DATE")  %>
+            </h3>
+          </div>
         </div>
-        <div class="activity">
-          <p> <strong> <%=display_last.activity.name%></strong></p>
-        </div>
-        <div class="paragraph">
-          <p><%=display_last.activity.description%></p>
+      </div>
+    <% end %>
+    <p id="list-meetings"> All your coming meetings</p>
+    <%= display_next = future_meetings[0] %>
+    <% if display_next && display_next != display_last %>
+      <div class="next-meeting-parked">
+        <img src=" <%= display_next.activity.photo%> " alt="">
+        <div class="next-meeting-parked-recap">
+          <h2><%= display_next.name %></h2>
+           <p> <strong> <%=display_next.activity.name%></strong></p>
         </div>
         <div class="right">
-          <h3 class="date-meeting" > <% date_meeting = display_last.start_time %>
+          <h3 class="date-meeting1" > <% date_meeting = display_next.start_time %>
             <%= DateFormat.change_to(date_meeting, "LONG_DATE")  %>
           </h3>
         </div>
       </div>
-    </div>
-    <% end %>
-    <p id="list-meetings"> All your coming meetings</p>
-    <% if future_meetings[0] != display_last %>
-    <div class="next-meeting-parked">
-        <img src=" <%=future_meetings[0].activity.photo%> " alt="">
-        <div class="next-meeting-parked-recap">
-          <h2><%= future_meetings[0].name %></h2>
-           <p> <strong> <%=future_meetings[0].activity.name%></strong></p>
-        </div>
-        <div class="right">
-          <h3 class="date-meeting1" > <% date_meeting = display_last.start_time %>
-            <%= DateFormat.change_to(date_meeting, "LONG_DATE")  %>
-          </h3>
-        </div>
-    </div>
-    <% else %>
     <% end %>
 
   </div>
