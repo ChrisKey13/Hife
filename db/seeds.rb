@@ -99,8 +99,8 @@ users_parameters = [
   },
   {
     first_name: "Christophe",
-    last_name: "Boucquet",
-    email: "Christophe.boucquet@kickmaker.com",
+    last_name: "Bouquet",
+    email: "Christophe.bouquet@kickmaker.com",
     password: "123456",
     company: kick_maker,
     photo: "https://uinames.com/api/photos/male/20.jpg"
@@ -267,7 +267,7 @@ activities_parameters = [
     People of all age groups can play and enjoy this sport. On average you burn 500 calories per hour while playing table tennis.",
     address: "9 rue alphonse Baudin 75011 Paris",
     intensiveness: "Medium",
-    photo: "https://images.pexels.com/photos/976873/pexels-photo-976873.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    photo: "http://www.cttlachauxdefonds.ch/wp-content/uploads/2014/08/imgtable3.jpg",
     #"https://images.unsplash.com/photo-1511067007398-7e4b90cfa4bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
     duration: 60,
     pas: 8000
@@ -281,7 +281,7 @@ activities_parameters = [
     A 2v2 match provide ample opportunities for one to socialise to meet new people whilst also giving one the experience of an intense double match!",
     address: "9 rue alphonse Baudin 75011 Paris",
     intensiveness: "Medium",
-    photo: "https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    photo: "https://images.unsplash.com/photo-1553258223-6e8add562470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     duration: 45,
     pas: 7000
   },
@@ -319,7 +319,7 @@ activities_parameters = [
     description: "Exercise is the ultimate mood booster. Reduce stress and anxiety with your collegues, stay motivated, promote healthy competition and make your average gym session so much more fun.",
     address: "9 Passage Thiéré, 75011 Paris",
     intensiveness: "High",
-    photo: "https://images.unsplash.com/photo-1519317245869-d6943e4a4f9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    photo: "https://images.pexels.com/photos/28080/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     duration: 35,
     pas: 8000
   },
