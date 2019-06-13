@@ -36,7 +36,7 @@ class MeetingsController < ApplicationController
     @meeting.activity = Activity.find(meeting_params["activity_ids"][1])
 
     if @meeting.save
-      sleep(4)
+      sleep(3.5)
       redirect_to dashboard_path
     else
       render :new

@@ -7,7 +7,7 @@
       <% if user_signed_in? %>
         <%= link_to "Dashboard", dashboard_path, class: 'bouton-red' %>
       <% else %>
-        <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red' %>
+        <%= link_to "Try it now", new_user_registration_path, class: 'bouton-red' %>
       <% end %>
     </div>
   </div>
@@ -35,7 +35,11 @@
             <li class="mt-2">Next Steps are Automatically Prioritised and Assigned</li>
           </ul>
           <div>
-          <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red-smaller mt-4 mb-5' %>
+            <% if user_signed_in? %>
+              <%= link_to "Dashboard", dashboard_path, class: 'bouton-red-smaller mt-4 mb-5' %>
+            <% else %>
+              <%= link_to "Try it now", new_user_registration_path, class: 'bouton-red-smaller mt-4 mb-5' %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -53,7 +57,11 @@
             <li class="mt-2">Choose From Only The Best Activities In Your Area</li>
           </ul>
           <div>
-          <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red-smaller mt-4 mb-5' %>
+            <% if user_signed_in? %>
+              <%= link_to "Dashboard", dashboard_path, class: 'bouton-red-smaller mt-4 mb-5' %>
+            <% else %>
+              <%= link_to "Try it now", new_user_registration_path, class: 'bouton-red-smaller mt-4 mb-5' %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -76,9 +84,11 @@
             <li class="mt-2">Seamless Feedback Loops</li>
             <li class="mt-2">Track KPI's Progress and Drill Into Sub-Funnels</li>
           </ul>
-          <div>
-          <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red-smaller mt-4 mb-5' %>
-          </div>
+          <% if user_signed_in? %>
+            <%= link_to "Dashboard", dashboard_path, class: 'bouton-red-smaller mt-4 mb-5' %>
+          <% else %>
+            <%= link_to "Try it now", new_user_registration_path, class: 'bouton-red-smaller mt-4 mb-5' %>
+          <% end %>
         </div>
       </div>
   </div>
@@ -117,7 +127,11 @@
     </div>
   </div>
     <div class="text-center">
-    <%= link_to "Try it free", new_user_registration_path, class: 'bouton-red-smaller mt-2 mb-5' %>
+      <% if user_signed_in? %>
+        <%= link_to "Dashboard", dashboard_path, class: 'bouton-red-smaller mt-2 mb-5' %>
+      <% else %>
+        <%= link_to "Try it now", new_user_registration_path, class: 'bouton-red-smaller mt-2 mb-5' %>
+      <% end %>
     </div>
     </div>
   </div>
@@ -129,7 +143,11 @@
       <div><%= image_tag "startup.png", class: "imageCTA"; %>
       </div>
       <h2 class="display-2 text-center mt-5">Get Started With Hife Today</h2>
-      <div><%= link_to "Try it free", new_user_registration_path, class: 'bouton-red mt-4 mb-5 footerCTA' %></div>
+      <% if user_signed_in? %>
+        <%= link_to "Dashboard", dashboard_path, class: 'bouton-red-smaller mt-4 mb-5 footerCTA' %>
+      <% else %>
+        <%= link_to "Try it now", new_user_registration_path, class: 'bouton-red-smaller mt-4 mb-5 footerCTA' %>
+      <% end %>
     </div>
   </div>
 

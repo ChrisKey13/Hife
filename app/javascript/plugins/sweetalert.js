@@ -14,6 +14,9 @@ const addSweetAlertAfterCreateMeeting = () => {
         Swal.fire({
           type: 'success',
           title: 'Meeting created!',
+          html:
+            '<div id="sweet-alert-text">You saved <strong>90</strong> minutes! \ ' +
+            'Sport time now!</div>',
           timer: 3000
         })
         form.submit();
