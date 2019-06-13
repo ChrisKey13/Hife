@@ -63,7 +63,7 @@
       </div>
     <% end %>
     <p id="list-meetings"> All your coming meetings</p>
-    <%= display_next = future_meetings[0] %>
+    <% display_next = future_meetings[0] %>
     <% if display_next && display_next != display_last %>
       <div class="next-meeting-parked">
         <img src=" <%= display_next.activity.photo%> " alt="">
