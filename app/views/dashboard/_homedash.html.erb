@@ -1,199 +1,83 @@
 
 <main role="main" class="container-home-dashboard">
-    <!-- <div class="image-create-meeting"> -->
-      <%#= image_tag "celebration.png", class: "image-celebration" %>
-      <!-- <div><%= link_to "Create your next meeting", new_meeting_path, class: 'bouton-CTA'%>
-      </div> -->
-    <!-- </div> -->
-  <!-- <div class="container-graph"> -->
-    <% @all_meetings = Meeting.all %>
-    <% @all_users = User.all %>
-    <% @future_meetings=[] %>
-    <% @past_meetings= [] %>
-    <% @all_meetings.each do |meeting| %>
-      <% if meeting.start_time > Date.today %>
-      <% @future_meetings << meeting %>
-      <% else %>
-      <% @past_meetings << meeting %>
-      <% end %>
+  <% future_meetings=[] %>
+  <% past_meetings= [] %>
+  <% @all_meetings.each do |meeting| %>
+    <% if meeting.start_time > Date.today %>
+      <% future_meetings << meeting %>
+    <% else %>
+      <% past_meetings << meeting %>
+    <% end %>
+  <% end %>
+
+  <div class="card-history">
+    <p class= "past"> Past meetings</p>
+
+    <div class="past-card-meeting">
+      <img src="<%= past_meetings[0].activity.photo %>" class="past-photos">
+      <div class="past-card-meeting-infos">
+        <div>
+          <h2><%= past_meetings[0].name %></h2>
+          <p> <strong> <%=past_meetings[0].activity.name%></strong></p>
+        </div>
+        <div>
+          <p> <%=past_meetings[0].activity.description%> </p>
+        </div>
+      <% date_meeting = past_meetings[0].start_time %>
+        <p class="sticky-date"> <%= DateFormat.change_to(date_meeting, "LONG_DATE")  %> </p>
+      </div>
+    </div>
+
+    <%= render 'past_meeting', meeting: past_meetings[1] %>
+    <%= render 'past_meeting', meeting: past_meetings[2] %>
+    <%= render 'past_meeting', meeting: past_meetings[3] %>
+    <%= render 'past_meeting', meeting: past_meetings[4] %>
+    <%= render 'past_meeting', meeting: past_meetings[5] %>
+
+  </div>
+
+  <% future_meetings = future_meetings.sort_by(&:start_time).reverse %>
+
+  <div class="container-new-meeting">
+    <p class= ""> Next Meeting</p>
+    <% display_last = future_meetings.last %>
+    <% if display_last != nil %>
+    <div class="card-meeting-future">
+      <img src="<%= display_last.activity.photo %>" class="future-photos">
+      <div class="card-meeting-infos-future">
+        <div class="title">
+            <h2><%= display_last.name %></h2>
+        </div>
+        <div class="activity">
+          <p> <strong> <%=display_last.activity.name%></strong></p>
+        </div>
+        <div class="paragraph">
+          <p><%=display_last.activity.description%></p>
+        </div>
+        <div class="right">
+          <h3 class="date-meeting" > <% date_meeting = display_last.start_time %>
+            <%= DateFormat.change_to(date_meeting, "LONG_DATE")  %>
+          </h3>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <p id="list-meetings"> All your coming meetings</p>
+    <% if future_meetings[0] != display_last %>
+    <div class="next-meeting-parked">
+        <img src=" <%=future_meetings[0].activity.photo%> " alt="">
+        <div class="next-meeting-parked-recap">
+          <h2><%= future_meetings[0].name %></h2>
+           <p> <strong> <%=future_meetings[0].activity.name%></strong></p>
+        </div>
+        <div class="right">
+          <h3 class="date-meeting1" > <% date_meeting = display_last.start_time %>
+            <%= DateFormat.change_to(date_meeting, "LONG_DATE")  %>
+          </h3>
+        </div>
+    </div>
+    <% else %>
     <% end %>
 
-    <div class="card-history">
-      <p class= "past"> Past meetings</p>
-
-      <div class="past-card-meeting">
-        <img src="<%= @past_meetings[0].activity.photo %>" class="past-photos">
-        <div class="past-card-meeting-infos">
-          <div>
-            <h2><%= @past_meetings[0].name %></h2>
-            <p> <strong> <%=@past_meetings[0].activity.name%></strong></p>
-          </div>
-          <div>
-            <p> <%=@past_meetings[0].activity.description%> </p>
-          </div>
-        <% @date_meeting = @past_meetings[0].start_time %>
-          <p class="sticky-date"> <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %> </p>
-        </div>
-      </div>
-
-
-      <div class="past-card-meeting">
-        <img src="<%= @past_meetings[1].activity.photo %>" class="past-photos">
-        <div class="past-card-meeting-infos">
-          <div>
-            <h2><%= @past_meetings[1].name %></h2>
-            <p> <strong> <%=@past_meetings[1].activity.name%></strong></p>
-          </div>
-          <div>
-            <p> <%=@past_meetings[1].activity.description%> </p>
-          </div>
-          <% @date_meeting = @past_meetings[1].start_time %>
-            <p class="sticky-date"> <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %> </p>
-          <!-- <div class="right">
-            <h3 class="date-meeting-past" > <% @date_meeting = @past_meetings[1].start_time %>
-              <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
-            </h3>
-            <p class="card-meeting-pricing"> <strong><%=@past_meetings[1].activity.duration %> min  saved</strong>
-            </p>
-          </div> -->
-        </div>
-      </div>
-
-      <div class="past-card-meeting">
-        <img src="<%= @past_meetings[2].activity.photo %>" class="past-photos" id="more">
-        <div class="past-card-meeting-infos">
-          <div>
-            <h2><%= @past_meetings[2].name %></h2>
-            <p> <strong> <%=@past_meetings[2].activity.name%></strong></p>
-          </div>
-          <div>
-            <p> <%=@past_meetings[2].activity.description%> </p>
-          </div>
-          <% @date_meeting = @past_meetings[2].start_time %>
-            <p class="sticky-date"> <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %> </p>
-         <!--  <div class="right">
-            <h3 class="date-meeting-past" > <% @date_meeting = @past_meetings[2].start_time %>
-              <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
-            </h3>
-            <p class="card-meeting-pricing"> <strong><%=@past_meetings[2].activity.duration %> min  saved</strong>
-            </p>
-          </div> -->
-        </div>
-      </div>
-
-      <div class="past-card-meeting">
-        <img src="<%= @past_meetings[3].activity.photo %>" class="past-photos" id="more">
-        <div class="past-card-meeting-infos">
-          <div>
-            <h2><%= @past_meetings[3].name %></h2>
-            <p> <strong> <%=@past_meetings[3].activity.name%></strong></p>
-          </div>
-          <div>
-            <p> <%=@past_meetings[3].activity.description%> </p>
-          </div>
-          <% @date_meeting = @past_meetings[3].start_time %>
-            <p class="sticky-date"> <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %> </p>
-          <!-- <div class="right">
-            <h3 class="date-meeting-past" > <% @date_meeting = @past_meetings[3].start_time %>
-              <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
-            </h3>
-            <p class="card-meeting-pricing"> <strong><%=@past_meetings[3].activity.duration %> min  saved</strong>
-            </p>
-          </div> -->
-        </div>
-      </div>
-
-      <div class="past-card-meeting">
-        <img src="<%= @past_meetings[4].activity.photo %>" class="past-photos" id="more">
-        <div class="past-card-meeting-infos">
-          <div>
-            <h2><%= @past_meetings[4].name %></h2>
-            <p> <strong> <%=@past_meetings[4].activity.name%></strong></p>
-          </div>
-          <div>
-            <p> <%=@past_meetings[4].activity.description%> </p>
-          </div>
-          <!-- <div class="sticky-date"> -->
-            <% @date_meeting = @past_meetings[4].start_time %>
-            <p class="sticky-date"> <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %> </p>
-          <!-- </div> -->
-          <!-- <div class="right">
-
-            <p class="card-meeting-pricing"> <strong><%=@past_meetings[4].activity.duration %> min  saved</strong>
-            </p>
-          </div> -->
-        </div>
-      </div>
-
-      <div class="past-card-meeting">
-        <img src="<%= @past_meetings[5].activity.photo %>" class="past-photos" id="more">
-        <div class="past-card-meeting-infos">
-          <div>
-            <h2><%= @past_meetings[5].name %></h2>
-            <p> <strong> <%=@past_meetings[5].activity.name%></strong></p>
-          </div>
-          <div>
-            <p> <%=@past_meetings[5].activity.description%> </p>
-          </div>
-          <% @date_meeting = @past_meetings[4].start_time %>
-          <p class="sticky-date"> <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %> </p>
-            <!-- <p class="sticky-date"> <%=@past_meetings[5].start_time %> </p> -->
-
-          <!-- <div class="right">
-            <h3 class="date-meeting-past" > <% @date_meeting = @past_meetings[5].start_time %>
-              <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
-            </h3>
-            <p class="card-meeting-pricing"> <strong><%=@past_meetings[5].activity.duration %> min  saved</strong>
-            </p>
-          </div> -->
-        </div>
-      </div>
-    </div>
-
-
-    <div class="container-new-meeting">
-      <p class= ""> Next Meeting</p>
-      <% @display_last = @future_meetings.last %>
-      <% if @display_last != nil %>
-      <div class="card-meeting-future">
-        <img src="<%= @display_last.activity.photo %>" class="future-photos">
-        <div class="card-meeting-infos-future">
-          <div class="title">
-              <h2><%= @display_last.name %></h2>
-          </div>
-          <div class="activity">
-            <p> <strong> <%=@display_last.activity.name%></strong></p>
-          </div>
-          <div class="paragraph">
-            <p><%=@display_last.activity.description%></p>
-          </div>
-          <div class="right">
-            <h3 class="date-meeting" > <% @date_meeting = @display_last.start_time %>
-              <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
-            </h3>
-          </div>
-        </div>
-      </div>
-      <% end %>
-      <p id="list-meetings"> All your coming meetings</p>
-      <% if @future_meetings[0] != @display_last %>
-      <div class="next-meeting-parked">
-          <img src=" <%=@future_meetings[0].activity.photo%> " alt="">
-          <div class="next-meeting-parked-recap">
-            <h2><%= @future_meetings[0].name %></h2>
-             <p> <strong> <%=@future_meetings[0].activity.name%></strong></p>
-          </div>
-          <div class="right">
-            <h3 class="date-meeting1" > <% @date_meeting = @display_last.start_time %>
-              <%= DateFormat.change_to(@date_meeting, "LONG_DATE")  %>
-            </h3>
-          </div>
-      </div>
-      <% else %>
-      <% end %>
-
-    </div>
-    <!-- <div class="container-past-meeting"></div> -->
-
-  <!-- </div> -->
+  </div>
 </main>
