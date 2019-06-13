@@ -16,12 +16,15 @@
 .logo-form {
   display: flex;
   align-items: center;
-  margin: 15px;
+  margin: 16px;
+  margin-top: -16px;
 
 }
 
 .logo-form img {
   width:70px;
+  margin-top: -8px;
+  margin-right: 4px;
 }
 
 #light-recurency{
@@ -44,7 +47,7 @@
 #slider2 {
     flex-direction: column;
   /* justify-content: space-around; */
-  width: 60%;
+  width: 80%;
   border-top: 50px;
   margin:0 auto;
   //margin-left: 60px;

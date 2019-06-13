@@ -2,21 +2,22 @@
   color: $red;
   text-align: center;
   width: 100%;
-  margin-top: -10px;
+  margin-top: 0px;
   margin-bottom: 10px;
 }
 
 .add-agenda {
-  margin: 16px 0;
-  background-color: white;
-  color: $orange;
-  border-color: $orange;
+  margin: 0px 0;
+  margin-top: -16px;
+  background-color: $orange1;
+  color: white;
+  border-color: $orange1;
   opacity:0.5;
   &:hover {
 
-    color: $orange;
-    background-color: white;
-    border: 1px solid $orange;
+    color: white;
+    background-color: $red;
+    border: 1px solid $red;
   }
 }
 
@@ -69,7 +70,7 @@ background-color: white;
 
 .agenda-bullet-section.show {
   opacity: 1;
-  height: 280px;
+  height: 230px;
   width: 100%;
 }
 
@@ -78,13 +79,17 @@ background-color: white;
 }
 
 .btn-agenda-unhide {
-  color: $orange3;
+  color: $orange1;
   opacity: 0.5;
   text-align: center;
   background-color: $white;
-  border: 1px solid $orange;
-  border-radius: 2px;
+  border: 1px solid $orange1;
+  border-radius: 3px;
   &:hover {
     opacity: 1;
+    color: white;
+    background-color: $red;
+    border: none;
+    border-radius: 3px;
   }
 }

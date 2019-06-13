@@ -68,22 +68,24 @@
   height: 100%;
   width: 100%;
 }
-
+.slider-btn-next {
+  width: 100%;
+  text-align: center;
+  padding: 12px 32px;
+  border-radius: 4px;
+  background-color: $red;
+  color: $white;
+  font-weight: 700;
+  &:hover {
+    background-color: $green;
+    color: $white;
+  }
 
 .slider-btn {
-  width: 150px;
-  text-align: center;
-  padding: 16px;
-  border-radius: 4px;
+
 }
 
 .slider-btn.next-btn {
-  background-color: $orange1;
-  color: $white;
-  &:hover {
-    background-color: $orange2;
-    color: $gray;
-  }
 }
 
 .slider-btn.previous-btn {
@@ -121,3 +123,36 @@
   }
 
 
+  .fa-arrow-right {
+    margin-left: 16px;
+  }
+
+.form-group {
+  margin-bottom: 0px;
+}
+.slider-btn-next-small {
+  width: 42%;
+  text-align: center;
+  padding: 12px 32px;
+  border-radius: 4px;
+  background-color: $red;
+  color: $white;
+  font-weight: 700;
+  &:hover {
+    background-color: $green;
+    color: $white;
+  }
+}
+.slider-btn-previous-small {
+  width: 42%;
+  text-align: center;
+  padding: 12px 32px;
+  border-radius: 4px;
+  background-color: $gray2;
+  color: $white;
+  font-weight: 700;
+  &:hover {
+    background-color: $orange1;
+    color: $white;
+  }
+}
