@@ -21,6 +21,7 @@
   object-fit: cover;
   width: 350px;
   height: 480px;
+  border-radius: 4px 0px 0px 4px;
 }
 
 .card-activity-right {
@@ -51,14 +52,16 @@
     color: $black;
     flex-grow: 1;
     font-size: 12px;
-    padding: auto 4px;
+    padding: 32px 0px;
   }
 }
 
 .activity-choice {
   width: 800px;
-  margin: 0 16px;
+  margin: 16px 16px;
   border-radius: 4px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border: 1px solid $gray;
   &:hover {
     cursor: pointer;
   }
@@ -75,6 +78,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: auto 0;
+  height: 120px;
   width: 42px;
   color: $orange3;
   opacity: 0.5;
@@ -93,6 +98,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: auto 0;
+  height: 120px;
   width: 42px;
   color: $orange3;
   opacity: 0.5;
@@ -119,7 +126,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
+  margin: 32px auto;
+  .intensiveness-picker {
+    text-align: center;
+    color: $orange;
+  }
 }
 
 // .marker-logo-company {
