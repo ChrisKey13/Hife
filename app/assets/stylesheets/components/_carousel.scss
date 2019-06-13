@@ -12,11 +12,28 @@
 
 
 .slider-activity-picker {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 0px;
+}
+
+.slider-activity-sidebar {
   display: flex;
   flex-direction: column;
+  background-color: $orange2;
   justify-content: space-around;
-  width: 1200px;
   margin: 0 auto;
+  height: 100vh;
+  padding: 16px;
+}
+
+.activity-meeting-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #F5F5F5;
+  height: 100vh;
+  padding: 16px;
 }
 
 #activities {
@@ -76,7 +93,7 @@
     background-color: $gray;
     color: $black;
   }
-
+  margin-right: 4px;
 }
 
 .slider-change {

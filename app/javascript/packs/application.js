@@ -87,3 +87,12 @@ if (activityCards) {
   initMapbox('high');
 }
 
+import { addSweetAlertAfterCreateMeeting } from '../plugins/sweetalert';
+
+
+const submitBtn = document.querySelector(".btn-success");
+
+if (submitBtn) {
+  addSweetAlertAfterCreateMeeting();
+}
+

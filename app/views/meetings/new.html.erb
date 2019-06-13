@@ -114,48 +114,53 @@
 
     <div class="slider-meeting fade-in hidden-slide">
       <div class="slider-activity-picker">
-        <h2>Please, pick an activity</h2>
-        <div class="card-activity-wrapper">
-          <label class="control-label radio_buttons optional hidden-slide">Activities</label>
-          <input type="hidden" name="meeting[activity_ids][]" value="">
-          <div id="card-activities-all">
-            <div class="activity-intensiveness-card activity-low hide-activity">
-              <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
-              <%= render 'activities', activities: @activities[:low] %>
-              <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
-            </div>
-            <div class="activity-intensiveness-card activity-medium active-activity">
-              <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
-              <%= render 'activities', activities: @activities[:medium] %>
-              <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
-            </div>
-            <div class="activity-intensiveness-card activity-high hide-activity">
-              <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
-              <%= render 'activities', activities: @activities[:high] %>
-              <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
-            </div>
+        <div class="slider-activity-sidebar">
+          <h2>Choose an activity</h2>
+          <div class="activity-intensiveness-picker">
+            <%= f.simple_fields_for(:activities) do |b| %>
+              <%= b.input :intensiveness, label: "Intensiveness", as: :range, input_html: { step: 1, value: 2,  min: 1, max: 3, id: "intensiveness-pick-activity" } %>
+              <output class="intensiveness-picker" id="activity-picker">Medium</output>
+            <% end %>
           </div>
-        </div>
 
-        <div class="activity-intensiveness-picker">
-          <%= f.simple_fields_for(:activities) do |b| %>
-            <%= b.input :intensiveness, label: "Intensiveness", as: :range, input_html: { step: 1, value: 2,  min: 1, max: 3, id: "intensiveness-pick-activity" } %>
-            <output class="intensiveness-picker" id="activity-picker">Medium</output>
-          <% end %>
-        </div>
+          <div class="slider-change">
+            <div class="slider-btn previous-btn">Previous</div>
+            <%= f.submit "Create a meeting", class: "btn btn-success", disabled: true %>
+          </div>
 
-        <div class="slider-change">
-          <div class="slider-btn previous-btn">Previous</div>
-          <%= f.submit "Create a meeting", class: "btn btn-success", disabled: true %>
         </div>
-        <div class="slider-indicators-container">
-          <div class="slider-indicators">
+        <div class="activity-meeting-container">
+
+          <div class="card-activity-wrapper">
+            <label class="control-label radio_buttons optional hidden-slide">Activities</label>
+            <input type="hidden" name="meeting[activity_ids][]" value="">
+            <div id="card-activities-all">
+              <div class="activity-intensiveness-card activity-low hide-activity">
+                <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
+                <%= render 'activities', activities: @activities[:low] %>
+                <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
+              </div>
+              <div class="activity-intensiveness-card activity-medium active-activity">
+                <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
+                <%= render 'activities', activities: @activities[:medium] %>
+                <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
+              </div>
+              <div class="activity-intensiveness-card activity-high hide-activity">
+                <div class="btn-arrow-left"><i class="fas fa-angle-left"></i></div>
+                <%= render 'activities', activities: @activities[:high] %>
+                <div class="btn-arrow-right"><i class="fas fa-angle-right"></i></div>
+              </div>
+            </div>
           </div>
-          <div class="slider-indicators">
-          </div>
-          <div class="slider-indicators">
-          </div>
-          <div class="slider-indicators active">
+          <div class="slider-indicators-container">
+            <div class="slider-indicators">
+            </div>
+            <div class="slider-indicators">
+            </div>
+            <div class="slider-indicators">
+            </div>
+            <div class="slider-indicators active">
+            </div>
           </div>
         </div>
 
