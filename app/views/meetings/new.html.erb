@@ -14,7 +14,7 @@
           <p class="text-funnel mt-3 mb-3"><span id="bold-meeting"> Is it a recurring meeting ?</span> <span id="light-recurency"> You might want to specify it in the name.</span></p>
           <%= f.input :name, label: "Meeting name", input_html: {class: "sign-up-label"} %>
           <div class="slider-change">
-            <div class="slider-btn next-btn" id="bouton1">Next</div>
+            <div class="slider-btn next-btn slider-btn-next">Nextt <i class="fas fa-arrow-right"></i><</div>
             <div class="slider-indicators-container">
               <div class="slider-indicators active">
               </div>
@@ -74,14 +74,14 @@
           <h4 class="pl-3 pt-2">Hife</h4>
         </div>
         <div class="slider-form2 col-6">
-          <h2 class="display-funnel mt-5"> Detail the agenda</h2>
-          <div class="agenda-bullets mt-3">
+          <h2 class="display-funnel"> Detail the agenda</h2>
+          <div class="agenda-bullets">
             <%= f.simple_fields_for @agenda do |a| %>
               <%= a.input :title, label: "Title", input_html: { name:"meeting[agendas][0][title]" } %>
-                <%= a.input :user, collection: @users, label_method: :his_name, label: "Collaborator in charge", input_html: { name:"meeting[agendas][0][user]" } %>
               <div class="agenda-bullet-section i-0 show">
                 <%= a.input :description, label: "Description", input_html: { name:"meeting[agendas][0][description]" } %>
                 <%= a.input :duration, label: "Duration", as: :range, input_html: { name: "meeting[agendas][0][duration]" , step: 5, value: 15,  min: 5, max: 120, id: "text-input-agenda-slider-0" } %>
+                <%= a.input :user, collection: @users, label_method: :his_name, label: "Collaborator in charge", input_html: { name:"meeting[agendas][0][user]" } %>
                 <output class="agenda-duration" id="agenda-duration id-0"></output>
               </div>
             <% end %>
