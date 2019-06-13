@@ -523,7 +523,8 @@ opacity: 0.7;
   margin-right: 16px;
 }
 .overflowavatar {
-  overflow-y: hidden;
+  overflow-y: scroll;
+  height: 380px;
 }
 .texttoggle {
   text-decoration: none;
@@ -557,7 +558,7 @@ border-radius: 4px;
 
 }
 .svg-analytics {
-  margin-top: 8px;
+  margin-top: 4px;
   margin-right: 8px;
 }
 .container-member-anal {
@@ -567,7 +568,7 @@ border-radius: 4px;
 }
 .figure-dash2 {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
 }
 .divinside {
   background-color: white;
@@ -578,4 +579,7 @@ border-radius: 4px;
 }
 .forsvg2 {
   position: relative;
+}
+.putpadding {
+  padding: 10px;
 }
