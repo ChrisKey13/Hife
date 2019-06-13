@@ -8,8 +8,7 @@
       </label>
       <div class="card-activity">
 
-        <div class="card-activity-photo">
-          <%= image_tag(activities[0].photo) %>
+        <div class="card-activity-photo" style="background-image: url('<%= activities[0].photo %>');">
         </div>
 
         <div class="card-activity-right">
@@ -32,7 +31,7 @@
           </div>
           <div class="card-activity-map">
             <div class="map" id='<%= "map_#{activities[0].id}" %>'
-              style="width: 638px; height: 230px;"
+              style="height: 230px;"
               data-markers-activity="<%= {lng: activities[0].longitude, lat: activities[0].latitude}.to_json %>"
               data-markers-company="<%= {lng: @company.longitude, lat: @company.latitude}.to_json %>"
               data-markers-logo-company="<%= image_path @company.photo %>"
@@ -55,8 +54,7 @@
       </label>
       <div class="card-activity">
 
-        <div class="card-activity-photo">
-          <%= image_tag(activity.photo) %>
+        <div class="card-activity-photo" style="background-image: url('<%= activity.photo %>');">
         </div>
 
         <div class="card-activity-right">
@@ -79,7 +77,7 @@
           </div>
           <div class="card-activity-map">
             <div class="map" id='<%= "map_#{activity.id}" %>'
-              style="width: 638px; height: 230px;"
+              style="height: 230px;"
               data-markers-activity="<%= {lng: activity.longitude, lat: activity.latitude}.to_json %>"
               data-markers-company="<%= {lng: @company.longitude, lat: @company.latitude}.to_json %>"
               data-markers-logo-company="<%= image_path @company.photo %>"

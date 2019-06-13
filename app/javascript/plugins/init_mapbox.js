@@ -9,15 +9,20 @@ const buildMap = (id) => {
   });
 };
 
-const addMarkersToMap = (map, marker, url) => {
+const addMarkersToMap = (map, marker, logo_boolean) => {
   // const markerL = new mapboxgl.LngLat([parseFloat(marker.lng), parseFloat(marker.lat)]);
   // const markerL = new mapboxgl.LngLat([marker.lng, marker.lat]);
-  if (false) {
-    // const el = document.createElement('div');
-    // el.className = 'marker-logo-company';
-    // new mapboxgl.Marker(el)
-    //   .setLngLat(marker)
-    //   .addTo(map);
+  if (logo_boolean) {
+    const el = document.createElement('div');
+    el.className = 'marker-logo-company';
+    el.style.backgroundImage = `url('https://www.belaircamp.org/wp-content/uploads/2018/06/KickMaker.png')`;
+    el.style.backgroundSize = 'contain';
+    el.style.width = '120px';
+    el.style.height = '64px';
+    el.style.backgroundRepeat = 'no-repeat';
+    new mapboxgl.Marker(el)
+      .setLngLat(marker)
+      .addTo(map);
 
   } else {
     new mapboxgl.Marker()
@@ -48,7 +53,7 @@ const initMapbox = (intensiveness) => {
       // const markersCompany = mapElement.dataset.markersCompany;
       // const urlLogo = mapElement.dataset.markersLogoCompany;
       const markers = [markersCompany, markersActivity];
-      addMarkersToMap(map, markersCompany);
+      addMarkersToMap(map, markersCompany, true);
       addMarkersToMap(map, markersActivity);
       fitMapToMarkers(map, markers);
     })
