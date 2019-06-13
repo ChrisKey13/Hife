@@ -7,26 +7,37 @@ const disableButtonIfAllNotFilled = () => {
     });
   const submitButton = submitArray[submitArray.length - 1];
   let formInputs = form.querySelectorAll('input');
+  const agendaBullets = document.querySelectorAll(".agenda-bullets");
+  const number = agendaBullets.length - 1;
+  let i
+  let arrayToCut = [];
+  formInputs.forEach((input, index) => {
+    if (input.id === `text-input-agenda-slider-${number}`) {
+      i = index;
+      arrayToCut.push(input);
+    }
+  });
+  const start = arrayToCut.length - i;
+  arrayToCut.splice(start, i);
   let formCollections = form.querySelectorAll('select');
-  if (formInputs) {
-    let formArray = loadingArray(formInputs, formCollections);
-    const lastInput = formArray[formArray.length - 1];
-    lastInput.addEventListener('click', (event) => {
+  if (arrayToCut) {
+    let formArray = loadingArray(arrayToCut, formCollections);
+    const lastInput = document.querySelectorAll('.activity-choices');
+    lastInput.forEach((activity) => {
+      activity.addEventListener('click', (event) => {
       let able = []
-      formInputs = form.querySelectorAll('input');
-      formCollections = form.querySelectorAll('select');
-
-      formArray = loadingArray(formInputs, formCollections);
       formArray.forEach((input, index) => {
         able.push(true);
         if (!input.value) {
           able[index] = false;
         }
       });
-      able.splice(-1,1);
+      // able.splice(-1,1);
       if (validArray(able)) {
+        console.log('toto');
         submitButton.disabled = false;
       }
+      });
     });
   }
 }
@@ -36,7 +47,6 @@ const loadingArray = (formInputs, formCollections) => {
   formInputs.forEach((formInput) => {
     formArray.push(formInput);
   });
-  formArray.splice(-1,1);
   formCollections.forEach((formCollection) => {
     formArray.push(formCollection);
   });
@@ -47,7 +57,6 @@ const validArray = (able) => {
   let boolean = true;
   able.forEach((test) => {
     if (!test) {
-      console.log(test);
       boolean = false;
     }
   });

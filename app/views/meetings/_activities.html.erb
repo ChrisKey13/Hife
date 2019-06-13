@@ -32,7 +32,7 @@
           </div>
           <div class="card-activity-map">
             <div class="map" id='<%= "map_#{activities[0].id}" %>'
-              style="width: 630px; height: 230px;"
+              style="width: 638px; height: 230px;"
               data-markers-activity="<%= {lng: activities[0].longitude, lat: activities[0].latitude}.to_json %>"
               data-markers-company="<%= {lng: @company.longitude, lat: @company.latitude}.to_json %>"
               data-markers-logo-company="<%= image_path @company.photo %>"
@@ -79,7 +79,7 @@
           </div>
           <div class="card-activity-map">
             <div class="map" id='<%= "map_#{activity.id}" %>'
-              style="width: 630px; height: 230px;"
+              style="width: 638px; height: 230px;"
               data-markers-activity="<%= {lng: activity.longitude, lat: activity.latitude}.to_json %>"
               data-markers-company="<%= {lng: @company.longitude, lat: @company.latitude}.to_json %>"
               data-markers-logo-company="<%= image_path @company.photo %>"

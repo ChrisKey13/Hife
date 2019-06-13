@@ -6,7 +6,6 @@ import "../components/slick";
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
-import { disableButtonIfAllNotFilled } from '../components/meeting_creation';
 //import { displayCards }
 
 
@@ -21,6 +20,7 @@ if (activities.length > 0) {
   mainActivityMaker();
 }
 
+import { disableButtonIfAllNotFilled } from '../components/meeting_creation';
 
 if (document.querySelector(".slider-meeting")) {
   disableButtonIfAllNotFilled();
