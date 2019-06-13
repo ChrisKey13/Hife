@@ -47,7 +47,7 @@ users_parameters = [
     email: "vincent.despatin@kickmaker.com",
     company: kick_maker,
     password: "123456",
-    photo: "https://uinames.com/api/photos/male/9.jpg"
+    photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/qm8h3f1lbaotwfxxsmwh.jpg"
   },
   {
     first_name: "Mikael",
