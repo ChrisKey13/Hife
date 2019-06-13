@@ -52,7 +52,6 @@
   width: 100%;
 }
 .slider-btn-next {
-  margin-right: -16px;
   width: 100%;
   text-align: center;
   padding: 12px 32px;
@@ -79,7 +78,7 @@
     background-color: $gray;
     color: $black;
   }
-
+}
 }
 
 .slider-change {
@@ -110,3 +109,33 @@
   .fa-arrow-right {
     margin-left: 16px;
   }
+
+.form-group {
+  margin-bottom: 0px;
+}
+.slider-btn-next-small {
+  width: 42%;
+  text-align: center;
+  padding: 12px 32px;
+  border-radius: 4px;
+  background-color: $red;
+  color: $white;
+  font-weight: 700;
+  &:hover {
+    background-color: $green;
+    color: $white;
+  }
+}
+.slider-btn-previous-small {
+  width: 42%;
+  text-align: center;
+  padding: 12px 32px;
+  border-radius: 4px;
+  background-color: $gray2;
+  color: $white;
+  font-weight: 700;
+  &:hover {
+    background-color: $orange1;
+    color: $white;
+  }
+}
