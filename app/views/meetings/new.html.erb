@@ -121,8 +121,11 @@
           </div>
         <div class="slider-change2 d-flex flex-column align-items-center justify-content-evenly">
         </div>
-          <%= f.submit "Create your meeting", class: " btn btn-success slider-btn-next-small1", disabled: true %>
 
+          <div>
+          <%= f.submit "Create your meeting", class: " btn btn-success slider-btn-next-small1", disabled: true %>
+          <div class="slider-btn previous-btn slider-btn-previous-small1 mt-2" id="boutonprevious">Previous</div>
+          </div>
       </div>
         <div class="activity-meeting-container">
 
@@ -159,7 +162,6 @@
           </div>
         </div>
 
-          <div class="slider-btn previous-btn slider-btn-previous-small1 mt-2">Previous</div>
       </div>
     </div>
   <% end %>

@@ -102,7 +102,6 @@ height: 500px;
 }
 
 .container-home-dashboard{
-  margin-left: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   //margin-top: 20px;
@@ -155,7 +154,6 @@ height: 500px;
   border: 0px;
   //color: $orange1;
   margin-top: 15px;
-  opacity: 0.4;
   font-weight: bold;
 }
 
@@ -186,7 +184,7 @@ height: 500px;
 }
 
 .container-new-meeting p {
-  color: black;
+  color: $red;
   margin-top:10px;
 }
 
@@ -204,6 +202,7 @@ height: 500px;
   align-items: center;
   //width: 450px;
   margin-bottom: 60px;
+  border-radius: 4px;
 
 }
 
@@ -477,7 +476,6 @@ main {
   flex: 0 0 200px;
 }
 .card-meeting-infos-future .date-meeting {
-  position: absolute;
   /* right: 10px; */
   bottom: 128px;
   //color: $orange;
@@ -567,6 +565,9 @@ border-radius: 4px;
 }
 .svg-analytics {
   margin-top: 4px;
+  margin-right: 8px;
+}
+.svg-analytics2 {
   margin-right: 8px;
 }
 .container-member-anal {

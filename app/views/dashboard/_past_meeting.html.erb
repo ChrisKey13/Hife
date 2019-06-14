@@ -5,9 +5,6 @@
       <h2><%= meeting.name %></h2>
       <p> <strong> <%=meeting.activity.name%></strong></p>
     </div>
-    <div>
-      <p> <%=meeting.activity.description%> </p>
-    </div>
     <p class="sticky-date"> <%= DateFormat.change_to(meeting.start_time, "LONG_DATE")  %> </p>
   </div>
 </div>
