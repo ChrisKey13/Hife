@@ -145,6 +145,33 @@ sales = Team.create({
   desired_intensiveness: "medium",
   manager: manager
   });
+
+marketing = Team.create({
+  name: "Marketing",
+  description: "10 outstanding sales Rep",
+  average_age: 35,
+  desired_intensiveness: "medium",
+  manager: manager
+});
+
+codir = Team.create({
+  name: "CODIR",
+  description: "10 outstanding sales Rep",
+  average_age: 35,
+  desired_intensiveness: "medium",
+  manager: manager
+});
+
+codir = Team.create({
+  name: "Back-office",
+  description: "10 outstanding sales Rep",
+  average_age: 35,
+  desired_intensiveness: "medium",
+  manager: manager
+});
+
+
+
 puts "Team created"
 
 sales_team_parameters = [
