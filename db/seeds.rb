@@ -354,7 +354,7 @@ activities_parameters = [
     intensiveness: "High",
     photo: "https://images.unsplash.com/photo-1492366254240-43affaefc3e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     #"https://images.unsplash.com/photo-1513328623-9363af1b33d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80"
-    duration: 45,
+    duration: 90,
     pas: 12000
 
   },
