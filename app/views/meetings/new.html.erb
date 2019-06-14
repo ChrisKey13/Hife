@@ -121,7 +121,7 @@
           <h2 class ="display-funnel2 text-center display-activity" >Choose <br>Your Activity</h2>
           <div class="activity-intensiveness-picker">
             <%= f.simple_fields_for(:activities) do |b| %>
-              <%= b.input :intensiveness, label: "Select Your Intensiveness ", as: :range, input_html: { step: 1, value: 2,  min: 1, max: 3, id: "intensiveness-pick-activity" } %>
+              <%= b.input :intensiveness, label: "Select Your Intensiveness ", as: :range,  required: false, input_html: { step: 1, value: 2,  min: 1, max: 3, id: "intensiveness-pick-activity" } %>
               <output class="intensiveness-picker mt-2" id="activity-picker">Medium</output>
             <% end %>
           </div>
