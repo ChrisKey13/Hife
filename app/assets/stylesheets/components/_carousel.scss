@@ -13,8 +13,9 @@
 
 .slider-activity-picker {
   display: grid;
-  grid-template-columns: 3fr 6fr;
+  grid-template-columns: 4fr 8fr;
   grid-gap: 0px;
+  width: 100%;
   background: linear-gradient($orange, $orange3);
 }
 

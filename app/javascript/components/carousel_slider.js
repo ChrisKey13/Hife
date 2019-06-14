@@ -60,11 +60,17 @@ const selectCardActivity = () => {
       activities.forEach((activityChecked) => {
         if (activityChecked.classList.contains("checked")) {
           activityChecked.classList.remove("checked");
+          const activityToUpdate = activityChecked.querySelector(".card-activity-infos-question-pick-activity");
+          activityToUpdate.innerText = "Choose this one?";
+          activityToUpdate.classList.remove("picked");
         }
       });
       activity.classList.add("checked");
       let activityInput = activity.querySelector("input");
       activityInput.checked = true;
+      const changeTextActivityPicked = activity.querySelector(".card-activity-infos-question-pick-activity");
+      changeTextActivityPicked.innerText = "Chosen Activity";
+      changeTextActivityPicked.classList.add("picked");
     });
   });
 };
